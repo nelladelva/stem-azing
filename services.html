@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services & Pricing — STEM-azing</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="services.html">
+
+<header class="site" id="site-header"></header>
+
+<section class="hero" style="padding-bottom:10px;">
+  <div class="wrap">
+    <div class="eyebrow">Services & Pricing</div>
+    <h1>Five ways to work together.</h1>
+    <p class="lead">Every engagement below includes a short discovery call first, so scope and
+    price match what you actually need. Prices shown are starting rates — final quotes depend on
+    project scope and are confirmed before any booking.</p>
+    <div class="currency-toggle" style="margin-top:24px;">
+      <button class="active" id="btnEUR" onclick="setCurrency('EUR')">EUR €</button>
+      <button id="btnUSD" onclick="setCurrency('USD')">USD $</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px;">
+  <div class="wrap">
+
+    <!-- 1. Consulting -->
+    <div class="card" style="margin-bottom:26px;">
+      <div class="two-col" style="align-items:flex-start;">
+        <div>
+          <span class="badge">Consulting</span>
+          <h3 style="font-size:22px;">Scientific Consulting</h3>
+          <p style="margin-top:10px;">For organizations navigating a specific scientific challenge —
+          from pharmaceutical R&D teams to research institutes needing an outside expert perspective.</p>
+          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
+          <ul class="cv-list">
+            <li>10+ years across oncology, neuroscience, and molecular biology research</li>
+            <li>Experience translating bench findings into strategic recommendations</li>
+            <li>Direct experience with iPSC models, genomics, and biomarker discovery</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-note">Hourly rate</div>
+          <div class="amount" data-eur="95" data-usd="105">€95<span class="unit">/hr</span></div>
+          <div class="price-note">or from <span class="amount-project" data-eur="750" data-usd="820">€750</span> per project scope</div>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Consulting" data-deposit-eur="375" data-deposit-usd="410" style="margin-top:16px;">Book & pay 50% deposit</a>
+          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Guest Lectures -->
+    <div class="card" style="margin-bottom:26px;">
+      <div class="two-col" style="align-items:flex-start;">
+        <div>
+          <span class="badge">Speaking</span>
+          <h3 style="font-size:22px;">Guest Lectures & Workshops</h3>
+          <p style="margin-top:10px;">Fresh perspectives on cell and molecular biology, neuroscience
+          and behavior, and cross-cultural scientific collaboration — for classrooms, conferences,
+          and internal training sessions.</p>
+          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
+          <ul class="cv-list">
+            <li>Adjunct teaching experience (Hillsborough Community College)</li>
+            <li>A track record of translating dense science for mixed audiences</li>
+            <li>First-hand experience navigating STEM across three countries</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-note">Per session (up to 90 min)</div>
+          <div class="amount" data-eur="350" data-usd="385">€350</div>
+          <div class="price-note">Multi-session workshops quoted separately</div>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Guest Lecture / Workshop" data-deposit-eur="175" data-deposit-usd="193" style="margin-top:16px;">Book & pay 50% deposit</a>
+          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Research & Data Analysis -->
+    <div class="card" style="margin-bottom:26px;">
+      <div class="two-col" style="align-items:flex-start;">
+        <div>
+          <span class="badge">Data Science</span>
+          <h3 style="font-size:22px;">Research & Data Analysis</h3>
+          <p style="margin-top:10px;">Study design, data analysis, and results interpretation —
+          particularly in neuroscience, biomedical sciences, and biomarker discovery. Includes
+          machine learning pipelines when a project calls for it.</p>
+          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
+          <ul class="cv-list">
+            <li>Statistical analysis (R, GraphPad) and applied machine learning (Python, scikit-learn)</li>
+            <li>Experience building and validating classification models on real biological data</li>
+            <li>A bench scientist's eye for what the data actually means</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-note">Hourly rate</div>
+          <div class="amount" data-eur="90" data-usd="99">€90<span class="unit">/hr</span></div>
+          <div class="price-note">or from <span class="amount-project" data-eur="900" data-usd="985">€900</span> per project scope</div>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Research & Data Analysis" data-deposit-eur="450" data-deposit-usd="493" style="margin-top:16px;">Book & pay 50% deposit</a>
+          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Scientific Writing -->
+    <div class="card" style="margin-bottom:26px;">
+      <div class="two-col" style="align-items:flex-start;">
+        <div>
+          <span class="badge">Writing</span>
+          <h3 style="font-size:22px;">Scientific Writing & Editing</h3>
+          <p style="margin-top:10px;">Advanced science writing and editing that improves a draft by
+          correcting errors and making words and sentences clearer, more precise, and more effective
+          — for manuscripts, grant narratives, and public-facing science content.</p>
+          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
+          <ul class="cv-list">
+            <li>Co-authorship on multiple peer-reviewed publications</li>
+            <li>Experience writing for both expert and general audiences</li>
+            <li>An editor's precision paired with a researcher's domain fluency</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-note">Per 1,000 words (editing)</div>
+          <div class="amount" data-eur="120" data-usd="132">€120</div>
+          <div class="price-note">Original writing quoted per project</div>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Writing & Editing" data-deposit-eur="60" data-deposit-usd="66" style="margin-top:16px;">Book & pay 50% deposit</a>
+          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Science Communication -->
+    <div class="card" style="margin-bottom:10px;">
+      <div class="two-col" style="align-items:flex-start;">
+        <div>
+          <span class="badge">Communication</span>
+          <h3 style="font-size:22px;">Science Communication</h3>
+          <p style="margin-top:10px;">Using experience and storytelling to engage the public,
+          increase awareness of scientific issues, and promote science education — through blogs,
+          public speaking, and social media content.</p>
+          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
+          <ul class="cv-list">
+            <li>An established public science platform (STEM-azing)</li>
+            <li>A genuine cross-cultural, cross-continental perspective</li>
+            <li>Experience mentoring students through Polygence and beyond</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-note">Per piece (article / post)</div>
+          <div class="amount" data-eur="180" data-usd="198">€180</div>
+          <div class="price-note">Ongoing content packages available</div>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Science Communication" data-deposit-eur="90" data-deposit-usd="99" style="margin-top:16px;">Book & pay 50% deposit</a>
+          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <div class="section-label">How Payment Works</div>
+    <h2 class="section-title">Simple, upfront, and in your currency</h2>
+    <div class="grid grid-3" style="margin-top:30px;">
+      <div class="card">
+        <div class="card-icon">1</div>
+        <h3>Discuss scope</h3>
+        <p>Every project starts with a short call to confirm scope, timeline, and final price.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">2</div>
+        <h3>Pay 50% to book</h3>
+        <p>A 50% deposit secures your slot — payable in EUR or USD via PayPal.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">3</div>
+        <h3>Remaining 50% on delivery</h3>
+        <p>The balance is due when the work is delivered and reviewed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Payment modal ── -->
+<div id="payModal" style="display:none; position:fixed; inset:0; background:rgba(20,33,61,0.55); z-index:100; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:var(--white); border-radius:18px; padding:36px; max-width:440px; width:100%;">
+    <h3 id="payModalTitle" style="font-size:20px; margin-bottom:8px;">Book & Pay Deposit</h3>
+    <p style="font-size:14px; color:var(--ink-70); margin-bottom:20px;">You're paying a 50% deposit
+    for <strong id="payModalService"></strong>. The remaining balance is due on delivery.</p>
+    <div style="background:var(--paper-alt); border-radius:12px; padding:18px; margin-bottom:20px;">
+      <div style="font-size:13px; color:var(--ink-70);">Deposit due now</div>
+      <div class="amount" id="payModalAmount" style="margin:4px 0 0;"></div>
+    </div>
+    <a id="paypalLink" href="#" target="_blank" rel="noopener" class="btn btn-gold btn-block">Pay with PayPal →</a>
+    <button onclick="closePayModal()" class="btn btn-outline btn-block" style="margin-top:10px;">Cancel</button>
+    <p style="font-size:11.5px; color:var(--ink-70); margin-top:16px;">
+      Replace this with your real PayPal.me link or Stripe Payment Link — see the README for setup.
+    </p>
+  </div>
+</div>
+
+<footer class="site" id="site-footer"></footer>
+<script src="nav.js"></script>
+<script>
+  // ── Currency toggle ──
+  // NOTE: these EUR/USD figures are illustrative starting rates only —
+  // update data-eur / data-usd attributes above with your real prices.
+  let currentCurrency = 'EUR';
+
+  function setCurrency(cur){
+    currentCurrency = cur;
+    document.getElementById('btnEUR').classList.toggle('active', cur === 'EUR');
+    document.getElementById('btnUSD').classList.toggle('active', cur === 'USD');
+
+    document.querySelectorAll('.amount').forEach(el => {
+      const val = el.getAttribute(cur === 'EUR' ? 'data-eur' : 'data-usd');
+      if (!val) return;
+      const unit = el.querySelector('.unit');
+      const symbol = cur === 'EUR' ? '€' : '$';
+      el.innerHTML = symbol + val + (unit ? unit.outerHTML : '');
+    });
+    document.querySelectorAll('.amount-project').forEach(el => {
+      const val = el.getAttribute(cur === 'EUR' ? 'data-eur' : 'data-usd');
+      const symbol = cur === 'EUR' ? '€' : '$';
+      el.textContent = symbol + val;
+    });
+  }
+
+  // ── Payment modal ──
+  // PLACEHOLDER PayPal.me username — replace YOURPAYPALNAME below with your real one.
+  const PAYPAL_USERNAME = "YOURPAYPALNAME";
+
+  document.querySelectorAll('.pay-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const service = btn.getAttribute('data-service');
+      const amount = currentCurrency === 'EUR'
+        ? btn.getAttribute('data-deposit-eur')
+        : btn.getAttribute('data-deposit-usd');
+      const symbol = currentCurrency === 'EUR' ? '€' : '$';
+      const currencyCode = currentCurrency === 'EUR' ? 'EUR' : 'USD';
+
+      document.getElementById('payModalService').textContent = service;
+      document.getElementById('payModalAmount').textContent = symbol + amount;
+      document.getElementById('paypalLink').href =
+        `https://www.paypal.com/paypalme/${PAYPAL_USERNAME}/${amount}${currencyCode}`;
+      document.getElementById('payModal').style.display = 'flex';
+    });
+  });
+
+  function closePayModal(){
+    document.getElementById('payModal').style.display = 'none';
+  }
+</script>
+</body>
+</html>

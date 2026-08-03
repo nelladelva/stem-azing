@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeuroPenetrance — STEM-azing</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="neuropenetrance.html">
+
+<header class="site" id="site-header"></header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Featured Project</div>
+    <h1>Neuro<em>Penetrance</em></h1>
+    <p class="lead">A dual-engine platform combining iPSC-derived multi-omics profiling with an AI
+    biomarker layer — built to answer a question genetics still can't: why do two people with the
+    exact same risk variant have such different outcomes?</p>
+    <div class="hero-cta-row">
+      <a href="#demo" class="btn btn-gold">Try the live demo ↓</a>
+      <a href="booking.html" class="btn btn-outline">Talk to me about it</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Incomplete penetrance — genetics' most stubborn unsolved question</h2>
+    <p class="section-sub" style="max-width:760px;">Two people can carry the exact same genetic
+    risk variant for a neurodevelopmental disorder — and one develops it, while the other shows no
+    symptoms at all. Clinicians and genetic counselors have no reliable way to predict which
+    outcome to expect. This phenomenon, called incomplete penetrance, is a documented,
+    unresolved problem across clinical genetics — not a niche curiosity, but a real gap affecting
+    families navigating a genetic diagnosis and pharmaceutical trials that fail when they can't
+    identify which patients will actually respond.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">The Approach</div>
+    <h2 class="section-title">Two engines, one compounding advantage</h2>
+    <div class="grid grid-2" style="margin-top:32px;">
+      <div class="card">
+        <div class="card-icon">◆</div>
+        <h3>Engine 1 — iPSC Penetrance Profiling</h3>
+        <p>Patient-derived stem cells are differentiated into disease-relevant neurons and profiled
+        using multi-omics data (transcriptomics, proteomics, chromatin accessibility) — capturing
+        how a genetic variant actually behaves in a living neuronal system, not just on paper.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">▦</div>
+        <h3>Engine 2 — PenetranSci AI Biomarker Layer</h3>
+        <p>Machine learning models trained on the datasets Engine 1 generates rank the strongest
+        biological predictors of risk, turning raw multi-omics data into an interpretable signal —
+        not a black box.</p>
+      </div>
+    </div>
+    <p style="margin-top:26px; max-width:760px; color:var(--ink-70);">Every service contract
+    generates proprietary training data that improves the AI layer, which in turn increases the
+    value of each new contract — a compounding advantage that's difficult for a generic lab
+    service or a DNA-only test to replicate.</p>
+  </div>
+</section>
+
+<section class="section-alt" id="demo">
+  <div class="wrap">
+    <div class="section-label">Live Demo</div>
+    <h2 class="section-title">See the analytical engine in action</h2>
+    <p class="section-sub">This is a real, working prototype — not a mockup. It runs a validated
+    10-gene immune signature model, built and tested on public patient data (GSE98793), and shows
+    exactly how the model reasons about a sample's risk profile.</p>
+
+    <div class="card" style="margin-top:30px; padding:0; overflow:hidden;">
+      <!--
+        Replace the src below with your live Streamlit Cloud URL.
+        If the embed doesn't render well on some browsers (iframe/cookie
+        restrictions), the button below is the reliable fallback.
+      -->
+      <iframe
+        src="https://neuropenetrance.streamlit.app"
+        title="PenetranSci Risk Signature Demo"
+        style="width:100%; height:820px; border:none; display:block;"
+        loading="lazy">
+      </iframe>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://neuropenetrance.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary">
+        Open the demo in a new tab →
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="callout">
+      <div class="section-label">What's Next</div>
+      <h2>From a validated prototype to proprietary iPSC data</h2>
+      <p style="max-width:640px; margin-top:14px;">This demo runs on public data as a proof of
+      concept. The same architecture — feature ranking, co-expression clustering, permutation-tested
+      classification — will be applied to proprietary iPSC-derived multi-omics data, where the
+      signal is expected to be even stronger and more interpretable.</p>
+      <div style="margin-top:26px;">
+        <a href="booking.html" class="btn btn-gold">Discuss a collaboration →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site" id="site-footer"></footer>
+<script src="nav.js"></script>
+</body>
+</html>
