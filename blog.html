@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — STEM-azing</title>
+<title>Blog &mdash; STEM-azing</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="blog.html">
@@ -15,128 +15,528 @@
     <div class="eyebrow">Blog</div>
     <h1>Notes from the bench, the border, and beyond.</h1>
     <p class="lead">Reflections on research, resilience, and building a life and career across
-    Haiti, the US, and Germany — plus the occasional deep dive into the science itself.</p>
+    Haiti, the US, and Germany &mdash; plus the occasional deep dive into the science itself.</p>
+  </div>
+</section>
+
+<section style="padding-top:0; padding-bottom:0;">
+  <div class="wrap">
+    <details style="border:1px solid var(--line, #ddd); border-radius:10px; padding:16px 20px; margin-bottom:10px;">
+      <summary style="cursor:pointer; font-weight:600;">Jump to a post (18 available to read)</summary>
+      <ol style="margin-top:14px; line-height:1.9; padding-left:20px;">
+          <li><a href="#organoids-vs-animal-models-the-ethical-and-scientific-debate">Organoids vs. Animal Models: The Ethical and Scientific Debate</a></li>
+          <li><a href="#research-without-borders-why-my-work-is-now-global-by-design">Research Without Borders: Why My Work Is Now Global by Design</a></li>
+          <li><a href="#full-circle-how-my-fulbright-fellowship-shaped-the-scientist-and-person-i-am-becoming">Full Circle: How My Fulbright Fellowship Shaped the Scientist—and Person—I Am Becoming</a></li>
+          <li><a href="#redefining-freedom-identity-and-belonging-what-living-in-germany-taught-me">Redefining Freedom, Identity, and Belonging: What Living in Germany Taught Me</a></li>
+          <li><a href="#the-future-of-personalized-medicine-targeting-psychological-disorders-with-precision-pharmacology">The Future of Personalized Medicine: Targeting Psychological Disorders with Precision Pharmacology</a></li>
+          <li><a href="#bridging-cultures-the-role-of-diversity-in-scientific-innovation">Bridging Cultures: The Role of Diversity in Scientific Innovation</a></li>
+          <li><a href="#closing-one-chapter-opening-another-embracing-the-journey-as-a-scientist">Closing One Chapter, Opening Another</a></li>
+          <li><a href="#my-journey-in-leadership-and-research-embracing-strength-in-stem">My Journey in Leadership and Research: Embracing Strength in STEM</a></li>
+          <li><a href="#phd-ing-and-becoming">PhD-ing and Becoming after COVID</a></li>
+          <li><a href="#my-research-journey">My Research Journey</a></li>
+          <li><a href="#stem-azing-coaching-mentoring-and-tutoring">STEM-azing Coaching, Mentoring and Tutoring</a></li>
+          <li><a href="#my-story-and-mentorship">My Story with Mentorship</a></li>
+          <li><a href="#brain-derived-neurotrophic-factor-a-therapeutic-target-for-depression">Brain-Derived Neurotrophic Factor: A Therapeutic Target for Depression</a></li>
+          <li><a href="#fulbright-fellowship-embracing-my-identity-culture-and-leadership-potential">Fulbright Fellowship: Embracing My Identity, Culture, and Leadership Potential</a></li>
+          <li><a href="#being-a-scientist-abroad-work-life-balance-germany-vs-usa">Being a Scientist Abroad: Observations on Work-Life Balance in Germany vs. the USA</a></li>
+          <li><a href="#the-true-cost-of-a-phd-understanding-opportunity-cost">The True Cost of a PhD: Understanding Opportunity Cost</a></li>
+          <li><a href="#diversity-a-more-personal-and-positive-experience">Diversity: A More Personal and Positive Experience</a></li>
+          <li><a href="#regulation-of-mood-by-interneuron-dopamine-d1-receptors">Regulation of Mood by Interneuron Dopamine D1 Receptors</a></li>
+      </ol>
+    </details>
   </div>
 </section>
 
 <section style="padding-top:10px;">
   <div class="wrap">
-    <div class="grid grid-3" id="blogGrid">
-      <!-- Posts are listed newest first. To add a new post, copy one of
-           these card blocks and edit the title, date, excerpt, and link. -->
-
-      <a href="https://www.stem-azing.com/post/organoids-vs-animal-models-the-ethical-and-scientific-debate" target="_blank" rel="noopener" class="card">
+    <div class="grid" id="blogGrid" style="grid-template-columns:1fr; max-width:760px; margin:0 auto; gap:56px;">
+      <article class="card" id="organoids-vs-animal-models-the-ethical-and-scientific-debate" style="cursor:default;">
         <span class="badge">Science</span>
-        <h3>Organoids vs. Animal Models: The Ethical and Scientific Debate</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">March 2026 · 5 min read</p>
-        <p>Weighing the promise of organoid models against the entrenched role of animal research
-        in neuroscience.</p>
-      </a>
+        <h2 style="margin-top:14px;">Organoids vs. Animal Models: The Ethical and Scientific Debate</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">March 2026 &middot; 5 min read</p>
+        <p><em>(and what U.S. vs. German rules mean in practice)</em></p>
+<p>Biomedical research is in the middle of a methodological shift: organoids (3D, self-organizing tissue models derived from stem cells) are increasingly positioned as a partial alternative to animal models—especially in neurodevelopment, infectious disease, toxicology, and precision medicine. But the debate isn’t “organoids <em>or</em> animals.” It’s about which model best answers a given biological question, and what level of moral, legal, and societal constraint should shape that choice.</p>
+<p>Below is a scientific comparison of the strengths and limitations of each model—followed by a practical, law-informed comparison of the United States vs. Germany.</p>
+<p><strong>1) The science: what organoids do well—and where animals still win</strong></p>
+<p><strong>What organoids are <em>excellent</em> for (scientific upside)</strong></p>
+<ul>
+<li><p><strong>Human relevance (species match).</strong> Organoids can capture <em>human</em> cell-type programs and regulatory logic that rodents simply don’t share—especially for human-specific developmental timing, gene regulation, and susceptibility loci.</p></li>
+<li><p><strong>Mechanistic precision.</strong> With CRISPR, lineage tracing, and single-cell multi-omics, organoids are a powerful platform for causal biology: perturb a gene → observe cell-state shifts → map downstream pathways. This is a major reason they are exploding in disease modeling.</p></li>
+<li><p><strong>Reduction of animal use for certain questions.</strong> For screening, target validation, and hypothesis narrowing, organoids can reduce the number of animals needed and improve “fail fast” decisions (a core “3Rs” goal: Replace/Reduce/Refine).</p></li>
+</ul>
+<p><strong>What organoids still struggle with (scientific limits)</strong></p>
+<ul>
+<li><p><strong>No whole-organism physiology.</strong> Most organoids lack full vascularization, endocrine–immune–neural integration, and long-range systems biology. Many drug effects and toxicities are <em>systems-level</em> phenomena.</p></li>
+<li><p><strong>Immune and microenvironment realism is partial.</strong> Co-cultures exist, but “real” immune dynamics, microbiome effects, and chronic inflammatory states are hard to reproduce.</p></li>
+<li><p><strong>Maturation and variability issues.</strong> Organoids can resemble fetal-like states; batch variability and protocol drift complicate reproducibility and regulatory acceptance.</p></li>
+<li><p><strong>Where animal models remain indispensable</strong></p></li>
+<li><p><strong>Integrated physiology and behavior.</strong> If your question is about organismal outcomes—metabolism, long-term immune responses, endocrine stress axes, behavior, pharmacokinetics—animals are still the most complete experimental system.</p></li>
+<li><p><strong>Safety and translational pipelines.</strong> Regulators and clinical translation often require animal data, especially when systemic exposure, reproduction, or long-term safety is at stake.</p></li>
+</ul>
+<p><strong>2) The ethics: animals vs. organoids aren’t “ethics vs. no ethics”</strong></p>
+<p><strong>Ethical concerns with animal models</strong></p>
+<ul>
+<li><p><strong>Sentience and suffering</strong>: pain, distress, and deprivation require moral justification.</p></li>
+<li><p><strong>Necessity and proportionality</strong>: is an animal experiment warranted if a non-animal method could answer the question?</p></li>
+<li><p><strong>Severity and cumulative burden</strong>: repeated procedures, chronic disease models, and endpoints matter.</p></li>
+</ul>
+<p>In Europe/Germany, these concerns are encoded into a structured harm–benefit analysis and severity assessment system.</p>
+<p><strong>Ethical concerns with organoids</strong></p>
+<p>Organoids reduce animal harms, but create <em>different</em> ethical questions:</p>
+<ul>
+<li><p>Human donor consent, data governance, and commercialization (especially with patient-derived organoids).</p></li>
+<li><p>Embryo-related concerns when embryonic stem cell lines or embryo-like models (“embryoids”) are involved.</p></li>
+<li><p>Brain organoids and “moral status” debates: while today’s cerebral organoids are not brains and not persons, governance discussions are active—especially around chimeras and long-term maturation. (<a href="http://gscn.org/"><u>gscn.org</u></a>)</p></li>
+<li></li>
+</ul>
+<p><strong>3) U.S. vs Germany: the regulatory reality</strong></p>
+<p><strong>A) Animal research oversight</strong></p>
+<p><strong>United States</strong></p>
+<ul>
+<li><p><strong>What’s strong</strong></p>
+<ul>
+<li><p>Most major research institutions operate under IACUC oversight (protocol review, humane endpoints, veterinary care, 3Rs consideration), especially when work is federally funded under the NIH/OLAW framework. (<a href="http://olaw.nih.gov/"><u>olaw.nih.gov</u></a>)</p></li>
+</ul></li>
+<li><p><strong>What’s weaker / controversial</strong></p>
+<ul>
+<li><p>The Animal Welfare Act (AWA) explicitly excludes rats (Rattus), mice (Mus), and birds bred for research from its definition of “animal,” meaning the core federal animal welfare statute does <em>not</em> cover the species that make up the majority of lab animals. (<a href="https://www.federalregister.gov/documents/2004/06/04/04-12693/animal-welfare-definition-of-animal?utm_source=chatgpt.com"><u>Federal Register</u></a>)<em>Important nuance:</em> Many U.S. institutions still regulate these species under PHS/NIH-linked standards (if they take federal funding), but the statutory baseline is narrower.</p></li>
+</ul></li>
+</ul>
+<p><strong>Germany</strong></p>
+<p><strong>What’s strong</strong></p>
+<ul>
+<li><p>Animal protection is also embedded as a state objective in the German constitution (Basic Law, Article 20a), shaping how interests are weighed. (<a href="https://fra.europa.eu/en/law-reference/basic-law-federal-republic-germany-33?utm_source=chatgpt.com"><u>FRA</u></a>)</p></li>
+</ul>
+<p><strong>What can be challenging</strong></p>
+<ul>
+<li><p>The German/EU system is often more procedurally demanding (documentation, approvals, and oversight cadence), which can slow iteration—even when ethically justified.</p></li>
+</ul>
+<p><strong>Net effect:</strong></p>
+<ul>
+<li><p>The U.S. can be faster and more heterogeneous (institution-driven, funding-driven).</p></li>
+<li><p>Germany is more uniformly structured, with stronger constitutional framing and licensing requirements—but more bureaucratic friction.</p></li>
+</ul>
+<p><strong>B) Organoids, embryos, and stem cell governance</strong></p>
+<p><strong>United States</strong></p>
+<p><strong>Pros</strong></p>
+<ul>
+<li><p>Organoid work is broadly enabled, and NIH provides detailed policy for NIH-funded human stem cell research. (<a href="http://stemcells.nih.gov/"><u>stemcells.nih.gov</u></a>)</p></li>
+<li><p>Oversight commonly involves specialized committees (e.g., ESCRO at many universities), often in parallel with IRB/IBC/IACUC as needed. (<a href="http://researchservices.cornell.edu/"><u>researchservices.cornell.edu</u></a>)</p></li>
+<li><p>Professional guidance is robust and frequently updated (e.g., ISSCR guidelines for embryo-related and stem-cell-adjacent research categories). (<a href="http://isscr.org/"><u>isscr.org</u></a>)</p></li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li><p>There is no single, uniform federal “organoid law.” Governance can depend on funding source, institution, and state context.</p></li>
+<li><p>U.S. embryo-related work is shaped heavily by federal funding restrictions like the Dickey–Wicker Amendment, which prohibits federal funding for research that creates or destroys human embryos—pushing some activities into privately funded spaces. (<a href="http://embryo.asu.edu/"><u>embryo.asu.edu</u></a>)</p></li>
+<li><p>Political shifts can rapidly reshape what is fundable. For example, in January 2026, NIH announced it will stop funding research using human fetal tissue from elective abortions—while noting that certain existing cell lines remain permissible. This matters because fetal tissue is often used to validate developmental models, including organoid systems. (<a href="https://apnews.com/article/90c096dec2b533dd19983b8eabde692a?utm_source=chatgpt.com"><u>AP News</u></a>)</p></li>
+</ul>
+<p><strong>Germany</strong></p>
+<p><strong>Pros</strong></p>
+<ul>
+<li><p>Germany’s framework is comparatively clear and restrictive regarding embryo-related research. The Embryo Protection Act strongly constrains embryo creation/use for research, and the Stem Cell Act establishes centralized ethics/approval structures for specific uses of human embryonic stem cells. (<a href="http://eurostemcell.org/"><u>eurostemcell.org</u></a>)</p></li>
+<li><p>This can increase public trust and create stable boundaries.</p></li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li><p>Some lines of research—especially those requiring embryo creation, certain embryonic stem cell derivations, or contested embryo-like models—are harder or impossible domestically, potentially slowing competitive work or pushing collaborations abroad.</p></li>
+</ul>
+<p><strong>Net effect:</strong></p>
+<ul>
+<li><p>The U.S. often has greater practical flexibility (with variability and politicization risk).</p></li>
+<li><p>Germany has tighter ethical-legal boundaries (with stability and limitation tradeoffs).</p></li>
+</ul>
+<p><strong>4) So who “wins”: organoids or animals?</strong></p>
+<p>Neither. The future is integrated evidence:</p>
+<ul>
+<li><p>Use organoids for: human-specific mechanisms, genetics, early development modeling, precision perturbation biology, and reducing exploratory animal work.</p></li>
+<li><p>Use animals for: system-level physiology, long-term and whole-body safety, immune–endocrine integration, behavior, and complex organism outcomes.</p></li>
+<li><p>Use organoids + animals together when: you need triangulation—organoids for human mechanistic plausibility; animals for organismal causality and safety.</p></li>
+</ul>
+<p>From an ethical standpoint, the most defensible pipeline is often:organoids first (replace/reduce) → animals only when necessary (refine) → transparent justification.</p>
+<p><strong>Both Organoids and Animal Models Are Essential for Scientific Advancement</strong></p>
+<p>The debate between organoids and animal models is often framed as a competition, but scientifically and ethically, that framing is incomplete. These systems are not substitutes in a zero-sum sense—they are complementary experimental platforms that answer different layers of biological complexity.</p>
+<p>Organoids provide unmatched access to <em>human-specific cellular mechanisms</em>. They allow high-resolution interrogation of gene regulation, lineage dynamics, developmental timing, and patient-specific disease phenotypes. In areas such as neurodevelopmental disorders, cancer genomics, and precision medicine, organoids enhance translational relevance and reduce early-stage animal use. They are powerful tools for mechanistic discovery and hypothesis refinement.</p>
+<p>However, biology does not operate at the level of isolated tissues alone. Animal models remain indispensable for understanding integrated physiology—immune responses, endocrine regulation, metabolism, pharmacokinetics, long-term disease progression, and behavior. Many therapeutic interventions fail not because the cellular mechanism was misunderstood, but because whole-organism complexity was underestimated. Animal systems allow researchers to evaluate safety, systemic interactions, and emergent properties that no current in vitro model can fully recapitulate.</p>
+<p>From an ethical standpoint, modern research frameworks in both the United States and Germany increasingly recognize that responsible science involves:</p>
+<ul>
+<li><p>Replacing animals where scientifically feasible</p></li>
+<li><p>Reducing animal numbers through better early-stage modeling</p></li>
+<li><p>Refining experimental design to minimize harm</p></li>
+</ul>
+<p>Organoids strengthen the first two principles. Animal models remain essential when the research question demands organism-level evidence.</p>
+<p>The most scientifically rigorous and ethically defensible approach is therefore methodological integration:</p>
+<ol type="1">
+<li><p>Use organoids to establish human-relevant mechanisms.</p></li>
+<li><p>Validate and contextualize findings in appropriate animal systems when systemic biology is required.</p></li>
+<li><p>Transparently justify model selection based on the research question—not ideology.</p></li>
+</ol>
+<p>Scientific progress has always advanced through methodological pluralism. Breakthroughs in translational medicine increasingly depend on layered evidence across model systems, not allegiance to a single platform.</p>
+<p>In short:Organoids accelerate precision.Animal models provide integration.Together, they advance science responsibly and effectively.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/research-without-borders-why-my-work-is-now-global-by-design" target="_blank" rel="noopener" class="card">
+      <article class="card" id="research-without-borders-why-my-work-is-now-global-by-design" style="cursor:default;">
         <span class="badge">Career</span>
-        <h3>Research Without Borders: Why My Work Is Now Global by Design</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">January 2026 · 2 min read</p>
-        <p>On building a career — and now a company — that was never designed to sit inside one
-        country's borders.</p>
-      </a>
+        <h2 style="margin-top:14px;">Research Without Borders: Why My Work Is Now Global by Design</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">January 2026 &middot; 2 min read</p>
+        <p>For much of my early scientific training, I believed that impact was tightly coupled to the wet lab—pipettes, assays, and experimental repetition were the primary currencies of contribution. While that foundation remains essential, my experience at the Max Delbrück Center fundamentally reframed how I understand scientific impact. It expanded my perspective from where research happens to how it moves, connects, and responds to urgent global questions.</p>
+<p>Working in an international research environment exposed me to a reality that is often underappreciated in traditional academic trajectories: some of the most consequential scientific advances depend not on a single laboratory’s output, but on the coordination of expertise across borders, disciplines, and systems. At MDC, collaboration was not an aspiration—it was infrastructure. Daily scientific exchange crossed nationalities, training systems, and methodological silos. That environment sharpened my awareness that global health, neurodevelopmental disorders, climate-linked disease burden, and emerging biomedical challenges cannot wait for fragmented, slow-moving pipelines.</p>
+<p><strong>Redefining Impact Beyond the Bench</strong></p>
+<p>One of the most meaningful shifts in my thinking was recognizing that impactful research does not always require direct bench work. Scientific progress also depends on:</p>
+<ul>
+<li><p>Translating findings across disciplines and audiences</p></li>
+<li><p>Coordinating multi-site collaborations efficiently</p></li>
+<li><p>Aligning experimental insight with clinical, policy, or societal needs</p></li>
+<li><p>Accelerating knowledge exchange when timing matters</p></li>
+</ul>
+<p>Some scientific questions demand immediate, collective attention—pandemics, neurodevelopmental windows, health inequities, and stress-related disorders among them. In these contexts, the ability to connect people, data, and ideas globally can be as valuable as generating new data locally.</p>
+<p>My time at MDC demonstrated that contributing at a global level means being fluent not only in science, but in collaboration—understanding how different research cultures operate, how to communicate across systems, and how to prioritize urgency without sacrificing rigor.</p>
+<p><strong>Why International Collaboration Is No Longer Optional</strong></p>
+<p>Modern science is operating on compressed timelines. Biological systems do not pause for institutional boundaries, and neither do public health crises. International collaboration enables:</p>
+<ul>
+<li><p>Faster validation and replication of findings</p></li>
+<li><p>Broader, more diverse datasets</p></li>
+<li><p>Reduced duplication of effort</p></li>
+<li><p>Shared responsibility for high-stakes scientific challenges</p></li>
+</ul>
+<p>When research ecosystems are connected, science becomes more resilient. When they are siloed, progress slows.</p>
+<p><strong>Advice for Scientists Interested in a Global Path</strong></p>
+<p>For early-career scientists considering a similar journey, a few reflections may be useful:</p>
+<ol type="1">
+<li><p>Redefine what “success” looks like early. Impact is not confined to authorship position or lab hours. Systems-level contribution matters.</p></li>
+<li><p>Develop cross-cultural scientific literacy. Learn how different countries fund, regulate, and prioritize research—it will shape how you collaborate.</p></li>
+<li><p>Invest in communication skills. Clear scientific communication accelerates trust and collaboration.</p></li>
+<li><p>Stay scientifically grounded. Even when stepping beyond the bench, deep technical understanding remains your credibility anchor.</p></li>
+<li><p>Choose urgency with intention. Work on questions that matter now, not only those that are convenient to study.</p></li>
+</ol>
+<p><strong>Looking Forward</strong></p>
+<p>My trajectory has convinced me that the future of research is not only interdisciplinary—it is decisively international. The problems we face are global in scale, and our scientific responses must be equally coordinated. Contributing to that ecosystem, whether through research, strategy, or collaboration-building, is where I now see my highest value.</p>
+<p>Science advances fastest when borders are treated as points of connection rather than limitation. That is the perspective I carry forward—and the standard I hope more of us will adopt.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/full-circle-how-my-fulbright-fellowship-shaped-the-scientist-and-person-i-am-becoming" target="_blank" rel="noopener" class="card">
+      <article class="card" id="full-circle-how-my-fulbright-fellowship-shaped-the-scientist-and-person-i-am-becoming" style="cursor:default;">
         <span class="badge">Reflection</span>
-        <h3>Full Circle: How My Fulbright Fellowship Shaped the Scientist—and Person—I Am Becoming</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">July 2025 · 4 min read</p>
-        <p>Looking back on a fellowship that reshaped both my research direction and my sense of
-        identity.</p>
-      </a>
+        <h2 style="margin-top:14px;">Full Circle: How My Fulbright Fellowship Shaped the Scientist&mdash;and Person&mdash;I Am Becoming</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">July 2025 &middot; 4 min read</p>
+        <p>As my Fulbright fellowship in Germany nears its close, I’ve been reflecting on the many layers of transformation I’ve experienced over the past year. This journey has been far more than a professional stepping stone—it has been a turning point in how I understand science, culture, resilience, and ultimately, myself.</p>
+<p>When I first applied for the Fulbright, I was driven by a strong desire to deepen my research in neuroscience and to expand my scientific network internationally. I was eager to immerse myself in a new research environment and work alongside leading scientists at the Max Delbrück Center for Molecular Medicine in Berlin. But what I didn’t fully grasp at the time was just how much this cultural and professional exchange would trigger a broader awakening in me—of creativity, of purpose, and of identity.</p>
+<p><strong>Science and Creativity Rooted in Culture and Resilience</strong></p>
+<p>Working in Berlin, I found myself energized by the intellectual rigor of my colleagues, the collaborative spirit of the research community, and the deeply interdisciplinary approach of the German scientific system. Yet, some of my most profound moments of insight didn’t happen under a microscope—they happened in cafés, in conversations with peers from around the world, and in quiet moments navigating everyday life in a new culture.</p>
+<p>What surprised me most was how much my scientific creativity was influenced by the cultural environment around me. The slower, more intentional pace of life in Germany, combined with the diversity of thought and tradition, gave me the space to approach scientific questions with fresh eyes. I began to see how resilience—a theme central to my research in stress neurobiology—was not just a biological mechanism, but a lived experience that spanned generations, borders, and disciplines. My own journey as a Haitian-American woman in science became a powerful lens through which I engaged with both the science I was doing and the people I was meeting.</p>
+<p><strong>The Gift of Slowing Down</strong></p>
+<p>Coming from a fast-paced U.S. academic environment, I was accustomed to juggling multiple deadlines, grants, presentations, and experiments at once. Slowing down felt, at first, like a challenge. But I quickly came to understand that slowing down was not about doing less—it was about being more intentional.</p>
+<p>This shift gave me time to refocus on what mattered most in my research: asking the right questions, digging deeper into data, and building meaningful collaborations. It also encouraged me to reconnect with why I became a scientist in the first place—not just to publish papers, but to uncover knowledge that could one day improve lives.</p>
+<p>Slowing down also helped me develop more effective cross-cultural communication skills. Working in a multilingual environment required me to be thoughtful, patient, and clear in how I expressed ideas. I learned to listen more carefully, to read between the lines, and to recognize the deep value in perspectives different from my own. These are not just soft skills—they are essential tools for any global scientist.</p>
+<p><strong>Culture as a Bridge, Not a Barrier</strong></p>
+<p>Living abroad also gave me a renewed appreciation for the richness of culture—and how it shapes the way people view science, work, and life itself. Germany taught me that there is no single right way to approach problems or structure a career. What matters most is the ability to listen, adapt, and build bridges across difference.</p>
+<p>One of the most powerful takeaways from this experience is that in order to truly communicate across cultures, we have to make active efforts to understand them. That means learning the language, yes—but also understanding local values, histories, and systems. This kind of empathy is essential not only in science, but in diplomacy, policy, and everyday human connection.</p>
+<p><strong>Revisiting the Immigrant Experience—Again</strong></p>
+<p>This year also brought me back into the complex emotions of migration. As someone who immigrated to the U.S. as a child, I am no stranger to the challenges of starting over in a new country. Yet going through it again as an adult—navigating a different bureaucracy, adapting to a new language, and building a support system from scratch—was humbling.</p>
+<p>It reminded me that transitioning as an immigrant is never easy, no matter how many degrees or credentials one holds. It also showed me how much more efficient and compassionate immigration systems need to be—especially for skilled professionals who have so much to contribute to their host countries. In a world increasingly shaped by global mobility, we must do better at creating clear and fair pathways to residency and long-term integration.</p>
+<p><strong>A Journey That Changed Me</strong></p>
+<p>Professionally, I’ve grown more focused, strategic, and collaborative. Personally, I’ve grown more grounded, self-aware, and resilient. This fellowship expanded not just my CV, but my heart and mind. I’ve developed a clearer sense of what kind of scientist—and human being—I want to be.</p>
+<p>My worldview has grown immeasurably. I now see science not just as a tool for discovery, but as a powerful platform for dialogue between cultures. I’ve gained lifelong friendships, a deeper understanding of international research ecosystems, and a more holistic sense of my place in the world.</p>
+<p>As I look toward the next chapter—whether continuing my postdoctoral work, applying for new fellowships, or contributing to policy around global research—I carry with me the lessons, the stories, and the spirit of this incredible journey.</p>
+<p><strong>Final Thoughts</strong></p>
+<p>To the Fulbright Commission, the Max Delbrück Center, my mentors, colleagues, and the people of Berlin: thank you. Thank you for welcoming me, for challenging me, and for allowing me to grow in ways I never expected. This has been a life-changing year—one that has reshaped my identity as a scientist, expanded my sense of home, and reaffirmed my belief in the power of cultural exchange.</p>
+<p>To future Fulbrighters or anyone considering a leap into the unknown: do it. You might not come back the same, and that’s a beautiful thing.</p>
+<p>With gratitude and hope for what lies ahead,</p>
+<p>Nella Christie Delva, Ph.D.</p>
+<p>Fulbright Fellow | Neuroscientist | Global Citizen</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/redefining-freedom-identity-and-belonging-what-living-in-germany-taught-me" target="_blank" rel="noopener" class="card">
+      <article class="card" id="redefining-freedom-identity-and-belonging-what-living-in-germany-taught-me" style="cursor:default;">
         <span class="badge">Reflection</span>
-        <h3>Redefining Freedom, Identity, and Belonging: What Living in Germany Taught Me</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">June 2025 · 3 min read</p>
-        <p>On what changes — and what doesn't — when you rebuild a life on a different continent.</p>
-      </a>
+        <h2 style="margin-top:14px;">Redefining Freedom, Identity, and Belonging: What Living in Germany Taught Me</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">June 2025 &middot; 3 min read</p>
+        <p>When I accepted a Fulbright to conduct research in Germany, I expected professional growth, scientific collaboration, and cultural exchange. What I didn’t anticipate was how deeply the experience would challenge and ultimately expand my understanding of freedom, identity, and belonging, both as a scientist and as a human being.</p>
+<p>Before arriving in Berlin, I often associated freedom with movement, opportunity, and self-determination the idea that one can shape their own future through hard work, ambition, and resilience. These values were deeply ingrained in me as an immigrant and a product of American society, where the “freedom to choose” is a guiding principle. But living and working in Germany revealed a different, more nuanced perspective one rooted not just in individual liberty, but in collective responsibility, historical accountability, and community care.</p>
+<p>Germany is a country with a rich and complex history, marked by both brilliance and brutality. From the horrors of the Nazi regime to the surveillance state of East Germany under the Stasi, freedom here was not always a given, it was something earned, lost, and redefined across generations. This legacy has shaped a modern German society that takes its commitment to democracy, inclusion, and human rights seriously. It was striking to witness how openly Germans confront their past through education, memorials, and public discourse and how this confrontation fuels a culture of reflection, transparency, and deliberate progress.</p>
+<p>As a Black woman and scientist, I experienced this in subtle but powerful ways. In professional spaces, I found that my work was not only respected but often contextualized within a broader conversation about equity, sustainability, and long-term societal impact. Research in Germany isn’t always driven by speed or competition, as I often felt back in the U.S., but by thoughtfulness and relevance to the public good. There is value placed on careers that serve the community whether in science, education, or public service and that value is backed by supportive systems. Maternity and paternity leave are normalized, healthcare is accessible, and job security is prioritized in a way that reflects a collective commitment to well-being over burnout.</p>
+<p>This societal structure made me reevaluate how I define success and fulfillment. For the first time in my career, I felt the space to breathe to focus on depth over speed, quality over quantity, collaboration over competition. I found a new sense of freedom, not in the ability to hustle endlessly, but in being part of a system that allows you to pause, rest, reflect, and still be valued. That, to me, is revolutionary.</p>
+<p>Germany also taught me that belonging doesn’t come from assimilating, but from being seen and respected in your difference. While I was certainly a cultural outsider at times, I also felt a genuine curiosity and willingness from those around me to engage with my story, my background, and my perspectives. I wasn’t expected to erase my identity to be accepted—I was encouraged to add to the mosaic. That affirmation gave me the confidence to speak more openly about my journey as a Haitian-American scientist, to share my insights through writing and talks, and to mentor others with authenticity.</p>
+<p>Ultimately, my time in Germany redefined what freedom means to me. It's no longer just the ability to move forward it’s the ability to feel grounded while doing so. It’s the freedom to pursue a meaningful career without sacrificing your health or your values. It’s the freedom to belong without conforming. And it’s the freedom to evolve not just as a professional, but as a whole person.</p>
+<p>As I look to the next chapter of my life and career, I carry this expanded view of freedom with me. I hope to infuse it into the spaces I enter, the teams I work with, and the students I mentor. Because sometimes, it takes stepping outside of your own system and into a country with a complicated but courageous past to see that the most powerful kind of freedom is the one that includes everyone.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/the-future-of-personalized-medicine-targeting-psychological-disorders-with-precision-pharmacology" target="_blank" rel="noopener" class="card">
+      <article class="card" id="the-future-of-personalized-medicine-targeting-psychological-disorders-with-precision-pharmacology" style="cursor:default;">
         <span class="badge">Science</span>
-        <h3>The Future of Personalized Medicine: Targeting Psychological Disorders with Precision Pharmacology</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">January 2025 · 2 min read</p>
-        <p>An early look at the ideas that would eventually shape NeuroPenetrance.</p>
-      </a>
+        <h2 style="margin-top:14px;">The Future of Personalized Medicine: Targeting Psychological Disorders with Precision Pharmacology</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">January 2025 &middot; 2 min read</p>
+        <p>The rapidly evolving field of personalized medicine is set to revolutionize the treatment of psychological disorders by leveraging genetic insights to tailor pharmacological interventions. This approach promises to transform psychiatric care by enabling the development of medication regimens that are fine-tuned to the genetic makeup of individual patients. This shift not only aims to increase the efficacy of treatments but also to reduce the prevalence of side effects, paving the way for a new era in mental health management.</p>
+<p>At the core of personalized medicine in psychiatry are genetic markers that can predict individual responses to psychiatric medications. These markers serve as crucial tools for pharmaceutical companies as they develop drugs targeted at specific pathologies observed in mental health disorders such as depression, schizophrenia, and bipolar disorder. For example, variations in the CYP450 genetic family affect how patients metabolize antidepressants and antipsychotics, which can guide dosing decisions to optimize therapeutic outcomes and minimize adverse effects.</p>
+<p>The implementation of targeted therapies in psychiatry has already shown promising results. Drugs like Abilify (aripiprazole) are being enhanced through genetic testing to determine the optimal dosing for individuals. Another example includes the use of pharmacogenomics in selecting appropriate medications for patients with major depressive disorder, significantly reducing the trial-and-error process often associated with psychiatric medication management.</p>
+<p>However, personalized medicine in the context of psychological disorders faces unique challenges. Ethical concerns regarding patient privacy and the potential for genetic discrimination are prominent, necessitating robust safeguards. Additionally, the high costs associated with genetic testing and tailored drug development pose significant hurdles to accessibility. Ensuring that these innovative treatments benefit all segments of the population remains a critical priority.</p>
+<p>The integration of personalized medicine into the field of psychiatry heralds a significant shift towards more precise and effective treatments for psychological disorders. As we continue to unravel the genetic underpinnings of these conditions, the pharmaceutical industry is poised to lead this charge, developing targeted medications that offer hope to those who have struggled with traditional treatment modalities. The future of psychiatric care is on the cusp of a major transformation, promising treatments that are as individual as the patients themselves.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/bridging-cultures-the-role-of-diversity-in-scientific-innovation" target="_blank" rel="noopener" class="card">
+      <article class="card" id="bridging-cultures-the-role-of-diversity-in-scientific-innovation" style="cursor:default;">
         <span class="badge">Culture</span>
-        <h3>Bridging Cultures: The Role of Diversity in Scientific Innovation</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">January 2025 · 2 min read</p>
-        <p>Why the best science often comes from teams that don't all think — or come from — the
-        same place.</p>
-      </a>
+        <h2 style="margin-top:14px;">Bridging Cultures: The Role of Diversity in Scientific Innovation</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">January 2025 &middot; 2 min read</p>
+        <p>Allow science to bring us together!!</p>
+<p>In the realm of science, every researcher brings not just their knowledge, but their entire cultural background to the lab each day. This mosaic of perspectives is what fuels the fire of discovery and innovation. As a Haitian immigrant and Fulbright Fellow working at the Max Delbrück Center of Molecular Medicine in Berlin, I have first-hand experience of how diverse cultural inputs can enrich scientific inquiry.</p>
+<p>My journey from Haiti to the halls of a leading research institute in Germany is a testament to the unpredictable yet transformative path of diverse experiences in science. In Haiti, resources were scarce, and scientific opportunities were limited, but curiosity thrived in the fertile ground of necessity and resilience. This background has instilled in me a unique perspective on problem-solving and hypothesis testing viewing each challenge as an opportunity to innovate from the ground up, much like building robust structures on uncertain terrain.</p>
+<p>Here at the Max Delbrück Center, I work alongside brilliant minds from around the globe, each bringing their own unique experiences and cultural heritage to our shared research endeavors. For instance, a german colleague introduced me to tools to quantify complex behaviors in freely-moving mice. They use a combination of home-cage phenotyping and deep-learning-based methods to screen mouse models for multiple phenotypes and quantify self-selected social interactions. This method proved to be remarkably effective, offering new insights that conventional models had missed.</p>
+<p>Such collaborations highlight the profound impact of cultural diversity in science. It's not just about varying the scientific methods; it's about enriching the scientific dialogue. We bring different questions, different priorities, and different interpretations to the table, which collectively enhance our understanding and push the boundaries of what is possible.</p>
+<p>I believe that embracing cultural diversity in science does more than just improve our research outcomes it builds a more inclusive and dynamic scientific community. As we continue to navigate the complexities of the human brain and behavior, the integration of diverse cultural perspectives is crucial. It not only enhances the robustness of our research but also ensures that our scientific advancements benefit a broader swath of humanity.</p>
+<p>Let us champion the cause of diversity in our scientific institutions. By fostering an environment where diverse cultural backgrounds are celebrated and harnessed for scientific inquiry, we are not only promoting innovation but are also paving the way for a richer, more comprehensive understanding of the world. In this globalized age, the fusion of cultures is not just inevitable but essential for the next leaps in scientific and technological advancement.</p>
+<p>I invite you all to join me in this conversation and share how your cultural background has influenced your scientific journey. Together, let's uncover the unlimited potential that lies in our differences.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/closing-one-chapter-opening-another-embracing-the-journey-as-a-scientist" target="_blank" rel="noopener" class="card">
+      <article class="card" id="closing-one-chapter-opening-another-embracing-the-journey-as-a-scientist" style="cursor:default;">
         <span class="badge">Graduate Life</span>
-        <h3>Closing One Chapter, Opening Another</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">June 2025</p>
-        <p>On finishing a six-year PhD journey — and the surreal feeling of realizing the training
-        never really ends.</p>
-      </a>
+        <h2 style="margin-top:14px;">Closing One Chapter, Opening Another</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">June 2025</p>
+        <p>As I sit down to write this, a wave of surrealism washes over me. The moment I've been working toward for over six long years is finally here. Graduate school—a chapter so extensive and consuming that it felt like it might never end—has officially come to a close. And yet, as I stand on the threshold of becoming a fully-fledged scientist, I can’t help but ask myself: does the training and learning ever truly end? For years, I convinced myself that this phase was infinite, a loop of experiments, late-night data analyses, grant writing, and endless revisions. But here I am, holding the keys to the next stage of my scientific journey, feeling both an exhilarating rush of excitement and the gentle hum of apprehension. Finishing graduate school isn’t just about closing a chapter; it’s about transitioning into a world where the stakes are higher, the questions are bigger, and the opportunities to make a true difference are boundless.</p>
+<p>Yet, this moment comes with a new set of questions. How do we, as scientists, measure the impact of our work? How do we know when our discoveries ripple beyond our lab benches and into the world, leaving a lasting, global imprint? The weight of this responsibility is both daunting and electrifying. Science has always been about pushing boundaries and expanding knowledge, but there’s an inherent vulnerability in striving for impact in a world that often values immediate results over long-term contributions.</p>
+<p>Reflecting on my time in graduate school, I realize the depth of transformation that’s occurred—not just academically, but personally and emotionally. I walked into this journey with a lot of questions, not just about neuroscience but about myself. Six years later, I’m walking out with answers I never expected. My confidence has blossomed, my sense of self-worth is stronger than ever, and emotionally, I’ve found a peace that I once thought was elusive. My curiosity—my lifelong companion—has been awakened and nourished in ways I never thought possible. Graduate school was the hardest thing I’ve ever done, both academically and personally. There were moments of doubt, of frustration, of depression, of wondering if I was cut out for this path. There were failed experiments, long nights of self-doubt, and countless times I questioned my own abilities. But those moments were balanced by breakthroughs, by moments of pure discovery, and by the realization that I am capable of so much more than I ever imagined.</p>
+<p>Through this journey, I learned that growth is often found in the discomfort of failure, in the grit it takes to keep going when everything feels uncertain. I discovered that resilience isn’t just about pushing through challenges, but also about embracing vulnerability, asking for help, and finding strength in community. I am forever grateful for the mentors who guided me, the colleagues who became friends, and the moments of quiet reflection that reminded me why I chose this path.</p>
+<p>This transition isn’t just a professional milestone; it’s a deeply personal one. It’s proof that I can grow, evolve, and continue peeling back the layers of who I am. The beauty of science is that it mirrors life in its constant state of flux, of questioning, of seeking answers only to uncover more questions. It has taught me that there’s no final destination—just a continuous journey of learning, discovery, and <u>self-improvement.</u><a href="http://self-improvement.as/"><u> </u>As</a> I step into this new chapter, I’m filled with gratitude, curiosity, and an unshakable excitement for what’s ahead. There’s still so much to learn—about science, about the world, and about myself. And maybe that’s the heart of being a scientist: embracing the role of a lifelong learner, driven not just by the need to understand but by the pure joy of discovery.</p>
+<p><a href="http://discovery.here/">Here</a>’s to the next chapter. To more questions, more discoveries, and more growth. And to the beautiful, unpredictable journey of being a scientist. Because in the end, it’s not just about the answers we find, but the paths we take to get there—and the people we become along the way.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/my-journey-in-leadership-and-research-embracing-strength-in-stem" target="_blank" rel="noopener" class="card">
+      <article class="card" id="my-journey-in-leadership-and-research-embracing-strength-in-stem" style="cursor:default;">
         <span class="badge">Leadership</span>
-        <h3>My Journey in Leadership and Research: Embracing Strength in STEM</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">August 2024</p>
-        <p>Reflecting on identity, mentorship, and leadership at the close of a PhD journey in
-        biomedical science.</p>
-      </a>
+        <h2 style="margin-top:14px;">My Journey in Leadership and Research: Embracing Strength in STEM</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">August 2024</p>
+        <p>As I stand at the threshold of completing my journey as a senior graduate student in biomedical science, I am filled with immense gratitude for the experiences and challenges that have shaped me into the leader I am today. Through my years in STEM, I’ve learned not only to hone my technical skills but also to embrace my identity—an identity that I once thought was a disadvantage. My background as a Haitian immigrant, combined with the transformative power of mentorship and leadership in STEM, has taught me invaluable lessons that have opened doors I never thought possible.</p>
+<p><u>From Perceived Weakness to Source of Strength </u></p>
+<p>When I first arrived in the United States as a Haitian immigrant, I often felt like an outsider. Haiti, a country rich in culture and history but with limited opportunities in science, was the foundation of my identity. While my upbringing in Haiti endowed me with resilience, I felt insecure about how my background might hold me back in a field as competitive as biomedical science. I believed that not having the same resources as my peers would make it difficult to keep up. This feeling of inadequacy lingered until I started realizing that my background was not a weakness but a profound strength.</p>
+<p>Growing up in Haiti, I witnessed firsthand how stress could affect individuals, families, and entire communities. Stress-related disorders, stemming from political instability, economic challenges, and natural disasters, are part of daily life for many Haitians. This personal connection to stress resilience was the seed of my academic curiosity, and it drove me to study neurobiology to understand stress and resilience. Today, my research focuses on understanding the neurocircuits of stress resiliency work that aims to contribute to a broader understanding of how we can alleviate the global burden of stress-related disorders.</p>
+<p>It is this personal connection that now fuels my research passion. What I once considered a hurdle my identity as an immigrant from a small, resource-limited country has become a vital part of my scientific journey. It offers me a unique perspective that enriches my research and enables me to approach problems with an open mind and creative solutions, drawing on my experiences of overcoming adversity.</p>
+<p><u>Leadership in STEM: Building Strength Through Community</u> </p>
+<p>Leadership in STEM has been a cornerstone of my journey, offering me opportunities to grow as a scientist and as a person. I’ve had the privilege of presenting my research on several platforms, including the recent FSU Biomedical Science Retreat, where I showcased my dissertation work. These moments have shaped me into a confident communicator and problem-solver, two essential traits for any scientist.</p>
+<p>However, leadership is not just about being at the forefront. It’s about building and sustaining a community. One of the greatest joys in my academic career has been mentoring younger students and peers, helping them navigate the complexities of biomedical research. Sharing my journey with others, particularly those who also come from underrepresented backgrounds, has deepened my belief in the importance of community and support networks. Being a leader in STEM has taught me that no one succeeds alone.</p>
+<p>I am fortunate to have had strong mentors who believed in my potential, various colleagues and professors who have encouraged me to embrace every opportunity. Their guidance, particularly during challenging moments like the unexpected disruption in my research caused by COVID-19, has been essential in keeping me focused and resilient. This strength in mentorship and community has been a constant anchor throughout my graduate school experience, teaching me the value of shared knowledge, mutual support, and collaboration.</p>
+<p><u>Passion Meets Purpose: Neurobiology of Stress Resiliency</u> </p>
+<p>My passion for understanding the neurobiology and neurocircuits of the brain, specifically in stress resiliency stems from both my personal background and my scientific curiosity. Stress is universal—no one is immune to it. It affects everyone, from children to adults, from people in Haiti to individuals across the world. As stress-related disorders continue to rise globally, my research aims to uncover the mechanisms that enable some individuals to be more resilient than others.</p>
+<p>This topic is not just relevant; it’s deeply personal. Growing up in Haiti, where adversity was part of everyday life, I’ve witnessed the toll that chronic stress can take. But I’ve also seen the incredible resilience of people who continue to thrive despite unimaginable challenges. This duality—the fragility of the human mind and the extraordinary power of resilience—drives my work. My hope is that my research will eventually contribute to new interventions that help people build resilience in the face of stress, mitigating the onset of stress-related disorders such as anxiety, depression, and PTSD.</p>
+<p>The opportunity to study something so close to my heart has opened numerous doors for me, including the honor of receiving a Fulbright award. My work in neurobiology has taken me to new places—both geographically and intellectually—and I now realize how vital my personal journey has been in shaping my scientific path.</p>
+<p> </p>
+<p><u>The Future: Turning Challenges into Opportunities </u></p>
+<p>Reflecting on my journey, I no longer see my background as a challenge to overcome, but rather as a source of power that continues to open doors for me. My experiences as an immigrant and a woman in STEM have granted me resilience, empathy, and a deep understanding of the importance of diverse perspectives in science. These qualities have shaped my leadership style and helped me forge meaningful connections with others in the scientific community.</p>
+<p>Through my research, my leadership, and my mentorship, I am driven by the belief that science has the power to change lives, not just in theoretical ways but in tangible, impactful ones. My goal is to continue contributing to the scientific community, particularly in the field of stress resiliency, and to use my experiences to inspire others who may feel like outsiders in this field. My blog, <em>STEM-azing.com</em>, is one way I hope to share my journey and connect with others who are passionate about leadership in STEM and the value of diversity in science.</p>
+<p>As I look ahead, I am excited about the opportunities that await. The challenges I once feared have become steppingstones toward growth, and my background—far from being a weakness—is the foundation of my strength. Leadership in STEM has taught me that the only limitations we face are the ones we place on ourselves. I am proud to continue this journey, guided by my passion for understanding the human mind and the endless possibilities that science offers.</p>
+<p> </p>
+<p>Let’s keep growing, learning, and leading in STEM together. </p>
+<p>Nella C. Delva </p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/phd-ing-and-becoming" target="_blank" rel="noopener" class="card">
+      <article class="card" id="phd-ing-and-becoming" style="cursor:default;">
         <span class="badge">Graduate Life</span>
-        <h3>PhD-ing and Becoming after COVID</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">May 2022</p>
-        <p>On networking, scholarly contribution, and building a research career during a
-        pandemic that limited every normal path to doing so.</p>
-      </a>
+        <h2 style="margin-top:14px;">PhD-ing and Becoming after COVID</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">May 2022</p>
+        <p>I am a late-stage Ph.D. student in Biomedical Sciences, thirsty for additional contacts in the fields of neuropsychopharmacology and the neurobiology of disease. The timing of my graduate work within the COVID-19 pandemic has significantly limited my ability to network and make contacts with neuroscientists outside of my home institution. Although, I have had an extensive research background which includes a master’s degree in biological sciences, productive research experience in cellular, molecular and developmental biology, and neuroscience. Moreover, I've already participated in several research conferences, acquired foundational teaching experience, and authored or co-authored several peer-reviewed scientific papers prior to my graduate academic journey. Importantly, I also recognize that I need help with networking!</p>
+<p>With a passion for STEM education and advocacy, and actively engaging in efforts to improve access to this career path for others from less-traditional social, ethnic, and racial backgrounds. I remain confident that my persistence and focus will facilitate a successful career as a neuroscientist. However, I still need to receive additional academic exposure, guidance, and practical education in funding opportunities for trainees.</p>
+<p>I have an exciting thesis project that focuses on the neurodevelopmental basis of brain disorders, with an emphasis on gene-environment interactions and susceptibility to mental health diseases. My specific dissertation project focuses on the effect of neuron subtype-specific loss of dopamine D1 receptors during a critical period of brain development in mice. The fundamental finding is that these conditional knockout mice exhibit strong antidepressant-like effects and reductions in stress hormones, likely through downregulation of an important neurexin molecule. These data suggest a new previously unidentified mechanisms to potentially exploit in the treatment of mood disorders. I expect this work to result in 2-3 primary manuscripts for publication – the first is currently in preparation.</p>
+<p>So far, I've been PhD-ing quite alright. I’m involved in graduate student advocacy and leadership on campus with the main goal of protecting a healthy and productive academic environment for graduate students. I am an executive member of the congress for graduate students (COGS) and in addition, I have participated in multiple panel discussions geared toward minorities in STEM both on and off-campus.</p>
+<p>This blog was created to provide a space for myself and others with additional opportunities for scholarly contribution, networking, and scientific exposure. Hopefully, this platform will pave the way for access to more competitive postdoctoral positions and other scholarly experiences that will consequently enhance future opportunities and skills as a future principal investigator. </p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/my-research-journey" target="_blank" rel="noopener" class="card">
+      <article class="card" id="my-research-journey" style="cursor:default;">
         <span class="badge">Reflection</span>
-        <h3>My Research Journey</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">December 2021 · 3 min read</p>
-        <p>From a sophomore-year research program analyzing zebrafish genes to the NIH
-        Post-Baccalaureate Research Program — how one opportunity opened the next.</p>
-      </a>
+        <h2 style="margin-top:14px;">My Research Journey</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">December 2021 &middot; 3 min read</p>
+        <p>My interests in scientific research began with my admission to the Research Initiative for Scientific Enhancement (MBRS-RISE) program my sophomore year of college. This was my first introduction to neuroscience research; I analyzed the function of palmitoyl-protein thioesterase 2 (PPT-2) in zebrafish. The RISE program opened up many opportunities for me and provided me with my initial research framework, including a 9-weeks summer undergraduate research paid internship at the University of Missouri-Columbia. After my undergraduate years, my interest in an academic research career blossomed, leading me to seek more opportunities in order to enrich my skill set in the lab, and my understanding of hypothesis testing and the scientific process. Therefore, in 2012 I entered the NIH Post-Baccalaureate Research Program (NIH-PREP) at the University of South Carolina-Columbia. This experience inspired me to pursue a Master’s degree in Biological Sciences.</p>
+<p>My master's thesis was very intellectually stimulating and focused on “Tp53 and Hras Influence on HPV16 E7 Expression in HPV16-Transformed Human Keratinocytes”. I significantly increased my knowledge and appreciation for cellular, molecular and developmental biology. This study focused on the molecular characteristics of HPV-inactive tumors and the molecular mechanisms by which these tumors may lose E6 and E7 oncogene expression. This project was aimed towards uncovering specific molecular mechanisms by which HPV-transformed cells can escape the need for continuous E6/E7 expression for proliferation. We tested whether mutated H-Ras (H-RasV12) expression results in changes in E7 mRNA and Rb protein levels in HKc. Our results indicated that H-RasV12 partially replaces E7 function. Additionally, we demonstrated that shRNA-mediated p53 knock-down could be achieved in human keratinocyte lines transformed with HPV16 (HKc/HPV16). In addition to a motivating project, this intense full-time research experience allowed me to gain a better grasp of scientific workflows and objectives, and most importantly, initiated my long-term goal of becoming a principal investigator.</p>
+<p>After acquiring my masters in Biological science (with a focus in Cellular, Molecular and Developmental Biology) in June 2015, I was offered an opportunity to work at Moffitt Cancer Center as a research associate. I was fortunate to have been part of Dr. David Morse’s team and participated in a very exciting project which led to two papers that I co-authored. Prior to joining the group, Ac-DOTA-MC1RL conjugate was synthesized in high radiochemical yield and purity and was tested in vitro for biostability and for MC1R-specific cytotoxicity in uveal melanoma cells, and the lanthanum-DOTA-MC1RL analog was tested for binding affinity. I was invited to join this multidisciplinary group of scientists to test non–tumor-bearing BALB/c mice for maximum tolerated dose and biodistribution; and studied tumors for biodistribution and efficacy on severe combined immunodeficient mice bearing uveal melanoma tumors or engineered MC1R-positive and -negative tumors. In addition, radiation dosimetry was calculated using biodistribution and kinetic data. We demonstrated significantly prolonged survival and decreased metastasis burden after a single administration of 225Ac-DOTA-MC1RL; this demonstrated potential for the clinical translation of 225Ac-DOTA-MC1RL as a novel therapy for metastatic uveal melanoma. I was able to personally experience how pre-clinical research can have a direct positive effect on an affected clinical population of study, since those previous findings were needed to allow for approval for a phase 1 clinical trial. This experience, most importantly, solidified my decision to pursue a PhD.</p>
+<p>I joined Biomedical Sciences at Florida State University College of Medicine in 2018, I knew this PhD program would allowed me to further develop my interests and skills in neuroscience, while also grounding me solidly in a human disease-focused curriculum. Initial laboratory rotations gave me an opportunity to sample multiple aspects of cell biology, biochemistry and neuropharmacology. I am engaged in thesis work in the laboratory of Dr. Gregg Stanwood; his laboratory studies the neurodevelopmental basis of brain disorders, with an emphasis on gene-environment interactions and susceptibility to mental health diseases. My dissertation project focuses on the effect of neuron subtype-specific loss of dopamine D1 receptors during a critical period of brain development in mice. Our data suggest that expression of D1 receptors in a specific subpopulation of cerebral cortical interneurons has previously undiscovered roles in regulating mood and cognition, may contribute to adaptive mechanisms sub-serving behavioral and cognitive resilience, and may ultimately serve as a previously unexplored target for the treatment of mood and psychotic disorders. More specifically, we have identified significant antidepressant-like effects in adult conditional knockout mice, accompanied by reduced basal circulating levels of the stress hormone corticosterone and altered expression of specific neurotrophins and synaptic plasticity genes in the prefrontal cortex. We may therefore have discovered a new and exciting mechanism to treat mood disorders, particularly in a subpopulation of patients that do not respond effectively to other antidepressants. In ongoing experiments, I am exploring roles for cortical interneurons and cortical dopamine signaling in mood regulation, stress responses, and synaptic stabilization using a combination of behavioral, neurochemical and molecular approaches. </p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/stem-azing-coaching" target="_blank" rel="noopener" class="card">
+      <article class="card" id="stem-azing-coaching-mentoring-and-tutoring" style="cursor:default;">
         <span class="badge">Mentorship</span>
-        <h3>STEM-azing Coaching</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">May 2021 · 2 min read</p>
-        <p>On the mentors who shaped a first-generation immigrant's path through a biomedical
-        sciences PhD program — and paying that forward.</p>
-      </a>
+        <h2 style="margin-top:14px;">STEM-azing Coaching, Mentoring and Tutoring</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">May 2021 &middot; 2 min read</p>
+        <p>Every student I've ever tutored, mentored, or coached has had one thing in common: untapped potential that just needed the right kind of attention to become visible &mdash; to them, as much as to anyone else. STEM-azing Coaching, Mentoring and Tutoring grew out of a simple belief I've carried since my own path through school: talent is distributed evenly, but access to guidance is not.</p>
+<p>I know that gap firsthand. As a first-generation Haitian immigrant moving through the American education system, I didn't grow up with a family member who could explain how a PhD program worked, what a research assistantship was, or how to turn a passing interest in biology into an actual career. I found my way largely by seeking out mentors who were willing to spend time explaining the unwritten rules &mdash; and by remembering, every step after that, how much of a difference that made.</p>
+<p>That's the model I try to offer students now. STEM-azing Coaching isn't just homework help. It's academic support built around direction: understanding not only the material in front of a student, but where that material fits into the bigger picture of what they're building toward. Sometimes that looks like breaking down a difficult concept in biology or chemistry until it finally clicks. Sometimes it looks like helping a student see a realistic, ambitious path from where they are now to where they want to be &mdash; a competitive program, a research opportunity, a career they didn't know was possible for someone like them.</p>
+<p>Much of this work happens one-on-one. Through the Polygence program, I mentor students on independent research projects, guiding them from a rough idea through to a finished piece of scholarly work &mdash; often their first real experience of what it feels like to think like a scientist. I've also spent time in the classroom directly, as an adjunct professor at Hillsborough Community College, which reinforced something I already suspected: the students who struggle most are rarely the ones who lack ability. They're the ones who've never had someone sit down and tell them, clearly and specifically, what their next step could be.</p>
+<p>So that's what I try to be: the person who sits down, asks what a student actually wants, and then helps build the academic foundation and the game plan to get there. Tutoring covers the content. Coaching covers the confidence, the strategy, and the belief that reaching a higher potential is something within reach &mdash; not reserved for students who happened to have the right people around them from the start.</p>
+<p>If that's the kind of support you or a student in your life is looking for, I'd love to hear from you.</p>
+      </article>
 
-      <a href="https://www.stem-azing.com/post/scenes-from-saturday-night" target="_blank" rel="noopener" class="card">
-        <span class="badge">Biomedical Sciences</span>
-        <h3>Scenes from Saturday Night</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">May 2021 · 4 min read</p>
-        <p>A slice-of-life reflection from early in the graduate school years.</p>
-      </a>
-
-      <a href="https://www.stem-azing.com/post/my-story-and-mentorship" target="_blank" rel="noopener" class="card">
+      <article class="card" id="my-story-and-mentorship" style="cursor:default;">
         <span class="badge">Mentorship</span>
-        <h3>My Story with Mentorship</h3>
-        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">December 2021</p>
-        <p>On the mentors who noticed and cultivated a first-generation immigrant's path into
-        biology — and the gap in mentorship access that remains for others like her.</p>
-      </a>
+        <h2 style="margin-top:14px;">My Story with Mentorship</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;">December 2021</p>
+        <p>Throughout my journey, academia and scholarship has been a point of comfort and hope for me, and universities became a point of focus, community, and success. Very early on, my drive, intellect and unique background was noticed and cultivated by great mentors who allowed for my interest in biology to grow and mature. A high school teacher advocated that I become part of my high school biomedical and environmental advancement magnet program, although I was still taking ESOL (English by Speakers of Other Languages) classes. This mentor affirmed my potential and initiated my trajectory. By the time I graduated high school, I’d grown so much academically that I was tutoring other ESOL students with gaps in science and math.</p>
+<p>As an immigrant, the expectation of success was (and still is) imperative, however finding guidance in translating my interest in biology in a way that I found impactful was a challenge. In college, after exploring STEM academically, my genetics professor (another influential mentor!) together with a Minority Biomedical Research Support Program (MBRS)-Research Initiative for Scientific Enhancement Program (RISE) program exposed me to biomedical research. Eleven years later, I’ve gone to a dozen research conferences; acquired 2 years of teaching experience; obtained a Master’s degree in biological sciences; gained productive research experience in cellular, molecular and developmental biology, and neuroscience. I have begun publishing peer-reviewed scientific papers, and have become a bona-fide “lab rat” who is obsessed with my research and with developing improved ways to educate other immigrants and other underrepresented communities.</p>
+<p>I consider myself fortunate to have found the appropriate mentorship at opportune academic times which positively benefited my intellectual growth. Unfortunately, I must acknowledge that appropriate mentorship is hard to find, specifically for first-generation American who are minority students; and predominantly those students who are assimilating to a new culture and academic system. My path is an exception, not the rule. It is also important to acknowledge need for improved guidance and mentorship in STEM, in particular for first generation Americans. if you are in need of a mentor, I would advice to use LinkedIn and social media as a tool; don't be afraid to "approach" (DM or message) people who looks like you, particularly those in the field of study you want to be in. I have mentored, coached, and taught students who needed to see themselves represented in their field, myself, and several of my mentees have moved on to successfully pursue a career in STEM themselves! </p>
+<p>Higher education STEM programs effectively promotes interdisciplinary training and fosters multi-disciplinary techniques and problem-solving strategies. Nevertheless, there is still a lack of academic mentorship for minorities such as myself. In my case, I've maintained my strong mentoring support system since undergrad (over a decade) including mentors at my early graduate academic careers. These wonderful individuals still nourishes my intellectual and personal growth today. Graduate school is lengthy and extremely challenging, if you find good mentors, HANG ON TO THEM!</p>
+<p>Think of a mentor as an investor, they invest time, resources and in some instance, even finances in making sure that you become successful. A good mentor will help support you in ways you didn't even know you needed support in. They will also be your advocate in critical period of your academic journey. Currently, I have a total of 4 great mentors, those mentors who are still an active part of my academic journey. </p>
+<p>No, I did not do this journey alone (you shouldn't have to either), I've had great mentors guiding me and investing in me all along. </p>
+<p>I am a fourth-year Biomedical Science PhD candidate at Florida State University (FSU). Now I’m nearing the end of graduate school, but my work in mentorship, teaching and coaching continues. I still want to continue to help educate and mentor first generation American minority students by sharing my story and experiences. </p>
+<p>FIND YOU A MENTOR WHO BELEIVES IN YOU, IT WILL MAKE A BIG DIFFERENCE IN YOUR ACADEMIC JOURNEY!!</p>
+      </article>
 
     </div>
 
-    <p style="font-size:12.5px; color:var(--ink-70); text-align:center; margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto;">
-      This list reflects the posts findable through public search — it may not capture your
-      full archive. For a guaranteed-complete migration, export your post list from your Wix
-      dashboard (Blog → Posts) and share it to fill in anything missing.
-    </p>
+    <div style="text-align:center; margin:56px 0 20px;">
+      <span class="eyebrow">More posts</span>
+      <h2 style="margin-top:8px;">Recently added &mdash; dates being finalized</h2>
+      <p style="font-size:13px; color:var(--ink-70); max-width:560px; margin:10px auto 0;">
+        The posts below are fully migrated, but I still need the original publish dates from
+        you to slot them into the timeline above correctly. Let me know the month/year for
+        each and I'll merge them in.
+      </p>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr; max-width:760px; margin:0 auto; gap:56px;">
+      <article class="card" id="brain-derived-neurotrophic-factor-a-therapeutic-target-for-depression" style="cursor:default;">
+        <span class="badge">Science</span>
+        <h2 style="margin-top:14px;">Brain-Derived Neurotrophic Factor: A Therapeutic Target for Depression</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;"><span style="color:#c0392b;">Date to confirm</span> &middot; 8 min read</p>
+        <p>Emily Chiang &amp; Nella Delva</p>
+<p><u>Abstract</u></p>
+<p><em>As depression rates increase among Americans, neuroscientists seek for more efficient targets for treating major depressive disorder (MDD). Brain-derived neurotrophic factor (BDNF), a neurotrophic protein, has been shown to be associated with the development of neuropsychological disorders such as MDD. Thus, targeting BDNF mechanisms through antidepressants, physical exercise, and gene therapy, in search of effective treatments for depression seem probable.</em></p>
+<p><em> </em></p>
+<p>Why Target BDNF?</p>
+<p>Major depressive disorder (MDD) affects more than 300 million people worldwide, with increasing numbers in the past decade. MDD encompasses a variety of adverse effects, including feelings of hopelessness, changes in appetite, and in severe cases, intense thoughts of suicide. Despite these debilitating consequences, only about half of people in the United States suffering from MDD receive effective treatment [1]. In fact, government health budgets allocate a mere 3% to mental health resources. Although the Diagnostic and Statistical Manual of Mental Disorders outlines the various requirements for an MDD diagnosis, the process of diagnosis relies heavily on patient self-report and subjective clinical evaluations.</p>
+<p>Since the external, symptomatic diagnosis of depression is largely generalized, patients often have difficulty receiving the specific treatment necessary to alleviate their symptoms. To combat this, researchers focus on internal, pathophysiological approaches to improve the subclassification of MDD among patients, through the use of biomarkers [2]. Biomarkers are biological molecules that serve as indicators of functional or dysfunctional biological processes [3]. (See Figure 2). Among these are neurotrophins, which are proteins that play a vital role in the development, plasticity, and survival of neurons. More specifically, brain-derived neurotrophic factors (BDNF) are neurotrophins that have proven to significantly contribute to the pathophysiology of MDD [4]. This review seeks to evaluate the process by which BDNF abnormalities affect MDD and analyze the various methods of BDNF-targeted treatment for MDD: antidepressant medication, physical exercise, and more recently, gene therapy.</p>
+<p> </p>
+<p>BDNF Correlates with Neurogenesis and Reduced Depressive-Like Symptoms</p>
+<p>The functionality of neurogenesis mechanisms in the brain is an important concept in understanding the etiology of depression. In general, high rates of neurogenesis are associated with reduced symptoms of depression, and, conversely, low rates of neurogenesis are associated with increased symptoms. In a 2013 study by Mateus-Pinheiro et al., rats treated with methylazoxymethanol (MAM), a neurotoxin that inhibits neurogenesis, displayed significantly higher levels of depressive-like behaviors, such as anhedonia (lack of pleasure), higher latency in feeding and escaping, and reduced time in open arms, compared to rats without the neurotoxin. (See Figure 1). This demonstrates that lack of neurogenesis is a key factor in depression.</p>
+<p>BDNF and TrkB Interactions Strengthen Neurons</p>
+<p>The binding of BDNF ligand to its receptor, tropomyosin receptor kinase B (TrkB), is greatly involved in regulating neuronal activity [6]. BDNF first binds to its high-affinity receptor TrkB on the postsynaptic dendrite and cell body. BDNF and TrkB interactions are found to be important in neuron survival, differentiation, dendritic spine complexity, LTP, and synaptic plasticity [7]. Immunohistochemistry (IHC) is a biomarker technique used in research to help visualize expressions of genes, such as TrkB (in red) and Parvalbumin (in green), an inhibitory neuron.</p>
+<p> </p>
+<p>Val66Met Polymorphism Causes Harmful Effects on BDNF Function</p>
+<p>Of the hundreds of known polymorphisms or genetic forms, of the BDNF gene, the two most common polymorphisms in which BDNF exists are the Val and the Met polymorphisms [8]. The Val polymorphism is the wild type, where the amino acid valine is found on codon 66 of the BDNF gene. In the mutant Val66Met polymorphism, which affects approximately 30 percent of the population [9], a methionine amino acid is found on codon 66 [10].</p>
+<p>              The Val66Met polymorphism introduces many interferences in the processing of BDNF, in comparison to the Val polymorphism. Like most gene expression processes, the precursor protein proBDNF is first synthesized in the endoplasmic reticulum. It then passes through the Golgi apparatus, where it is cleaved to form mature BDNF (mBDNF). After it passes the Golgi, the mBDNF protein leaves the cell body through secretory vesicles [11]. In the Val66Met polymorphism, however, the proBDNF protein is less likely to pass through the Golgi apparatus. This means that it is less likely to reach secretory vesicles and be secreted from the neuron body. As a result, less BDNF is expressed as ligands, resulting in fewer interactions between BDNF and TrkB, further resulting in decreased synaptic activity and neuroplasticity [12]. (See Figure 3). In addition to reduced BDNF expression, the Val66Met polymorphism also prevents the maturation of BDNF.</p>
+<p> <img src="media/image1.png" style="width:6.5in;height:2.53681in" /></p>
+<p>ProBDNF Leads to Opposite Effects of Mature BDNF</p>
+<p>BDNF is initially synthesized as a precursor protein (proBDNF), which is cleaved by the enzyme furin to produce mature BDNF. ProBDNF ligand binds with the p75 neurotrophin receptor, while mBDNF preferentially binds with the receptor TrkB [13]. ProBDNF-p75NTR binding has been shown to negatively modulate dendritic complexity and spine density in mice. Mice whose p75 neurotrophin receptor genes have been knocked out display greater number of spines, instances of co-localization, and overall complexity, than wild-type mice [14]. This indicates that interactions between the p75 neurotrophin receptor and its ligand, proBDNF, are responsible for reducing cell survival and synaptic plasticity, which in turn increases long-term depression. This view is also supported by Teng et al., who concluded that proBDNF acts as a proapoptotic ligand, meaning that it correlates with the increase of neuronal cell death. The decrease in neuronal plasticity, coupled with the apoptotic effects, proves that the proBDNF mechanism plays a role in inducing harmful symptoms of depression. The Val66Met polymorphism has been shown to hinder the ability of proBDNF to mature into mBDNF, prolonging such deleterious effects of proBDNF-p75NTR interactions [16].</p>
+<p> </p>
+<p> </p>
+<p>Antidepressants as a BDNF-Targeted Treatment for MDD</p>
+<p>Amongst the 17.5 million Americans diagnosed with depression from 2005 to 2016, around 10 million were prescribed some form of antidepressant medication, making antidepressant medication one of the most common treatments for depression [17]. Specifically, selective serotonin reuptake inhibitors (SSRIs) such as fluoxetine are used to prolong the presence of the neurotransmitter serotonin within the synaptic cleft. Aside from its impact on serotonergic pathways within the brain, fluoxetine has been shown to increase BDNF levels and, consequently, the rate of neurogenesis, especially in the dentate gyrus, a key region of the brain where adult neurogenesis occurs [3].</p>
+<p> </p>
+<p>In many preclinical trials, fluoxetine contributes to increased BDNF-TrkB activity and reduced fear [7]. For instance, while fluoxetine is known to increase synaptic plasticity in the adult hippocampus, cortex, and amygdala [18]; in addition, it reverts the neuroplastic connections responsible for remembering fear-inducing stimuli. As a result, fluoxetine-induced plasticity contributes to fear erasure, a system that is mediated by BDNF [19]. These preclinical trials provide a glimpse into the use of fluoxetine in mitigating the symptoms of depression, such as fear and anxiety, through BDNF systems.</p>
+<p> </p>
+<p>Physical Activity as an Inducer for BDNF</p>
+<p>According to the CDC, exercise “can improve [one’s] cognitive health—helping [to] think, learn, problem-solve, and enjoy an emotional balance.” One of the mechanisms by which physical activity improves mental health is by increasing BDNF levels. Aerobic exercise generally upregulates BDNF gene expression in the hippocampus [20]. As seen in Figure 4, Sleiman et al.’s study showed that the amount of BDNF gene expression and protein availability in the hippocampus correlates with an increase in exercise. In another study, as the distance run by rats increased, so did the level of BDNF mRNA in the brain [22]. These studies both implicate exercise in increasing BDNF levels.</p>
+<p>How can researchers be sure that it is through BDNF mechanisms that physical exercise increases synaptic plasticity in the brain, as opposed to other mechanisms? Vaynman et al. investigated the effects of physical activity on synaptic plasticity in the absence of BDNF by blockading BDNF ligands on TrkB receptors. The results revealed that, without BDNF-TrkB pathways, physical activity had minimal effect on synaptic plasticity when compared to functioning BDNF-TrkB pathways. This ultimately suggests that physical activity alleviates symptoms of MDD only by increasing BDNF levels.</p>
+<p> </p>
+<p>Fluoxetine and physical activity have very similar effects on BDNF regulation and synaptic plasticity. Running and fluoxetine stimulate plasticity of new neurons by increasing neuron spine density and dendritic complexity and increasing short-term synaptic plasticity. When it comes to neurogenesis, fluoxetine has been shown to accelerate the S-phase of the cell cycle in dentate gyrus protogeniture cells, whereas physical activity reduces the cell cycle length in each phase. This means that the process of cell division is catalyzed by exercise, while only the interphase period between cell divisions is accelerated by fluoxetine. Regardless, the overall process of cell division is enhanced by both antidepressants and exercise [24].</p>
+<p> </p>
+<p>Gene Therapy: A Promising Look into the Future</p>
+<p> </p>
+<p>An ongoing clinical trial beginning October 2022 focuses on transporting BDNF genes to specific regions of the brain in patients of Alzheimer’s Disease (AD) and Mild Cognitive Impairment (MCI). Mark Tuszynski of UC San Diego, the principal investigator, seeks to deliver BDNF genes through a vector known as the adeno-associated virus (AAV2). The trial will measure the cognitive effects of induced BDNF levels on symptoms of AD and MCI. The implications are both to improve AD and MCI and to increase neurogenesis and synaptic plasticity, which can potentially counter symptoms of depression. Marking the first trial of AAV2-BDNF on humans, Tuszynski’s study will pioneer a new and effective approach to treating depressive disorders from a genetic standpoint.</p>
+      </article>
+
+      <article class="card" id="fulbright-fellowship-embracing-my-identity-culture-and-leadership-potential" style="cursor:default;">
+        <span class="badge">Reflection</span>
+        <h2 style="margin-top:14px;">Fulbright Fellowship: Embracing My Identity, Culture, and Leadership Potential</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;"><span style="color:#c0392b;">Date to confirm</span> &middot; 6 min read</p>
+        <p>Growing up as a Haitian immigrant, I have always carried with me the complex beauty and resilience of my homeland. Haiti, a small island rich in culture but with limited resources, has shaped the way I see the world and my place within it. Now, as I embark on my Fulbright Fellowship journey, I realize how much my background, my curious mind, and my deep-rooted desire to make a difference have guided me to this moment.</p>
+<p>When I look back at my early days, I can see how my cultural nuances impacted my research perspective in positive, profound ways. In Haiti, where resources were often scarce, creativity was not an option it was a necessity. Growing up in an environment where I had to innovate with limited materials, I developed a deep sense of curiosity and resourcefulness. I didn’t always have access to cutting-edge technology or labs, but I had my imagination and determination. This resourcefulness became the foundation of my scientific creativity. Even in moments when it felt like the odds were stacked against me, I found ways to explore and investigate the world around me.</p>
+<p><u>The Role of Community in Nurturing Leadership and Mentorship </u></p>
+<p>What’s more, being part of an underrepresented community in STEM made me hyperaware of the importance of mentorship and leadership. As a young girl in Haiti, I was surrounded by people who believed in my potential, even when opportunities seemed out of reach. Teachers and family members who saw promise in me helped build my confidence, showing me that my dreams were not just valid but achievable. It was through this community that my leadership journey began one built on the foundation of supporting others and fostering an environment where underrepresented voices could thrive.</p>
+<p>The gift of mentorship, which I now cherish as both a mentor and mentee, was born from this deep-seated belief in the potential of individuals, no matter their background. As I progressed in my scientific career, I realized that leadership in STEM is not just about achieving personal success. It’s about creating space for others who, like me, might have felt invisible at some point. Through mentorship, I hope to inspire future generations to step into their own power, embrace their uniqueness, and pursue their dreams relentlessly.</p>
+<p><u>The Fulbright Fellowship: A Convergence of Identity, Culture, and Scientific Potential </u></p>
+<p>The Fulbright Study/Research Grant has given me the opportunity to dive deeper into my passion for neuroscience research an opportunity that embodies the intersection of my cultural identity, academic aspirations, and leadership potential. The Fulbright program is not just a fellowship for me; it is a platform where I can showcase the richness of my Haitian American culture and how it has shaped the way I think and conduct research. It allows me to combine my cultural nuances with my scientific inquiries, bringing a fresh and unique perspective to the table.</p>
+<p>As someone deeply passionate about understanding the neurobiology and neurocircuits of stress resiliency, I recognize that this work goes beyond academic curiosity. It’s about making a tangible difference in how we understand stress-related disorders something that affects people globally, but that I have witnessed on a very personal level, having grown up in Haiti. My work, driven by the resilience I saw in my community, is aimed at contributing to solutions that can improve the lives of people worldwide. The Fulbright Fellowship has given me the space to pursue this research while allowing my cultural roots to inform my approach and vision.</p>
+<p>For me, this fellowship is the embodiment of who I am in all my complexity: a Haitian immigrant, a scientist, a leader, and a mentor. It represents not just my academic potential but also my cultural richness and my aspirations to lead with purpose and compassion. The Fulbright Fellowship is an acknowledgment of my journey and the belief that my story—and the stories of so many others like me deserves to be told and heard.</p>
+<p> </p>
+<p><u>A Shift in Aspirations: More Than Just a PhD </u></p>
+<p>Five years ago, when I was just starting as a graduate student, my sole goal was to earn a PhD. At that time, I saw the degree as the ultimate achievement proof that I had "made it" in academia. But as I stand here today, with all the experiences I’ve gathered, I realize that I want much more than just a PhD. I want to make a difference. I want to create a lasting impact in the world, especially in underrepresented communities.</p>
+<p>Now, my aspirations go beyond the title of “Doctor.” I want my work and my story to inspire others to pursue their dreams, regardless of the barriers they may face. I want to ensure that the cultural richness and unique perspectives that individuals from diverse backgrounds bring to the table are valued and celebrated. These cultural nuances are not limitations they are essential to innovation, progress, and creating solutions that reflect the diverse world we live in.</p>
+<p>The Fulbright Fellowship gives me the opportunity to contribute to a global conversation about neuroscience, stress resilience, and how cultural context plays a significant role in our understanding of mental health. Through this fellowship, I am not only advancing my research but also advocating for the importance of diverse voices in science. This opportunity aligns with my long-held belief that science should be inclusive and reflective of the varied experiences of people from all corners of the world.</p>
+<p><u>Embracing the Future: A Leader, A Mentor, and A Global Citizen </u></p>
+<p>As I move forward in my Fulbright journey, I am excited about the possibilities ahead. This fellowship represents the culmination of my past experiences, cultural identity, and scientific potential. It provides a platform for me to pursue my academic goals while staying true to the cultural values and leadership qualities that have been instilled in me since childhood.</p>
+<p>The opportunity to represent Haiti and the United States, to carry my cultural richness into my research, and to advocate for diversity and inclusion in science, is one that I do not take lightly. I am committed to making an impact, not just for myself, but for all those who have supported me along the way and for those who will follow in my footsteps.</p>
+<p>I hope that through this journey, I can inspire others to believe in the power of their own stories, to see their unique backgrounds as strengths, and to use their cultural richness to shape their careers and aspirations in meaningful ways. The Fulbright Fellowship is not just about research it’s about making connections, building bridges, and showing the world that diversity in science leads to greater innovation and progress.</p>
+<p>In the end, my journey is about more than achieving a degree it’s about making an impact. It’s about using my story, my culture, and my passion to create a future where every voice is valued, and every perspective is seen as an essential part of the collective advancement of knowledge.</p>
+<p> </p>
+<p>Nella C. Delva</p>
+      </article>
+
+      <article class="card" id="being-a-scientist-abroad-work-life-balance-germany-vs-usa" style="cursor:default;">
+        <span class="badge">Reflection</span>
+        <h2 style="margin-top:14px;">Being a Scientist Abroad: Observations on Work-Life Balance in Germany vs. the USA</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;"><span style="color:#c0392b;">Date to confirm</span> &middot; 3 min read</p>
+        <p>It’s been about a month since I started my Fulbright fellowship here in Germany, and I’ve already made some eye-opening observations as a global scientist. Moving from the competitive research environment of the United States to the more balanced approach found in Germany has been a refreshing, and at times, surprising experience.</p>
+<p>As a neuroscientist, I’ve spent years in the US honing my skills in data analysis, conducting experiments, and working hard to understand the complexities of the brain. I’ve also grown accustomed to the rigorous demands placed on researchers. Long hours in the lab, working through weekends, and competing for grants and publications have often felt like the norm. It’s as if we’ve internalized this culture of “living to work” in the name of scientific progress. While I love my work, I’ve come to recognize that the American scientific landscape often pushes us to unhealthy extremes in pursuit of success.</p>
+<p>In Germany, my initial observation give me a different way of approaching research—one that I believe we could all learn from. Europeans have not only implemented laws to protect workers, but they’ve also built a culture that values balance. Here, there’s a collective understanding that you can be a dedicated, productive scientist while still making time for life outside the lab. It’s a shift in mindset that prioritizes “working to live” rather than the other way around. Weekends are sacred, and taking time off to recharge isn’t seen as a sign of weakness or lack of commitment to your research.</p>
+<p>This cultural difference has prompted me to reconsider my long-held beliefs about the stress and pressure we associate with scientific work. Perhaps it’s not the act of doing science that’s inherently stressful. Maybe it’s the environment we create around the research—the relentless competition, the glorification of long hours, and the constant push for more—that breeds anxiety and burnout.</p>
+<p>Now that I’m working at the Max Delbrück Center for Molecular Medicine, I’m starting to believe that a healthier approach to scientific research is possible. My intellectual and creative writing is productive here because I have the mental space to reflect, innovate, and focus on my experiments without feeling like I’m constantly racing against the clock.</p>
+<p>For the first time in my career, I feel like I can be both a committed scientist and a well-rounded individual. I’ve been exploring Berlin, spending time outdoors, and even making new friends—all while continuing to make progress on my research. It’s a lesson in balance, one that I hope to carry with me wherever I go next in my scientific journey.</p>
+<p>To my fellow scientists, especially those back in the US: It’s time we question the culture we’ve built around our work. Science doesn’t have to be a stressful grind. We can pursue our passions, make breakthroughs, and contribute to our fields while also living fulfilling lives. I’m grateful for this opportunity to see that firsthand as a Fulbright Fellow in Germany, and I hope more of us can begin to embrace a work-life balance that supports both our professional and personal well-being.</p>
+      </article>
+
+      <article class="card" id="the-true-cost-of-a-phd-understanding-opportunity-cost" style="cursor:default;">
+        <span class="badge">Graduate Life</span>
+        <h2 style="margin-top:14px;">The True Cost of a PhD: Understanding Opportunity Cost</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;"><span style="color:#c0392b;">Date to confirm</span> &middot; 5 min read</p>
+        <p>Pursuing a PhD is often framed as a noble endeavor: the quest for knowledge, the pursuit of innovation, and the contribution to humanity’s collective understanding. For those of us in STEM, specifically minority and underrepresented individual, this journey holds the promise of tackling some of the most pressing issues in health and disease. But behind this inspiring narrative lies a quieter, less-discussed reality: the profound opportunity cost associated with dedicating six or more years of our lives to this pursuit.</p>
+<p>Opportunity cost, in essence, is the price of what we forgo when we choose one path over another. For PhD students, this means weighing the potential financial, personal, and health-related sacrifices against the perceived rewards of earning a doctoral degree. Here, I’ll unpack these dimensions of opportunity cost and reflect on what they mean for those of us who have committed to this long and challenging path.</p>
+<p><strong>The Financial Opportunity Cost</strong></p>
+<p>While our peers in industry may begin earning competitive salaries straight out of college or after a master’s program, PhD students often subsist on modest stipends. In biomedical science, stipends can range from barely livable to moderately comfortable depending on the institution and location, but they rarely allow for significant savings.</p>
+<p>Consider the compounding effect of this financial disparity. If a peer starts earning $60,000 annually at age 22 and saves even 10% of their income, those savings, invested wisely, can grow substantially over time. Meanwhile, a PhD student in their late 20s or early 30s might be just starting to earn a livable salary, having missed critical years of potential investment growth. This gap only widens when factoring in retirement accounts like 401(k)s or IRAs—many of which PhD students cannot contribute to meaningfully during their training years.</p>
+<p>For those of us with family responsibilities, the financial strain is even greater. As a minority student financial responsibility can range from supporting aging parents, helping siblings through college, or contributing to a partner’s goals can feel nearly impossible on a PhD stipend. The financial trade-offs are not just about what we’re missing for ourselves but also about what we cannot provide for others during these formative years.</p>
+<p><strong>The Personal Opportunity Cost</strong></p>
+<p>The decision to pursue a PhD often delays major life milestones, including starting a family. For many women in STEM, the overlap of prime reproductive years with the grueling demands of graduate school creates a significant tension. The emotional and logistical challenges of balancing pregnancy, childcare, and a PhD workload can feel insurmountable, and many are forced to postpone or reconsider their plans altogether.</p>
+<p>Even for those without immediate family plans, the long hours in the lab and the mental exhaustion of graduate school can strain relationships. Partners may struggle to understand the time and energy demands of a PhD, and social connections outside of academia often take a backseat to deadlines and experiments.</p>
+<p>Beyond family planning, there’s the broader question of life satisfaction. How many concerts, weddings, or trips with friends have we missed because we were tethered to our work? The years spent in graduate school are ones we’ll never get back, and the sacrifices extend far beyond the financial realm. For some, the feeling of missing out on life’s joys and milestones can weigh heavily, especially as peers outside academia seem to move forward more rapidly.</p>
+<p><strong>The Health Opportunity Cost</strong></p>
+<p>Graduate school is notorious for its high-stress environment. Between the pressure to produce publishable results, secure funding, and meet advisor expectations, many students experience chronic stress. This prolonged exposure to stress has well-documented negative effects on mental health, including anxiety, depression, and burnout.</p>
+<p>The physical toll of a PhD is just as concerning. Irregular sleep patterns, poor diet, and sedentary lab work can lead to a host of health issues, from weight gain to cardiovascular problems. Chronic stress exacerbates these risks, contributing to a cycle that’s difficult to break. For many of us, prioritizing health feels impossible amidst the constant demands of coursework, research, and teaching responsibilities.</p>
+<p>The health sacrifices made during graduate school don’t disappear when we graduate. Chronic stress can have lasting effects on the body, including increased risk of hypertension, diabetes, and autoimmune disorders. The cumulative health costs of these years are often hidden but real.</p>
+<p><strong>Reconciling the Costs and Benefits</strong></p>
+<p>So why do we do it? For most of us, the answer lies in our passion for science and our belief in the importance of our work in our respective communities. The opportunity to contribute to research advances, the intellectual satisfaction of solving complex problems, and the hope of making a meaningful impact on patients’ lives drive us forward despite the sacrifices.</p>
+<p>But it’s important to acknowledge these costs openly and honestly. Doing so allows us to make informed decisions, advocate for systemic changes in academia, and support one another through the challenges of this journey. As PhD students and future scientists, we can—and must—push for better funding, mental health resources, and work-life balance to reduce the opportunity costs for those who follow in our footsteps.</p>
+<p><strong>In Summary </strong></p>
+<p>The opportunity cost of a PhD student in STEM is significant, touching every aspect of our lives—financial, personal, and physical. Yet, by understanding and addressing these sacrifices, we can better navigate the challenges of graduate school and advocate for a more sustainable academic culture. As we move forward in our careers, let’s carry these lessons with us, working not just to advance science but also to create an environment where the pursuit of knowledge doesn’t come at such a high personal cost.</p>
+      </article>
+
+      <article class="card" id="diversity-a-more-personal-and-positive-experience" style="cursor:default;">
+        <span class="badge">Culture</span>
+        <h2 style="margin-top:14px;">Diversity: A More Personal and Positive Experience</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;"><span style="color:#c0392b;">Date to confirm</span> &middot; 3 min read</p>
+        <p>Diversity isn't just a policy or practice; it's a vibrant thread woven into the fabric of our daily lives, enhancing everything from the culinary arts to fashion, and playing a pivotal role in how we understand and interact with the world. These cultural experiences foster our personal identities and propel us to explore and adopt a wide range of global narratives and aesthetics. In the workplace, this mosaic of backgrounds and perspectives fuels innovation and creativity, leading to groundbreaking solutions and advancements across various industries.</p>
+<p>On a personal and societal scale, diversity is a cornerstone of community resilience and personal relationships. It promotes empathy and mutual respect among individuals from all walks of life, enriching communities and academic settings alike. This broad spectrum of ideas and experiences not only leads to more robust and universally relevant research but also knits a stronger, more interconnected social fabric. Embracing diversity broadens our perspectives, contributing to a life that is both more fulfilling and positively vibrant.</p>
+<p>From a professional standpoint, diversity is indispensable. It brings together diverse thoughts that often catalyze innovation, enhance problem-solving capabilities, and lead to more effective decision-making. Diverse teams challenge echo chambers, embracing complexity with a multifaceted approach. For instance, during the COVID-19 pandemic, diverse scientific teams rapidly developed vaccines by leveraging their varied expertise, illustrating the profound impact of collaborative diversity.</p>
+<p>However, the path to embracing diversity isn’t devoid of challenges. While it cultivates a rich, inclusive culture that enhances creativity and productivity, diversity initiatives can sometimes encounter resistance due to misconceptions about standards being compromised. Yet, studies consistently demonstrate that diversity strengthens performance, debunking myths that inclusivity equates to lower quality. The resistance often stems from a fear of change or a perceived threat to established norms, not from a genuine aversion to diversity itself.</p>
+<p>Having been immersed in diverse cultural, personal, and research environments from my roots in Haiti to professional experiences in the United States and Germany I've realized that no single structure reigns supreme. Instead, the strength lies in creating robust channels for understanding and collaboration. My journey has shown me the incredible potential for personal and professional growth within diverse settings, particularly in fields as varied as neurobiology and leadership.</p>
+<p>Describing my identity, I navigate through numerous cultural and professional layers. Each experience from Haiti to the U.S., and then to Germany has contributed uniquely to who I am. Yet, I am not solely defined by any of these individual experiences. Rather, my identity is a complex blend of all these influences, enriched and shaped by each but anchored by none. This openness to diversity has not only defined my personal and professional trajectory but has also underscored my belief in the profound benefits of embracing a diverse array of experiences.</p>
+<p>In essence, diversity should be viewed not as a threat but as a powerful catalyst for growth and comprehensive understanding. It does not dilute our identity but rather enriches and completes it, preparing us to thrive in an interconnected and ever-changing world.</p>
+      </article>
+
+      <article class="card" id="regulation-of-mood-by-interneuron-dopamine-d1-receptors" style="cursor:default;">
+        <span class="badge">Science</span>
+        <h2 style="margin-top:14px;">Regulation of Mood by Interneuron Dopamine D1 Receptors</h2>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0 18px;"><span style="color:#c0392b;">Date to confirm</span> &middot; 2 min read</p>
+        <p>Major Depressive Disorder (MDD) produces the greatest decrement in health when compared to other chronic diseases. Depression has genetic, epigenetic, and environmental contributions; that include the involvement of chronic and acute stressors as an important environmental contributor in causing MDD. A number of patients do not respond to treatment to newly developed medications and therefore resulting in a high failure rate, additionally, a significant proportion of MDD patients are “treatment-resistant”. Many existing drug treatments for depression focus on the neurotransmitter serotonin, however, previous studies have also found important roles for the neurotransmitter dopamine (DA) in regulating mood and affect. Dopaminergic systems, in the past decades, have become an important substrate to explore in people suffering from anxiety and depressive disorders since they have been shown to contribute to the underlying pathophysiological changes in mood and cognitive disorders.</p>
+<p>My laboratory recently discovered that D1 receptors expressed on a specific subpopulation of cerebral cortical interneurons regulate mood-related behaviors and brain circuits. We created a model system in which we delete the Drd1 gene from medial ganglionic eminence-derived (MGE) GABAergic neurons (future GABAergic cortical interneurons); behavioral assessment of those mice showed strong antidepressant-like phenotypes. My project assesses stress responses in these mice and tests the hypothesis that cell-type-specific inactivation of D1 receptors in cortical interneurons derived from the Nkx2.1 lineage (MGE-Drd1-cKO mice) alters their cellular and molecular circuitry in the PFC and provides protection from acute and chronic stress. My Ph.D. thesis is focused on addressing the questions below:</p>
+<p>1) Any neuroendocrine and neurobehavioral responses to stress following the developmental and cell-type specific deletion of D1 receptors in cerebral cortical interneurons derived from the Nkx2.1 lineage (MGE-Drd1-cKO)?</p>
+<p>2) Any Structural and cellular correlates of reduced depression-related responses in the prefrontal cortex (PFC) of MGE-Drd1-cKO mice?</p>
+<p>3) Does loss of Drd1 in PV+ neurons phenocopy stress-resilient phenotypes?</p>
+<p>The need for more effective therapies for the treatment of depression remains pressing; a significant proportion of major depressive disorder patients remain resistant to currently available treatments. Our goal in this proposal is to address this need by identifying a new therapeutic target that will inevitably lead to new innovative strategies for developing more efficient therapeutics for this disease. Some studies suggest that cell-specific neuropharmacology strategies with location-biased ligands could be a possibility.</p>
+<p>The selective deletion of D1 receptors from MGE-derived GABAergic neurons provides a powerful animal model with the translational potential to examine the roles of this subset of cortical interneuron in both neuropathological processes and in promoting adaptive mechanisms contributing to behavioral and cognitive resilience. Therefore, blocking D1 receptors expressed on cortical interneurons may represent a new and exciting mechanism to treat MDD. </p>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin:56px 0 20px;">
+      <span class="eyebrow">Not yet migrated</span>
+      <h2 style="margin-top:8px;">Still on the original blog</h2>
+      <p style="font-size:13px; color:var(--ink-70); max-width:560px; margin:10px auto 0;">
+        I don't have the source file for this one yet &mdash; upload its Word doc and
+        I'll add it here too.
+      </p>
+    </div>
+
+    <div class="grid grid-3" style="max-width:760px; margin:0 auto;">
+      <a href="https://www.stem-azing.com/post/scenes-from-saturday-night" target="_blank" rel="noopener" class="card">
+        <span class="badge">Biomedical Sciences</span>
+        <h3>Scenes from Saturday Night</h3>
+        <p class="mono" style="font-size:12px; color:var(--sage); margin:10px 0;">May 2021 &middot; 4 min read</p>
+        <p>A slice-of-life reflection from early in the graduate school years.</p>
+      </a>
+    </div>
 
     <div style="text-align:center; margin-top:44px;">
       <a href="https://www.stem-azing.com" target="_blank" rel="noopener" class="btn btn-outline">
-        Read the full archive on the original blog →
+        View the original blog &rarr;
       </a>
     </div>
   </div>
