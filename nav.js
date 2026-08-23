@@ -6,7 +6,7 @@
 const NAV_LINKS = [
   { href: "index.html", label: "Home" },
   { href: "biography.html", label: "Biography" },
-  { href: "portfolio.html", label: "Portfolio" },
+  { href: "portfolio.html", label: "Advising" },
   { href: "services.html", label: "Services & Pricing" },
   { href: "blog.html", label: "Scientific Writing & Editing" },
   { href: "neuropenetrance.html", label: "NeuroPenetrance" },
@@ -52,7 +52,7 @@ function renderFooter(){
         <div>
           <h4>Explore</h4>
           <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portfolio.html">Advising</a>
             <a href="services.html">Services & Pricing</a>
             <a href="blog.html">Scientific Writing & Editing</a>
             <a href="neuropenetrance.html">NeuroPenetrance</a>
