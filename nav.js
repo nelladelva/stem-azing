@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { href: "index.html", label: "Home" },
   { href: "biography.html", label: "Biography" },
   { href: "portfolio.html", label: "Portfolio" },
-  { href: "cv.html", label: "CV" },
   { href: "services.html", label: "Services & Pricing" },
   { href: "blog.html", label: "Scientific Writing & Editing" },
   { href: "neuropenetrance.html", label: "NeuroPenetrance" },
