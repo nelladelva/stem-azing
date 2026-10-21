@@ -48,7 +48,7 @@
           <div class="price-note">Hourly rate</div>
           <div class="amount" data-eur="95" data-usd="105">€95<span class="unit">/hr</span></div>
           <div class="price-note">or from <span class="amount-project" data-eur="750" data-usd="820">€750</span> per project scope</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Consulting" data-deposit-eur="375" data-deposit-usd="410" style="margin-top:16px;">Request deposit invoice</a>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Consulting" data-deposit-eur="375" data-deposit-usd="410" style="margin-top:16px;">Request an invoice</a>
           <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
         </div>
       </div>
@@ -76,7 +76,7 @@
           <div class="price-note">Per session (up to 90 min)</div>
           <div class="amount" data-eur="350" data-usd="385">€350</div>
           <div class="price-note">Multi-session workshops quoted separately</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Guest Lecture / Workshop" data-deposit-eur="175" data-deposit-usd="193" style="margin-top:16px;">Request deposit invoice</a>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Guest Lecture / Workshop" data-deposit-eur="175" data-deposit-usd="193" style="margin-top:16px;">Request an invoice</a>
           <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
         </div>
       </div>
@@ -104,7 +104,7 @@
           <div class="price-note">Hourly rate</div>
           <div class="amount" data-eur="90" data-usd="99">€90<span class="unit">/hr</span></div>
           <div class="price-note">or from <span class="amount-project" data-eur="900" data-usd="985">€900</span> per project scope</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Research & Data Analysis" data-deposit-eur="450" data-deposit-usd="493" style="margin-top:16px;">Request deposit invoice</a>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Research & Data Analysis" data-deposit-eur="450" data-deposit-usd="493" style="margin-top:16px;">Request an invoice</a>
           <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
         </div>
       </div>
@@ -132,7 +132,7 @@
           <div class="price-note">Per 1,000 words (editing)</div>
           <div class="amount" data-eur="120" data-usd="132">€120</div>
           <div class="price-note">Original writing quoted per project</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Writing & Editing" data-deposit-eur="60" data-deposit-usd="66" style="margin-top:16px;">Request deposit invoice</a>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Writing & Editing" data-deposit-eur="60" data-deposit-usd="66" style="margin-top:16px;">Request an invoice</a>
           <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
         </div>
       </div>
@@ -192,7 +192,7 @@
           <div class="price-note">Per piece (article / post)</div>
           <div class="amount" data-eur="180" data-usd="198">€180</div>
           <div class="price-note">Ongoing content packages available</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Science Communication" data-deposit-eur="90" data-deposit-usd="99" style="margin-top:16px;">Request deposit invoice</a>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Science Communication" data-deposit-eur="90" data-deposit-usd="99" style="margin-top:16px;">Request an invoice</a>
           <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
         </div>
       </div>
@@ -220,7 +220,7 @@
           <div class="price-note">Per session</div>
           <div class="amount" data-eur="100" data-usd="120">€100<span class="unit">/session</span></div>
           <div class="price-note">or <span class="amount-project" data-eur="950" data-usd="1000">€950</span> for a 10-session package</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Tutoring & Mentorship" data-deposit-eur="475" data-deposit-usd="500" style="margin-top:16px;">Request deposit invoice</a>
+          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Tutoring & Mentorship" data-deposit-eur="475" data-deposit-usd="500" style="margin-top:16px;">Request an invoice</a>
           <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
         </div>
       </div>
@@ -256,11 +256,11 @@
 <!-- ── Invoice request modal ── -->
   <div id="payModal" style="display:none; position:fixed; inset:0; background:rgba(20,33,61,0.55); z-index:100; align-items:center; justify-content:center; padding:20px;">
     <div style="background:var(--white); border-radius:18px; padding:36px; max-width:440px; width:100%;" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
-      <h3 id="payModalTitle" style="font-size:20px; margin-bottom:8px;">Request a deposit invoice</h3>
-      <p style="font-size:14px; color:var(--ink-70); margin-bottom:20px;">You're requesting an invoice for the 50% deposit
-        for <strong id="payModalService"></strong>. The remaining balance is invoiced on delivery.</p>
+      <h3 id="payModalTitle" style="font-size:20px; margin-bottom:8px;">Request an invoice</h3>
+      <p style="font-size:14px; color:var(--ink-70); margin-bottom:20px;">You're requesting an invoice
+        for <strong id="payModalService"></strong>.</p>
       <div style="background:var(--paper-alt); border-radius:12px; padding:18px; margin-bottom:20px;">
-        <div style="font-size:13px; color:var(--ink-70);">Deposit (starting rate)</div>
+        <div style="font-size:13px; color:var(--ink-70);">Starting rate</div>
         <div class="amount" id="payModalAmount" style="margin:4px 0 0;"></div>
       </div>
       <a id="invoiceLink" href="#" class="btn btn-gold btn-block">Request invoice by email →</a>
@@ -306,15 +306,16 @@
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const service = btn.getAttribute('data-service');
-      const amount = currentCurrency === 'EUR'
-        ? btn.getAttribute('data-deposit-eur')
-        : btn.getAttribute('data-deposit-usd');
+      const priceEl = btn.closest('.price-card').querySelector('.amount');
+      const unit = priceEl.querySelector('.unit');
+      const amount = priceEl.getAttribute(currentCurrency === 'EUR' ? 'data-eur' : 'data-usd')
+        + (unit ? unit.textContent : '');
       const symbol = currentCurrency === 'EUR' ? '€' : '$';
 
       document.getElementById('payModalService').textContent = service;
       document.getElementById('payModalAmount').textContent = symbol + amount;
-      const subject = `Invoice request: ${service} (50% deposit, ${symbol}${amount})`;
-      const body = `Hello Dr. Delva,\n\nPlease send me an invoice for the 50% deposit for ${service} (${symbol}${amount}, ${currentCurrency}).\n\nBilling name:\nBilling address:\nVAT ID (organizations):\nShort project description:\n\nThank you!`;
+      const subject = `Invoice request: ${service}`;
+      const body = `Hello Dr. Delva,\n\nPlease send me an invoice for ${service} (starting rate ${symbol}${amount}, ${currentCurrency}).\n\nBilling name:\nBilling address:\nVAT ID (organizations):\nShort project description:\n\nThank you!`;
       document.getElementById('invoiceLink').href =
         `mailto:${INVOICE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       document.getElementById('payModal').style.display = 'flex';
