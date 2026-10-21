@@ -10,20 +10,25 @@ var INVOICE_TEXT = {
   en: {
     subject: "Invoice request: ",
     body: function (o) {
-      return "Hello Dr. Delva,\n\nPlease send me an invoice for " + o.service + " (starting rate " + o.symbol + o.amount + ", " + o.currency + ").\n\n" +
+      return "Hello Dr. Delva,\n\nPlease send me an invoice for " + o.service + " (starting rate " + formatMoney(o.symbol, o.amount, "en") + (o.unit || "") + ", " + o.currency + ").\n\n" +
         "Billing name:\nBilling address:\nShort project description:\n\nThank you!\n\n(No VAT is charged under § 19 UStG.)";
     }
   },
   de: {
     subject: "Rechnungsanfrage: ",
     body: function (o) {
-      return "Guten Tag Frau Dr. Delva,\n\nbitte senden Sie mir eine Rechnung für " + o.service + " (Startpreis " + o.symbol + o.amount + ", " + o.currency + ").\n\n" +
+      return "Guten Tag Frau Dr. Delva,\n\nbitte senden Sie mir eine Rechnung für " + o.service + " (Startpreis " + formatMoney(o.symbol, o.amount, "de") + (o.unit || "") + ", " + o.currency + ").\n\n" +
         "Rechnungsname:\nRechnungsadresse:\nKurze Projektbeschreibung:\n\nVielen Dank!\n\n(Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.)";
     }
   }
 };
 
-// { service, symbol, amount, currency, lang } → { subject, href }
+// "€150" in English, "150 €" in German
+function formatMoney(symbol, value, lang) {
+  return lang === "de" ? value + " " + symbol : symbol + value;
+}
+
+// { service, symbol, amount, unit, currency, lang } → { subject, href }
 function buildInvoiceMail(o) {
   var t = INVOICE_TEXT[o.lang] || INVOICE_TEXT.en;
   var subject = t.subject + o.service;
@@ -33,13 +38,14 @@ function buildInvoiceMail(o) {
   };
 }
 
-if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInvoiceMail };
+if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInvoiceMail, formatMoney: formatMoney };
 (function () {
   "use strict";
   if (typeof document === "undefined") return;
 
   // ── Currency switch ──
   var currency = "EUR";
+  var pageLang = document.documentElement.lang === "de" ? "de" : "en";
   window.stemCurrency = function () { return currency; };
 
   function setCurrency(cur) {
@@ -53,11 +59,11 @@ if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInv
       var val = el.getAttribute(attr);
       if (!val) return;
       var unit = el.querySelector(".unit");
-      el.innerHTML = symbol + val + (unit ? " " + unit.outerHTML : "");
+      el.innerHTML = formatMoney(symbol, val, pageLang) + (unit ? " " + unit.outerHTML : "");
     });
     document.querySelectorAll(".amount-project").forEach(function (el) {
       var val = el.getAttribute(attr);
-      if (val) el.textContent = symbol + val;
+      if (val) el.textContent = formatMoney(symbol, val, pageLang);
     });
   }
 
@@ -92,12 +98,13 @@ if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInv
       var priceEl = card.querySelector(".amount");
       var unit = priceEl.querySelector(".unit");
       var symbol = currency === "EUR" ? "€" : "$";
-      var amount = priceEl.getAttribute(currency === "EUR" ? "data-eur" : "data-usd") + (unit ? unit.textContent.trim().replace(/^\/\s*/, "/") : "");
+      var amount = priceEl.getAttribute(currency === "EUR" ? "data-eur" : "data-usd");
+      var unitText = unit ? unit.textContent.trim().replace(/^\/\s*/, "/") : "";
       var service = btn.getAttribute("data-service");
       var lang = btn.getAttribute("data-lang") || document.documentElement.lang || "en";
-      var mail = buildInvoiceMail({ service: service, symbol: symbol, amount: amount, currency: currency, lang: lang });
+      var mail = buildInvoiceMail({ service: service, symbol: symbol, amount: amount, unit: unitText, currency: currency, lang: lang });
       document.getElementById("payModalService").textContent = service;
-      document.getElementById("payModalAmount").textContent = symbol + amount;
+      document.getElementById("payModalAmount").textContent = formatMoney(symbol, amount, lang) + unitText;
       document.getElementById("invoiceLink").href = mail.href;
       modal.classList.add("is-open");
       document.getElementById("invoiceLink").focus();

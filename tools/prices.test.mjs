@@ -12,9 +12,10 @@ export const HEADLINE = {
 };
 const PROJECT = { 'Scientific consulting': ['750', '820'], 'Research & data analysis': ['900', '985'], 'Tutoring & mentorship': ['950', '1000'] };
 
-export function checkServices(file, vatNote) {
+export function checkServices(file, vatNote, names = {}) {
   const h = read(file);
-  const p = parsePrices(h);
+  const raw = parsePrices(h);
+  const p = Object.fromEntries(Object.entries(raw).map(([k, v]) => [names[k] || k, v]));
   assert.deepEqual(Object.keys(p).sort(), Object.keys(HEADLINE).sort());
   for (const [name, [eur, usd]] of Object.entries(HEADLINE)) assert.deepEqual([p[name].eur, p[name].usd], [eur, usd], name);
   for (const [name, pair] of Object.entries(PROJECT)) assert.ok(p[name].all.some(x => x[0] === pair[0] && x[1] === pair[1]), `${name} project ${pair}`);
