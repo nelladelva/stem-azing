@@ -1,0 +1,178 @@
+<h2>STEM-azing home page: three directions</h2>
+<p class="subtitle">Same content, much less text. Services are grouped by <b>who you are</b> (educators · people who need a writer · research teams), with one line each and a starting price. Click the direction that feels most professional and inviting. You can also mix ("A's colours with C's layout").</p>
+
+<style>
+.dir{border:1px solid #ddd;border-radius:14px;overflow:hidden;margin:26px 0 8px;background:#fff;cursor:pointer}
+.dir.selected{outline:4px solid #2f80ed}
+.dir-label{font:600 14px/1.3 system-ui;padding:10px 16px;background:#f4f4f4;border-bottom:1px solid #e3e3e3}
+.m *{box-sizing:border-box;margin:0;padding:0}
+.m img{display:block}
+/* ---------- A: Warm editorial ---------- */
+.ma{background:#FBF7F1;color:#2A2A2A;font-family:Georgia,serif}
+.ma nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font:14px system-ui;color:#3D3D3D}
+.ma nav b{font:600 20px Georgia;color:#1F3B4D}
+.ma nav span{margin-left:22px}
+.ma .cta{background:#B5523B;color:#fff;border-radius:999px;padding:9px 18px;font:600 13px system-ui}
+.ma .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:30px 40px 46px}
+.ma h1{font-size:44px;line-height:1.1;color:#1F3B4D;font-weight:500}
+.ma h1 i{color:#B5523B}
+.ma .lede{font:17px/1.55 system-ui;color:#555;margin:16px 0 22px;max-width:440px}
+.ma .btns{display:flex;gap:12px;font:600 14px system-ui}
+.ma .b1{background:#1F3B4D;color:#fff;padding:12px 20px;border-radius:999px}
+.ma .b2{border:1.5px solid #1F3B4D;color:#1F3B4D;padding:11px 20px;border-radius:999px}
+.ma .photo{position:relative}
+.ma .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 18px 18px}
+.ma .badge{position:absolute;bottom:18px;left:-20px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 8px 24px rgba(0,0,0,.08);font:13px system-ui;color:#333}
+.ma .badge b{display:block;font:600 15px Georgia;color:#1F3B4D}
+.ma .sec{padding:40px;background:#fff}
+.ma .k{font:600 12px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#B5523B}
+.ma h2{font-size:30px;color:#1F3B4D;font-weight:500;margin:6px 0 22px}
+.ma .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ma .card{background:#FBF7F1;border-radius:16px;padding:22px}
+.ma .card h3{font-size:20px;color:#1F3B4D;font-weight:500;margin-bottom:10px}
+.ma .card li{list-style:none;font:14px/1.5 system-ui;color:#444;padding:7px 0;border-top:1px solid #EADFD0;display:flex;justify-content:space-between}
+.ma .card li span{color:#B5523B;font-weight:600}
+.ma .why{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 40px;background:#1F3B4D;color:#fff}
+.ma .why b{font:500 26px Georgia;color:#F2C9A8;display:block}
+.ma .why p{font:14px/1.5 system-ui;opacity:.9;margin-top:6px}
+/* ---------- B: Clean consultancy ---------- */
+.mb{background:#fff;color:#1B2430;font-family:system-ui,-apple-system,sans-serif}
+.mb nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid #EEF1F4;font-size:14px;color:#475467}
+.mb nav b{font-size:19px;color:#0B3B5C;letter-spacing:-.01em}
+.mb nav b em{font-style:normal;color:#0E8C84}
+.mb nav span{margin-left:22px}
+.mb .cta{background:#0E8C84;color:#fff;border-radius:8px;padding:9px 16px;font-weight:600;font-size:13px}
+.mb .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding:46px 40px;background:linear-gradient(180deg,#F4F8FA,#fff)}
+.mb .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0E8C84}
+.mb h1{font-size:40px;line-height:1.12;letter-spacing:-.02em;color:#0B3B5C;margin:10px 0 14px}
+.mb .lede{font-size:17px;line-height:1.55;color:#475467;max-width:460px}
+.mb .btns{display:flex;gap:12px;margin-top:22px;font-weight:600;font-size:14px}
+.mb .b1{background:#0B3B5C;color:#fff;padding:12px 20px;border-radius:8px}
+.mb .b2{border:1.5px solid #CBD5E1;color:#0B3B5C;padding:11px 20px;border-radius:8px}
+.mb .photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;box-shadow:0 20px 40px rgba(11,59,92,.12)}
+.mb .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #EEF1F4;border-bottom:1px solid #EEF1F4}
+.mb .stats div{padding:18px 24px;font-size:13px;color:#475467;border-right:1px solid #EEF1F4}
+.mb .stats b{display:block;font-size:22px;color:#0B3B5C}
+.mb .sec{padding:40px}
+.mb h2{font-size:28px;letter-spacing:-.01em;color:#0B3B5C;margin-bottom:6px}
+.mb .sub{color:#475467;font-size:15px;margin-bottom:22px}
+.mb .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mb .card{border:1px solid #E4E9EE;border-radius:12px;padding:20px}
+.mb .ic{width:36px;height:36px;border-radius:8px;background:#E6F4F3;color:#0E8C84;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
+.mb .card h3{font-size:17px;color:#0B3B5C;margin-bottom:8px}
+.mb .card p{font-size:14px;color:#475467;line-height:1.5}
+.mb .card .from{margin-top:12px;font-size:13px;color:#0E8C84;font-weight:600}
+/* ---------- C: Vibrant & welcoming ---------- */
+.mc{background:#FFFDF8;color:#22223B;font-family:system-ui,-apple-system,sans-serif}
+.mc nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:14px;color:#4A4E69}
+.mc nav b{font-size:20px;color:#22223B}
+.mc nav b em{font-style:normal;background:#F4B942;padding:0 6px;border-radius:6px}
+.mc nav span{margin-left:22px}
+.mc .cta{background:#22223B;color:#fff;border-radius:999px;padding:9px 18px;font-weight:600;font-size:13px}
+.mc .hero{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center;padding:30px 40px 44px}
+.mc .tag{display:inline-block;background:#E3F2EF;color:#127C6E;font-weight:600;font-size:13px;padding:6px 12px;border-radius:999px}
+.mc h1{font-size:46px;line-height:1.05;letter-spacing:-.02em;margin:14px 0}
+.mc h1 span{background:linear-gradient(transparent 62%,#F4B942 62%)}
+.mc .lede{font-size:17px;line-height:1.55;color:#4A4E69;max-width:440px}
+.mc .btns{display:flex;gap:12px;margin-top:22px;font-weight:600;font-size:14px}
+.mc .b1{background:#E85D4A;color:#fff;padding:12px 22px;border-radius:999px}
+.mc .b2{background:#fff;border:2px solid #22223B;color:#22223B;padding:10px 20px;border-radius:999px}
+.mc .photo{position:relative;padding:14px}
+.mc .photo:before{content:"";position:absolute;inset:0 30px 30px 0;background:#127C6E;border-radius:28px;transform:rotate(-4deg)}
+.mc .photo img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px}
+.mc .chip{position:absolute;right:-6px;top:40px;background:#F4B942;border-radius:14px;padding:10px 14px;font-weight:700;font-size:13px}
+.mc .sec{padding:40px;background:#22223B;color:#fff;border-radius:28px 28px 0 0}
+.mc h2{font-size:30px;letter-spacing:-.01em;margin-bottom:20px}
+.mc .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mc .card{border-radius:20px;padding:22px;color:#22223B}
+.mc .c1{background:#F4B942}.mc .c2{background:#FFD8CC}.mc .c3{background:#BFE6DF}
+.mc .card h3{font-size:19px;margin-bottom:12px}
+.mc .card li{list-style:none;font-size:14px;padding:6px 0;border-top:1px solid rgba(34,34,59,.15);display:flex;justify-content:space-between}
+.mc .card li span{font-weight:700}
+.mc .quote{padding:30px 40px;background:#22223B;color:#E9E9F0;font-size:18px;line-height:1.5;border-top:1px solid #3A3A5A}
+.mc .quote b{color:#F4B942}
+</style>
+
+<!-- ====================== A ====================== -->
+<div class="dir" data-choice="a" onclick="toggleSelect(this)">
+<div class="dir-label">A · Warm editorial: cream, deep blue and terracotta, elegant serif headings, an arched portrait</div>
+<div class="m ma">
+  <nav><b>STEM-azing</b><div><span>Services</span><span>About</span><span>NeuroPenetrance</span><span>Blog</span><span class="cta">Book a free call</span></div></nav>
+  <div class="hero">
+    <div>
+      <h1>Science made <i>clear</i>, for every classroom, page and lab.</h1>
+      <p class="lede">I'm Dr. Nella Delva, a neuroscientist and writer. I help educators, authors and research teams turn complex science into something people understand.</p>
+      <div class="btns"><span class="b1">See services &amp; prices</span><span class="b2">Book a free 20-min call</span></div>
+    </div>
+    <div class="photo"><img src="/files/headshot.jpg" alt=""><div class="badge"><b>Fulbright Fellow · PhD</b>15+ years in research</div></div>
+  </div>
+  <div class="sec">
+    <div class="k">How I can help</div>
+    <h2>Choose what fits you</h2>
+    <div class="grid">
+      <div class="card"><h3>For educators</h3><ul><li>Guest lectures &amp; workshops <span>€350</span></li><li>Tutoring &amp; mentorship <span>€100</span></li></ul></div>
+      <div class="card"><h3>For writing</h3><ul><li>Writing &amp; editing <span>€120/1k</span></li><li>Ghostwriting <span>€0.37/word</span></li><li>Science communication <span>€180</span></li></ul></div>
+      <div class="card"><h3>For research teams</h3><ul><li>Scientific consulting <span>€95/hr</span></li><li>Data analysis &amp; ML <span>€90/hr</span></li></ul></div>
+    </div>
+  </div>
+  <div class="why">
+    <div><b>Bench to page</b><p>A working scientist, so the science is right.</p></div>
+    <div><b>Clear for anyone</b><p>Writing that experts trust and students follow.</p></div>
+    <div><b>Haiti → USA → Berlin</b><p>A first-generation path that shapes how I teach and mentor.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- ====================== B ====================== -->
+<div class="dir" data-choice="b" onclick="toggleSelect(this)">
+<div class="dir-label">B · Clean consultancy: white, navy and teal, crisp modern type, a numbers strip for instant trust</div>
+<div class="m mb">
+  <nav><b>STEM<em>-azing</em></b><div><span>Services</span><span>About</span><span>NeuroPenetrance</span><span>Blog</span><span class="cta">Book a call</span></div></nav>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Scientific writing · Teaching · Research advice</div>
+      <h1>Clear science for classrooms, manuscripts and research teams.</h1>
+      <p class="lede">Dr. Nella C. Delva, neuroscientist and data scientist in Berlin. Rigorous, readable and on time.</p>
+      <div class="btns"><span class="b1">Explore services</span><span class="b2">Book a free call</span></div>
+    </div>
+    <div class="photo"><img src="/files/headshot.jpg" alt=""></div>
+  </div>
+  <div class="stats">
+    <div><b>15+ yrs</b>biomedical research</div><div><b>PhD</b>neurobiology, FSU</div><div><b>Fulbright</b>Fellow, MDC Berlin</div><div><b>3</b>countries, 4 languages</div>
+  </div>
+  <div class="sec">
+    <h2>Services</h2><p class="sub">Every project starts with a free 20-minute call.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">✎</div><h3>Writing &amp; ghostwriting</h3><p>Manuscripts, grants, articles and posts, written or polished.</p><div class="from">From €0.37/word</div></div>
+      <div class="card"><div class="ic">◎</div><h3>Lectures &amp; mentoring</h3><p>Guest lectures, workshops and one-to-one STEM coaching.</p><div class="from">From €100/session</div></div>
+      <div class="card"><div class="ic">▦</div><h3>Research &amp; data</h3><p>Study design, analysis and machine learning for biomedical teams.</p><div class="from">From €90/hr</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ====================== C ====================== -->
+<div class="dir" data-choice="c" onclick="toggleSelect(this)">
+<div class="dir-label">C · Vibrant &amp; welcoming: warm Caribbean colours (marigold, coral, teal), friendly rounded shapes, bold headline</div>
+<div class="m mc">
+  <nav><b>STEM<em>azing</em></b><div><span>Services</span><span>About</span><span>NeuroPenetrance</span><span>Blog</span><span class="cta">Let's talk</span></div></nav>
+  <div class="hero">
+    <div>
+      <span class="tag">🌍 Science for everyone</span>
+      <h1>Your science deserves to be <span>understood</span>.</h1>
+      <p class="lede">I'm Dr. Nella Delva, a Haitian-American neuroscientist in Berlin. I write, teach and advise, so your ideas reach students, readers and reviewers.</p>
+      <div class="btns"><span class="b1">Find your service</span><span class="b2">Book a free call</span></div>
+    </div>
+    <div class="photo"><img src="/files/headshot.jpg" alt=""><div class="chip">Fulbright Fellow ✦</div></div>
+  </div>
+  <div class="sec">
+    <h2>What can I help you with?</h2>
+    <div class="grid">
+      <div class="card c1"><h3>🎓 I teach or mentor</h3><ul><li>Guest lectures <span>€350</span></li><li>Tutoring &amp; mentorship <span>€100</span></li></ul></div>
+      <div class="card c2"><h3>✍️ I need a writer</h3><ul><li>Writing &amp; editing <span>€120/1k</span></li><li>Ghostwriting <span>€0.37/word</span></li><li>Science stories <span>€180</span></li></ul></div>
+      <div class="card c3"><h3>🔬 I run research</h3><ul><li>Consulting <span>€95/hr</span></li><li>Data &amp; ML <span>€90/hr</span></li></ul></div>
+    </div>
+  </div>
+  <div class="quote">“Curiosity is currency for success.” <b>From Haiti to the lab bench to Berlin</b>: I know what it's like to be the first in the room, and I make science welcoming for whoever comes next.</div>
+</div>
+</div>

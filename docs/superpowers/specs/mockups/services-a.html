@@ -1,0 +1,115 @@
+<h2>Services page in Direction A: how much text per service?</h2>
+<p class="subtitle">Same six services and prices, grouped by who you are. The only difference is how much each card says. Click the one that feels right: <b>1 · Short</b> (one line and the price) or <b>2 · Short + proof</b> (one line, two reasons to trust you, the price).</p>
+
+<style>
+.dir{border:1px solid #ddd;border-radius:14px;overflow:hidden;margin:26px 0 8px;background:#fff;cursor:pointer}
+.dir.selected{outline:4px solid #2f80ed}
+.dir-label{font:600 14px/1.3 system-ui;padding:10px 16px;background:#f4f4f4;border-bottom:1px solid #e3e3e3}
+.m *{box-sizing:border-box;margin:0;padding:0}
+.ma{background:#FBF7F1;color:#2A2A2A;font-family:Georgia,serif}
+.ma nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font:14px system-ui;color:#3D3D3D}
+.ma nav b{font:600 20px Georgia;color:#1F3B4D}
+.ma nav span{margin-left:22px}
+.ma nav .on{color:#B5523B;font-weight:600}
+.ma .cta{background:#B5523B;color:#fff;border-radius:999px;padding:9px 18px;font:600 13px system-ui}
+.ma .head{padding:26px 40px 30px}
+.ma h1{font-size:38px;line-height:1.1;color:#1F3B4D;font-weight:500}
+.ma h1 i{color:#B5523B}
+.ma .lede{font:16px/1.55 system-ui;color:#555;margin-top:10px;max-width:560px}
+.ma .jump{display:flex;gap:10px;margin-top:18px;font:600 13px system-ui}
+.ma .jump span{background:#fff;border:1px solid #EADFD0;color:#1F3B4D;padding:8px 14px;border-radius:999px}
+.ma .grp{padding:28px 40px;background:#fff;border-top:1px solid #EFE6DA}
+.ma .k{font:600 12px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#B5523B}
+.ma h2{font-size:26px;color:#1F3B4D;font-weight:500;margin:4px 0 16px}
+.ma .row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.ma .row.three{grid-template-columns:repeat(2,1fr)}
+.ma .card{background:#FBF7F1;border-radius:16px;padding:20px;display:flex;flex-direction:column}
+.ma .card h3{font-size:20px;color:#1F3B4D;font-weight:500}
+.ma .also{font:600 13px system-ui;color:#B5523B;margin-top:3px}
+.ma .card p{font:14px/1.5 system-ui;color:#4A4A4A;margin-top:8px}
+.ma .proof{margin-top:10px}
+.ma .proof li{list-style:none;font:13px/1.45 system-ui;color:#3D3D3D;padding:4px 0 4px 18px;position:relative}
+.ma .proof li:before{content:"✓";position:absolute;left:0;color:#5B7B6A;font-weight:700}
+.ma .foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:auto;padding-top:14px;border-top:1px solid #EADFD0}
+.ma .price{font:500 24px Georgia;color:#1F3B4D}
+.ma .price small{font:13px system-ui;color:#777}
+.ma .price em{display:block;font:12px system-ui;color:#777;font-style:normal}
+.ma .acts{display:flex;gap:8px;font:600 12px system-ui}
+.ma .b1{background:#1F3B4D;color:#fff;padding:9px 14px;border-radius:999px}
+.ma .b2{border:1.5px solid #1F3B4D;color:#1F3B4D;padding:8px 14px;border-radius:999px}
+.ma .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:30px 40px;background:#1F3B4D;color:#fff}
+.ma .steps b{font:500 22px Georgia;color:#F2C9A8;display:block}
+.ma .steps p{font:14px/1.5 system-ui;opacity:.9;margin-top:4px}
+</style>
+
+<!-- ====================== 1: Short ====================== -->
+<div class="dir" data-choice="short" onclick="toggleSelect(this)">
+<div class="dir-label">1 · Short: one line and the price. Details come in the free call.</div>
+<div class="m ma">
+  <nav><b>STEM-azing</b><div><span>Home</span><span class="on">Services</span><span>About</span><span>NeuroPenetrance</span><span>Blog</span><span class="cta">Book a free call</span></div></nav>
+  <div class="head">
+    <h1>Six ways to <i>work together</i></h1>
+    <p class="lede">Pick what fits. Not sure? Book a free 20-minute call and we figure it out together.</p>
+    <div class="jump"><span>For educators</span><span>For writing</span><span>For research teams</span></div>
+  </div>
+
+  <div class="grp"><div class="k">For educators</div><h2>Teaching that reaches every student</h2>
+    <div class="row">
+      <div class="card"><h3>Guest lectures &amp; workshops</h3><p>Dense science made clear for mixed audiences, up to 90 minutes.</p>
+        <div class="foot"><div class="price">€350 <small>/ session</small></div><div class="acts"><span class="b1">Request an invoice</span></div></div></div>
+      <div class="card"><h3>Tutoring &amp; mentorship</h3><p>Sessions built around the student's real goals, not a fixed curriculum.</p>
+        <div class="foot"><div class="price">€100 <small>/ session</small><em>or €950 for 10 sessions</em></div><div class="acts"><span class="b1">Request an invoice</span></div></div></div>
+    </div></div>
+
+  <div class="grp"><div class="k">For writing</div><h2>Words that experts trust and readers follow</h2>
+    <div class="row">
+      <div class="card"><h3>Scientific writing &amp; editing</h3><div class="also">Ghostwriting also offered</div><p>Manuscripts, grants and public science, clearer and more precise.</p>
+        <div class="foot"><div class="price">from €150 <small>/ 1,000 words</small><em>scientific edit €220 · grants &amp; writing from €800</em></div><div class="acts"><span class="b1">Request an invoice</span></div></div></div>
+      <div class="card"><h3>Science communication</h3><p>Blogs, talks and social posts that bring science to the public.</p>
+        <div class="foot"><div class="price">€180 <small>/ piece</small></div><div class="acts"><span class="b1">Request an invoice</span></div></div></div>
+    </div></div>
+
+  <div class="grp"><div class="k">For research teams</div><h2>A scientist on your side</h2>
+    <div class="row">
+      <div class="card"><h3>Scientific consulting</h3><p>Turn bench findings into clear next steps for your project.</p>
+        <div class="foot"><div class="price">€95 <small>/ hr</small><em>or from €750 per project</em></div><div class="acts"><span class="b1">Request an invoice</span></div></div></div>
+      <div class="card"><h3>Research &amp; data analysis</h3><p>Statistics and machine learning on real biological data.</p>
+        <div class="foot"><div class="price">€90 <small>/ hr</small><em>or from €900 per project</em></div><div class="acts"><span class="b1">Request an invoice</span></div></div></div>
+    </div></div>
+
+  <div class="steps">
+    <div><b>1 · Free call</b><p>20 minutes to agree on the scope.</p></div>
+    <div><b>2 · 50% invoice</b><p>Paying it books your spot.</p></div>
+    <div><b>3 · 50% on delivery</b><p>The rest when the work is done.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- ====================== 2: Short + proof ====================== -->
+<div class="dir" data-choice="proof" onclick="toggleSelect(this)">
+<div class="dir-label">2 · Short + proof: one line, two reasons to trust you, the price. (One group shown; the others follow the same pattern.)</div>
+<div class="m ma">
+  <nav><b>STEM-azing</b><div><span>Home</span><span class="on">Services</span><span>About</span><span>NeuroPenetrance</span><span>Blog</span><span class="cta">Book a free call</span></div></nav>
+  <div class="head">
+    <h1>Six ways to <i>work together</i></h1>
+    <p class="lede">Pick what fits. Not sure? Book a free 20-minute call and we figure it out together.</p>
+    <div class="jump"><span>For educators</span><span>For writing</span><span>For research teams</span></div>
+  </div>
+
+  <div class="grp"><div class="k">For writing</div><h2>Words that experts trust and readers follow</h2>
+    <div class="row">
+      <div class="card"><h3>Scientific writing &amp; editing</h3><div class="also">Ghostwriting also offered</div><p>Manuscripts, grants and public science, clearer and more precise.</p>
+        <ul class="proof"><li>Co-author on peer-reviewed publications</li><li>An editor's precision with a researcher's fluency</li></ul>
+        <div class="foot"><div class="price">from €150 <small>/ 1,000 words</small><em>scientific edit €220 · grants &amp; writing from €800</em></div><div class="acts"><span class="b1">Request an invoice</span><span class="b2">Ask first</span></div></div></div>
+      <div class="card"><h3>Science communication</h3><p>Blogs, talks and social posts that bring science to the public.</p>
+        <ul class="proof"><li>Runs the STEM-azing public science platform</li><li>A cross-cultural voice: Haiti, USA, Berlin</li></ul>
+        <div class="foot"><div class="price">€180 <small>/ piece</small><em>content packages available</em></div><div class="acts"><span class="b1">Request an invoice</span><span class="b2">Ask first</span></div></div></div>
+    </div></div>
+
+  <div class="steps">
+    <div><b>1 · Free call</b><p>20 minutes to agree on the scope.</p></div>
+    <div><b>2 · 50% invoice</b><p>Paying it books your spot.</p></div>
+    <div><b>3 · 50% on delivery</b><p>The rest when the work is done.</p></div>
+  </div>
+</div>
+</div>
