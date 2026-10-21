@@ -1,74 +1,63 @@
-# STEM-azing — New Website
+# STEM-azing — stem-azing.com
 
-A complete, custom-built 8-page site: Home, Biography, Portfolio, CV, Services & Pricing,
-Blog, Booking, and NeuroPenetrance — built as plain HTML/CSS/JS so it can be hosted for
-free on Netlify or GitHub Pages.
+Plain HTML/CSS/JS site, hosted for free on GitHub Pages (custom domain in `CNAME`).
+No build step: what is in this folder is what goes live.
 
-## Before you publish: 3 things to configure
+> **Pushing to `main` publishes the site.** Preview locally first.
 
-This site is fully built and functional, but three pieces need YOUR real account details
-plugged in — these can't be created on your behalf, since they involve your own payment
-and scheduling accounts.
+## Preview and checks
 
-### 1. Payment (invoice requests) — in `services.html`
-
-The "Request an invoice" buttons open a short dialog and then an email to
-`stemazing.advancement@gmail.com` (set in `INVOICE_EMAIL` near the bottom of `services.html`),
-pre-filled with the service, its starting rate and currency, and fields for the client's
-billing details. You then send the invoice yourself.
-
-Prices: search for `data-eur=` and `data-usd=` (and `data-deposit-eur` / `data-deposit-usd`)
-in `services.html` to edit every price.
-
-### 2. Booking (Calendly) — in `booking.html`
-
-Find this line:
-```html
-data-url="https://calendly.com/YOUR-CALENDLY-USERNAME/20min"
+```bash
+python3 -m http.server 8091      # then open http://127.0.0.1:8091/
+npm test                         # site checks (Node 22, no dependencies)
 ```
-Sign up free at calendly.com, create a "20 Minute Meeting" event type, and replace the
-URL with your real scheduling link.
 
-### 3. NeuroPenetrance demo link — in `neuropenetrance.html`
+`npm test` checks links, prices (EN and DE), the § 19 VAT note, legal pages, the
+NeuroPenetrance numbers, that German pages stay hidden, the sitemap, and that no page
+loads Google Fonts or Wix images.
 
-Find:
-```html
-src="https://neuropenetrance.streamlit.app"
-```
-Replace with your actual deployed Streamlit Cloud URL if it's different from this
-placeholder.
+## Structure
 
-## How to deploy (free)
+| File | Page |
+|---|---|
+| `index.html` | Home |
+| `services.html` | Services & prices, € / $ switch, invoice request |
+| `about.html` | About |
+| `writing.html` | Writing samples, publications, all blog posts |
+| `neuropenetrance.html` | NeuroPenetrance |
+| `booking.html` | Free 20-minute call (Calendly loads on click) |
+| `consulting-portfolio.html` | Research advisory, data science, sample deliverables |
+| `impressum.html`, `datenschutz.html` | Legal pages (German versions in `de/` are binding) |
+| `posts/*.html` | 16 blog posts (English only) |
+| `de/*.html` | German versions of the main pages |
+| `biography.html`, `portfolio.html`, `blog.html` | Redirects for old links |
 
-### Option A: Netlify (recommended — fastest)
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Drag this entire folder onto the page
-3. You'll get a live URL in seconds (e.g., `random-name-123.netlify.app`)
-4. To use your own domain name later: Site settings → Domain management → Add custom domain
+Shared parts: `css/site.css` (all styling), `nav.js` (menu and footer on every page),
+`js/site.js` (€ / $ switch, invoice dialog, sample filters, Calendly loader), photos in `img/`.
 
-### Option B: GitHub Pages (since you already have GitHub set up)
-1. Create a new repository (e.g., `stem-azing-website`) the same way you did for
-   `neuropenetrance_app`
-2. Add all these files to it via GitHub Desktop, commit, and push
-3. On GitHub.com, go to the repo's **Settings → Pages**
-4. Under "Source," select the `main` (or `master`) branch and click Save
-5. Your site will be live at `https://yourusername.github.io/stem-azing-website`
+## Editing prices
 
-## Adding new blog posts
+Prices live in `data-eur` / `data-usd` attributes in **both** `services.html` and
+`de/services.html` (and the short starting prices on `index.html` / `de/index.html`).
+Change both languages, then run `npm test` — it fails if either disagrees with the
+expected prices in `tools/prices.test.mjs`, so update that file too when a price changes.
 
-Open `blog.html` and find the `<div class="grid" id="blogGrid">` section. Each post is one
-`<a class="card">` block. To add a new post, copy an existing block and edit the title,
-date, excerpt, and link.
+STEM-azing is a Kleinunternehmerin business: every price area shows
+"No VAT is charged under § 19 UStG." / „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“
 
-## Files in this folder
+## Invoice requests
 
-- `index.html` — Home
-- `biography.html` — Biography
-- `portfolio.html` — Professional portfolio
-- `cv.html` — Full CV
-- `services.html` — Services, pricing, and payment
-- `booking.html` — 20-minute call booking
-- `neuropenetrance.html` — NeuroPenetrance project page + live demo
-- `blog.html` — Blog listing
-- `styles.css` — Shared design system
-- `nav.js` — Shared header/footer (edit once, updates every page)
+"Request an invoice" opens a dialog and then a pre-filled email to
+`stemazing.advancement@gmail.com` (set in `INVOICE_EMAIL` in `js/site.js`) with the
+service, starting rate, currency and the § 19 note. You send the invoice yourself.
+
+## German version (hidden)
+
+The German pages in `de/` are not linked from the site until a native speaker has
+reviewed them. To launch:
+
+1. Set `var DE_LIVE = true;` in `nav.js` (shows the EN | DE switch and German menus).
+2. Add `hreflang` alternates between each EN/DE pair and the `/de/` pages to `sitemap.xml`.
+3. Update the "German stays hidden" test in `tools/i18n.test.mjs` to the live variant.
+
+The German legal pages (`de/impressum.html`, `de/datenschutz.html`) are live already.
