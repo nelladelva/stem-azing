@@ -3,297 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services & Pricing — STEM-azing</title>
-<link rel="stylesheet" href="styles.css">
+<title>Services &amp; Prices — STEM-azing</title>
+<meta name="description" content="Six ways to work with Dr. Nella C. Delva: guest lectures, tutoring, scientific writing and editing, science communication, consulting and data analysis. Prices in EUR and USD.">
+<link rel="stylesheet" href="/css/site.css">
+<script src="/nav.js" defer></script>
+<script src="/js/site.js" defer></script>
 </head>
 <body data-page="services.html">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
 
-<header class="site" id="site-header"></header>
-
-<section class="hero" style="padding-bottom:10px;">
-  <div class="wrap">
-    <div class="eyebrow">Services & Pricing</div>
-    <h1>Six ways to work together.</h1>
-    <p class="lead">Every engagement below includes a short discovery call first, so scope and
-    price match what you actually need. Prices shown are starting rates — final quotes depend on
-    project scope and are confirmed before any booking.</p>
-    <div class="currency-toggle" style="margin-top:24px;">
-      <button class="active" id="btnEUR" onclick="setCurrency('EUR')">EUR €</button>
-      <button id="btnUSD" onclick="setCurrency('USD')">USD $</button>
+<main id="main">
+  <section class="wrap" style="padding-top:36px;padding-bottom:40px">
+    <p class="kicker">Services &amp; prices</p>
+    <h1>Six ways to <em>work together</em></h1>
+    <p class="lede">Pick what fits. Not sure? Book a free 20-minute call and we figure it out together.</p>
+    <nav class="jump" aria-label="Service groups">
+      <a href="#educators">For educators</a><a href="#writing">For writing</a><a href="#research">For research teams</a>
+    </nav>
+    <div class="currency" role="group" aria-label="Currency">
+      <button type="button" data-currency="EUR" aria-pressed="true">EUR €</button>
+      <button type="button" data-currency="USD" aria-pressed="false">USD $</button>
     </div>
+  </section>
+
+  <section class="section section--white" id="educators">
+    <div class="wrap">
+      <p class="kicker">For educators</p>
+      <h2>Teaching that reaches every student</h2>
+      <div class="grid-2">
+        <article class="card service" data-service="Guest lectures &amp; workshops">
+          <h3>Guest lectures &amp; workshops</h3>
+          <p>Dense science made clear for mixed audiences, in sessions of up to 90 minutes.</p>
+          <ul class="proof"><li>Adjunct teaching at Hillsborough Community College</li><li>A track record of explaining dense science to mixed audiences</li></ul>
+          <div class="service-foot">
+            <div><div class="price"><span class="amount" data-eur="350" data-usd="385">€350 <span class="unit">/ session</span></span></div><span class="price-note">Multi-session workshops quoted separately</span></div>
+            <div class="btn-row" style="margin-top:0">
+              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Guest lectures &amp; workshops">Request an invoice</button>
+              <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
+            </div>
+          </div>
+        </article>
+        <article class="card service" data-service="Tutoring &amp; mentorship">
+          <h3>Tutoring &amp; mentorship</h3>
+          <p>Sessions built around the student's real goals, not a fixed curriculum.</p>
+          <ul class="proof"><li>Adjunct teaching and research mentoring through Polygence</li><li>A first-generation path through a PhD and a Fulbright</li></ul>
+          <div class="service-foot">
+            <div><div class="price"><span class="amount" data-eur="100" data-usd="120">€100 <span class="unit">/ session</span></span></div><span class="price-note">or <span class="amount-project" data-eur="950" data-usd="1000">€950</span> for 10 sessions</span></div>
+            <div class="btn-row" style="margin-top:0">
+              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Tutoring &amp; mentorship">Request an invoice</button>
+              <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section " id="writing">
+    <div class="wrap">
+      <p class="kicker">For writing</p>
+      <h2>Words that experts trust and readers follow</h2>
+      <div class="grid-2">
+        <article class="card service" data-service="Scientific writing &amp; editing">
+          <h3>Scientific writing &amp; editing</h3>
+          <p class="also">Ghostwriting also offered</p>
+          <p>Manuscripts, grants and public science, clearer and more precise.</p>
+          <ul class="proof"><li>Co-author on peer-reviewed publications</li><li>An editor's precision with a researcher's fluency</li></ul>
+          <div class="service-foot">
+            <div><div class="price">from <span class="amount" data-eur="150" data-usd="165">€150 <span class="unit">/ 1,000 words</span></span></div><span class="price-note">language &amp; clarity edit · scientific edit <span class="amount-project" data-eur="220" data-usd="240">€220</span> / 1,000 words</span><span class="price-note">grants &amp; original writing from <span class="amount-project" data-eur="800" data-usd="880">€800</span></span></div>
+            <div class="btn-row" style="margin-top:0">
+              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Scientific writing &amp; editing">Request an invoice</button>
+              <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
+            </div>
+          </div>
+        </article>
+        <article class="card service" data-service="Science communication">
+          <h3>Science communication</h3>
+          <p>Blogs, talks and social posts that bring science to the public.</p>
+          <ul class="proof"><li>Runs the STEM-azing public science platform</li><li>A cross-cultural voice: Haiti, USA, Berlin</li></ul>
+          <div class="service-foot">
+            <div><div class="price"><span class="amount" data-eur="180" data-usd="198">€180 <span class="unit">/ piece</span></span></div><span class="price-note">Ongoing content packages available</span></div>
+            <div class="btn-row" style="margin-top:0">
+              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Science communication">Request an invoice</button>
+              <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--white" id="research">
+    <div class="wrap">
+      <p class="kicker">For research teams</p>
+      <h2>A scientist on your side</h2>
+      <div class="grid-2">
+        <article class="card service" data-service="Scientific consulting">
+          <h3>Scientific consulting</h3>
+          <p>An outside expert view that turns bench findings into clear next steps.</p>
+          <ul class="proof"><li>10+ years across oncology, neuroscience and molecular biology</li><li>Experience turning bench findings into strategic recommendations</li></ul>
+          <div class="service-foot">
+            <div><div class="price"><span class="amount" data-eur="95" data-usd="105">€95 <span class="unit">/ hr</span></span></div><span class="price-note">or from <span class="amount-project" data-eur="750" data-usd="820">€750</span> per project</span></div>
+            <div class="btn-row" style="margin-top:0">
+              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Scientific consulting">Request an invoice</button>
+              <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
+            </div>
+          </div>
+        </article>
+        <article class="card service" data-service="Research &amp; data analysis">
+          <h3>Research &amp; data analysis</h3>
+          <p>Study design, statistics and machine learning on real biological data.</p>
+          <ul class="proof"><li>Statistics (R, GraphPad) and machine learning (Python, scikit-learn)</li><li>Builds and validates classification models on biological data</li></ul>
+          <div class="service-foot">
+            <div><div class="price"><span class="amount" data-eur="90" data-usd="99">€90 <span class="unit">/ hr</span></span></div><span class="price-note">or from <span class="amount-project" data-eur="900" data-usd="985">€900</span> per project</span></div>
+            <div class="btn-row" style="margin-top:0">
+              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Research &amp; data analysis">Request an invoice</button>
+              <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p style="margin-top:20px"><a class="link-arrow" href="/consulting-portfolio.html">See a sample deliverable →</a></p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="vat-note">Starting prices; the final price is confirmed before booking. No VAT is charged under § 19 UStG.</p>
+  </section>
+
+  <section class="band--navy" style="margin-top:28px">
+    <div class="wrap steps">
+      <div><b>1 · Free call</b><p>20 minutes to agree on the scope.</p></div>
+      <div><b>2 · 50% invoice</b><p>Paying it books your spot.</p></div>
+      <div><b>3 · 50% on delivery</b><p>The rest when the work is done.</p></div>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="payModal">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
+    <h3 id="payModalTitle">Request an invoice</h3>
+    <p>You're requesting an invoice for <strong id="payModalService"></strong>.</p>
+    <p class="price-note" style="margin-top:14px">Starting rate</p>
+    <p class="amount" id="payModalAmount"></p>
+    <div class="btn-row">
+      <a id="invoiceLink" href="#" class="btn btn--accent">Request invoice by email →</a>
+      <button type="button" class="btn btn--outline" data-close-modal>Cancel</button>
+    </div>
+    <p class="vat-note">This opens an email to stemazing.advancement@gmail.com. Please add your billing name and address. The final amount is confirmed on the invoice. No VAT is charged under § 19 UStG.</p>
   </div>
-</section>
+</div>
 
-<section style="padding-top:10px;">
-  <div class="wrap">
-
-    <!-- 1. Consulting -->
-    <div class="card" style="margin-bottom:26px;">
-      <div class="two-col" style="align-items:flex-start;">
-        <div>
-          <img src="https://static.wixstatic.com/media/06c435_81a603d78b984375b307c08c4f85a1eb~mv2.jpg"
-               alt="" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:16px;">
-          <span class="badge">Consulting</span>
-          <h3 style="font-size:22px;">Scientific Consulting</h3>
-          <p style="margin-top:10px;">For organizations navigating a specific scientific challenge —
-          from pharmaceutical R&D teams to research institutes needing an outside expert perspective.</p>
-          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
-          <ul class="cv-list">
-            <li>10+ years across oncology, neuroscience, and molecular biology research</li>
-            <li>Experience translating bench findings into strategic recommendations</li>
-            <li>Direct experience with iPSC models, genomics, and biomarker discovery</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <div class="price-note">Hourly rate</div>
-          <div class="amount" data-eur="95" data-usd="105">€95<span class="unit">/hr</span></div>
-          <div class="price-note">or from <span class="amount-project" data-eur="750" data-usd="820">€750</span> per project scope</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Consulting" data-deposit-eur="375" data-deposit-usd="410" style="margin-top:16px;">Request an invoice</a>
-          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. Guest Lectures -->
-    <div class="card" style="margin-bottom:26px;">
-      <div class="two-col" style="align-items:flex-start;">
-        <div>
-          <img src="https://static.wixstatic.com/media/06c435_b73d728cf0f248e4a92a51ad3c2118fc~mv2.jpg"
-               alt="" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:16px;">
-          <span class="badge">Speaking</span>
-          <h3 style="font-size:22px;">Guest Lectures & Workshops</h3>
-          <p style="margin-top:10px;">Fresh perspectives on cell and molecular biology, neuroscience
-          and behavior, and cross-cultural scientific collaboration — for classrooms, conferences,
-          and internal training sessions.</p>
-          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
-          <ul class="cv-list">
-            <li>Adjunct teaching experience (Hillsborough Community College)</li>
-            <li>A track record of translating dense science for mixed audiences</li>
-            <li>First-hand experience navigating STEM across three countries</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <div class="price-note">Per session (up to 90 min)</div>
-          <div class="amount" data-eur="350" data-usd="385">€350</div>
-          <div class="price-note">Multi-session workshops quoted separately</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Guest Lecture / Workshop" data-deposit-eur="175" data-deposit-usd="193" style="margin-top:16px;">Request an invoice</a>
-          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3. Research & Data Analysis -->
-    <div class="card" style="margin-bottom:26px;">
-      <div class="two-col" style="align-items:flex-start;">
-        <div>
-          <img src="https://static.wixstatic.com/media/06c435_4a4b247096664cf6a75ba494c148c107~mv2.jpg"
-               alt="" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:16px;">
-          <span class="badge">Data Science</span>
-          <h3 style="font-size:22px;">Research & Data Analysis</h3>
-          <p style="margin-top:10px;">Study design, data analysis, and results interpretation —
-          particularly in neuroscience, biomedical sciences, and biomarker discovery. Includes
-          machine learning pipelines when a project calls for it.</p>
-          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
-          <ul class="cv-list">
-            <li>Statistical analysis (R, GraphPad) and applied machine learning (Python, scikit-learn)</li>
-            <li>Experience building and validating classification models on real biological data</li>
-            <li>A bench scientist's eye for what the data actually means</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <div class="price-note">Hourly rate</div>
-          <div class="amount" data-eur="90" data-usd="99">€90<span class="unit">/hr</span></div>
-          <div class="price-note">or from <span class="amount-project" data-eur="900" data-usd="985">€900</span> per project scope</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Research & Data Analysis" data-deposit-eur="450" data-deposit-usd="493" style="margin-top:16px;">Request an invoice</a>
-          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. Scientific Writing -->
-    <div class="card" style="margin-bottom:26px;">
-      <div class="two-col" style="align-items:flex-start;">
-        <div>
-          <img src="https://static.wixstatic.com/media/06c435_e69edcec72cc413d884e888599065b80~mv2.jpg"
-               alt="" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:16px;">
-          <span class="badge">Writing</span>
-          <h3 style="font-size:22px;">Scientific Writing & Editing</h3>
-          <p style="margin-top:4px; font-weight:600; color:var(--teal);">Ghostwriting also offered</p>
-          <p style="margin-top:10px;">Advanced science writing and editing that improves a draft by
-          correcting errors and making words and sentences clearer, more precise, and more effective
-          — for manuscripts, grant narratives, and public-facing science content.</p>
-          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
-          <ul class="cv-list">
-            <li>Co-authorship on multiple peer-reviewed publications</li>
-            <li>Experience writing for both expert and general audiences</li>
-            <li>An editor's precision paired with a researcher's domain fluency</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <div class="price-note">Per 1,000 words (editing)</div>
-          <div class="amount" data-eur="120" data-usd="132">€120</div>
-          <div class="price-note">Original writing quoted per project</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Scientific Writing & Editing" data-deposit-eur="60" data-deposit-usd="66" style="margin-top:16px;">Request an invoice</a>
-          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5. Science Communication -->
-    <div class="card" style="margin-bottom:10px;">
-      <div class="two-col" style="align-items:flex-start;">
-        <div>
-          <img src="https://static.wixstatic.com/media/06c435_eb9df26cb4ab4a67811ff221e85a316b~mv2.jpg"
-               alt="" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:16px;">
-          <span class="badge">Communication</span>
-          <h3 style="font-size:22px;">Science Communication</h3>
-          <p style="margin-top:10px;">Using experience and storytelling to engage the public,
-          increase awareness of scientific issues, and promote science education — through blogs,
-          public speaking, and social media content.</p>
-          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
-          <ul class="cv-list">
-            <li>An established public science platform (STEM-azing)</li>
-            <li>A genuine cross-cultural, cross-continental perspective</li>
-            <li>Experience mentoring students through Polygence and beyond</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <div class="price-note">Per piece (article / post)</div>
-          <div class="amount" data-eur="180" data-usd="198">€180</div>
-          <div class="price-note">Ongoing content packages available</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Science Communication" data-deposit-eur="90" data-deposit-usd="99" style="margin-top:16px;">Request an invoice</a>
-          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6. Tutoring & Mentorship -->
-    <div class="card" style="margin-bottom:10px;">
-      <div class="two-col" style="align-items:flex-start;">
-        <div>
-          <img src="/img/tutoring-mentorship.jpg" alt="Dr. Delva mentoring a student during a lab dissection"
-               style="width:100%; max-width:220px; border-radius:12px; margin-bottom:16px;">
-          <span class="badge">Mentoring</span>
-          <h3 style="font-size:22px;">Tutoring & Mentorship</h3>
-          <p style="margin-top:10px;">One-on-one academic coaching for students and early-career
-          researchers — breaking down difficult STEM concepts, and building a realistic path
-          toward research opportunities, fellowships, or graduate programs.</p>
-          <p style="margin-top:12px; font-weight:600; color:var(--ink);">What I bring to the table:</p>
-          <ul class="cv-list">
-            <li>Adjunct teaching experience (Hillsborough Community College) and research mentoring through Polygence</li>
-            <li>Firsthand experience navigating a PhD and Fulbright as a first-generation immigrant</li>
-            <li>Sessions built around a student's actual goals — not a fixed curriculum</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <div class="price-note">Per session</div>
-          <div class="amount" data-eur="100" data-usd="120">€100<span class="unit">/session</span></div>
-          <div class="price-note">or <span class="amount-project" data-eur="950" data-usd="1000">€950</span> for a 10-session package</div>
-          <a href="#" class="btn btn-primary btn-block pay-btn" data-service="Tutoring & Mentorship" data-deposit-eur="475" data-deposit-usd="500" style="margin-top:16px;">Request an invoice</a>
-          <a href="booking.html" class="btn btn-outline btn-block" style="margin-top:10px;">Discuss scope first</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section-alt">
-  <div class="wrap">
-    <div class="section-label">How Payment Works</div>
-    <h2 class="section-title">Simple, upfront, and in your currency</h2>
-    <div class="grid grid-3" style="margin-top:30px;">
-      <div class="card">
-        <div class="card-icon">1</div>
-        <h3>Discuss scope</h3>
-        <p>Every project starts with a short call to confirm scope, timeline, and final price.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">2</div>
-        <h3>Invoice for 50% to book</h3>
-          <p>A 50% deposit secures your slot. You receive an invoice in EUR or USD by email.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">3</div>
-        <h3>Remaining 50% on delivery</h3>
-        <p>The balance is invoiced when the work is delivered and reviewed.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Invoice request modal ── -->
-  <div id="payModal" style="display:none; position:fixed; inset:0; background:rgba(20,33,61,0.55); z-index:100; align-items:center; justify-content:center; padding:20px;">
-    <div style="background:var(--white); border-radius:18px; padding:36px; max-width:440px; width:100%;" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
-      <h3 id="payModalTitle" style="font-size:20px; margin-bottom:8px;">Request an invoice</h3>
-      <p style="font-size:14px; color:var(--ink-70); margin-bottom:20px;">You're requesting an invoice
-        for <strong id="payModalService"></strong>.</p>
-      <div style="background:var(--paper-alt); border-radius:12px; padding:18px; margin-bottom:20px;">
-        <div style="font-size:13px; color:var(--ink-70);">Starting rate</div>
-        <div class="amount" id="payModalAmount" style="margin:4px 0 0;"></div>
-      </div>
-      <a id="invoiceLink" href="#" class="btn btn-gold btn-block">Request invoice by email →</a>
-      <button onclick="closePayModal()" class="btn btn-outline btn-block" style="margin-top:10px;">Cancel</button>
-      <p style="font-size:11.5px; color:var(--ink-70); margin-top:16px;">
-        This opens an email to stemazing.advancement@gmail.com. Please add your billing name, address and,
-        for organizations, VAT ID. The final amount is confirmed on the invoice.
-      </p>
-    </div>
-  </div>
-
-  <footer class="site" id="site-footer"></footer>
-<script src="nav.js"></script>
-<script>
-  // ── Currency toggle ──
-  // NOTE: these EUR/USD figures are illustrative starting rates only —
-  // update data-eur / data-usd attributes above with your real prices.
-  let currentCurrency = 'EUR';
-
-  function setCurrency(cur){
-    currentCurrency = cur;
-    document.getElementById('btnEUR').classList.toggle('active', cur === 'EUR');
-    document.getElementById('btnUSD').classList.toggle('active', cur === 'USD');
-
-    document.querySelectorAll('.amount').forEach(el => {
-      const val = el.getAttribute(cur === 'EUR' ? 'data-eur' : 'data-usd');
-      if (!val) return;
-      const unit = el.querySelector('.unit');
-      const symbol = cur === 'EUR' ? '€' : '$';
-      el.innerHTML = symbol + val + (unit ? unit.outerHTML : '');
-    });
-    document.querySelectorAll('.amount-project').forEach(el => {
-      const val = el.getAttribute(cur === 'EUR' ? 'data-eur' : 'data-usd');
-      const symbol = cur === 'EUR' ? '€' : '$';
-      el.textContent = symbol + val;
-    });
-  }
-
-  // ── Invoice request modal ──
-  const INVOICE_EMAIL = "stemazing.advancement@gmail.com";
-
-  document.querySelectorAll('.pay-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const service = btn.getAttribute('data-service');
-      const priceEl = btn.closest('.price-card').querySelector('.amount');
-      const unit = priceEl.querySelector('.unit');
-      const amount = priceEl.getAttribute(currentCurrency === 'EUR' ? 'data-eur' : 'data-usd')
-        + (unit ? unit.textContent : '');
-      const symbol = currentCurrency === 'EUR' ? '€' : '$';
-
-      document.getElementById('payModalService').textContent = service;
-      document.getElementById('payModalAmount').textContent = symbol + amount;
-      const subject = `Invoice request: ${service}`;
-      const body = `Hello Dr. Delva,\n\nPlease send me an invoice for ${service} (starting rate ${symbol}${amount}, ${currentCurrency}).\n\nBilling name:\nBilling address:\nVAT ID (organizations):\nShort project description:\n\nThank you!`;
-      document.getElementById('invoiceLink').href =
-        `mailto:${INVOICE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      document.getElementById('payModal').style.display = 'flex';
-    });
-  });
-
-  function closePayModal(){
-    document.getElementById('payModal').style.display = 'none';
-  }
-</script>
+<footer id="site-footer"></footer>
 </body>
 </html>

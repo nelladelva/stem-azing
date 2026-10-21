@@ -1,6 +1,38 @@
 // STEM-azing — shared page behaviour, wired by data attributes:
 //   [data-currency="EUR|USD"]  € / $ switch for .amount and .amount-project
 //   [data-filter-group]        filter chips (.chip[data-filter]) over [data-tags] items
+//   .pay-btn[data-service]     invoice-request dialog (#payModal) → pre-filled email
+
+var INVOICE_EMAIL = "stemazing.advancement@gmail.com";
+
+var INVOICE_TEXT = {
+  en: {
+    subject: "Invoice request: ",
+    body: function (o) {
+      return "Hello Dr. Delva,\n\nPlease send me an invoice for " + o.service + " (starting rate " + o.symbol + o.amount + ", " + o.currency + ").\n\n" +
+        "Billing name:\nBilling address:\nShort project description:\n\nThank you!\n\n(No VAT is charged under § 19 UStG.)";
+    }
+  },
+  de: {
+    subject: "Rechnungsanfrage: ",
+    body: function (o) {
+      return "Guten Tag Frau Dr. Delva,\n\nbitte senden Sie mir eine Rechnung für " + o.service + " (Startpreis " + o.symbol + o.amount + ", " + o.currency + ").\n\n" +
+        "Rechnungsname:\nRechnungsadresse:\nKurze Projektbeschreibung:\n\nVielen Dank!\n\n(Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.)";
+    }
+  }
+};
+
+// { service, symbol, amount, currency, lang } → { subject, href }
+function buildInvoiceMail(o) {
+  var t = INVOICE_TEXT[o.lang] || INVOICE_TEXT.en;
+  var subject = t.subject + o.service;
+  return {
+    subject: subject,
+    href: "mailto:" + INVOICE_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(t.body(o))
+  };
+}
+
+if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInvoiceMail };
 (function () {
   "use strict";
   if (typeof document === "undefined") return;
@@ -49,4 +81,28 @@
       });
     });
   });
+  // ── Invoice request dialog ──
+  var modal = document.getElementById("payModal");
+  function closeModal() { if (modal) modal.classList.remove("is-open"); }
+  document.querySelectorAll(".pay-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (!modal) return;
+      var card = btn.closest(".service");
+      var priceEl = card.querySelector(".amount");
+      var unit = priceEl.querySelector(".unit");
+      var symbol = currency === "EUR" ? "€" : "$";
+      var amount = priceEl.getAttribute(currency === "EUR" ? "data-eur" : "data-usd") + (unit ? unit.textContent.trim().replace(/^\/\s*/, "/") : "");
+      var service = btn.getAttribute("data-service");
+      var lang = btn.getAttribute("data-lang") || document.documentElement.lang || "en";
+      var mail = buildInvoiceMail({ service: service, symbol: symbol, amount: amount, currency: currency, lang: lang });
+      document.getElementById("payModalService").textContent = service;
+      document.getElementById("payModalAmount").textContent = symbol + amount;
+      document.getElementById("invoiceLink").href = mail.href;
+      modal.classList.add("is-open");
+      document.getElementById("invoiceLink").focus();
+    });
+  });
+  document.querySelectorAll("[data-close-modal]").forEach(function (b) { b.addEventListener("click", closeModal); });
+  if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
 })();

@@ -59,3 +59,17 @@ export function wordCount(html) {
   const t = text(m ? m[1] : html);
   return t ? t.split(' ').length : 0;
 }
+
+// Service cards: <article class="card service" data-service="Name"> … .amount[data-eur][data-usd] …
+// Returns { Name: { eur, usd, all: [[eur, usd], …], html } } — eur/usd from the first .amount.
+export function parsePrices(html) {
+  const out = {};
+  for (const m of html.matchAll(/<article\b[^>]*class="[^"]*\bservice\b[^"]*"[^>]*data-service="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)) {
+    const name = m[1].replace(/&amp;/g, '&');
+    const body = m[2];
+    const pairs = [...body.matchAll(/data-eur="([^"]+)"\s+data-usd="([^"]+)"/g)].map(p => [p[1], p[2]]);
+    const first = body.match(/class="amount"[^>]*data-eur="([^"]+)"\s+data-usd="([^"]+)"/);
+    out[name] = { eur: first?.[1], usd: first?.[2], all: pairs, html: body };
+  }
+  return out;
+}
