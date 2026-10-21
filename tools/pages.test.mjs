@@ -29,3 +29,12 @@ test('about', () => {
   assert.ok(!t.includes('where I grew up'));
   assert.ok(wordCount(h) <= 380, `words: ${wordCount(h)}`);
 });
+
+test('consulting portfolio', () => {
+  const h = read('consulting-portfolio.html'), t = text(h);
+  for (const id of ['case-study-1', 'case-study-2']) assert.ok(h.includes(`id="${id}"`), id);
+  has(t, ['Le Wagon', 'Python', 'SQL', 'Starter', 'Standard', 'Advanced', 'Grant']);
+  assert.ok(h.includes('href="/services.html#research"') && h.includes('href="/booking.html"'));
+  assert.ok(h.includes('/css/site.css'));
+  if (t.includes('NeuroPenetrance')) assert.ok(t.includes('779') && t.includes('0.61'), 'NeuroPenetrance facts');
+});
