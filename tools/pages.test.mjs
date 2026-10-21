@@ -58,3 +58,19 @@ test('writing', () => {
 test('home links to the writing page', () => {
   assert.ok(read('index.html').includes('href="/writing.html"'));
 });
+
+test('neuropenetrance', () => {
+  const h = read('neuropenetrance.html'), t = text(h);
+  has(t, ['six-gene', '779', '0.61', '8 of 8', 'in development', 'research use', 'Try the PenetranSci demo']);
+  assert.ok(h.includes('href="https://neuropenetrance.com'), 'link to neuropenetrance.com');
+  assert.ok(/<a [^>]*href="https:\/\/neuropenetrance\.streamlit\.app\/?"[^>]*target="_blank"[^>]*>\s*Try the PenetranSci demo/.test(h), 'demo button');
+  assert.ok(!/<iframe/i.test(h), 'no iframe');
+});
+
+test('booking', () => {
+  const h = read('booking.html'), t = text(h);
+  assert.ok(![...h.matchAll(/<script\b[^>]*>/g)].some(m => /calendly/i.test(m[0])), 'no Calendly script in static HTML');
+  assert.ok(h.includes('data-url="https://calendly.com/nella-delva/new-meeting-2"'));
+  assert.ok(h.includes('href="https://calendly.com/nella-delva/new-meeting-2"'));
+  has(t, ['20 minutes, free', 'stemazing.advancement@gmail.com']);
+});

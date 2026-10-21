@@ -4,125 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NeuroPenetrance — STEM-azing</title>
-<link rel="stylesheet" href="styles.css">
+<meta name="description" content="NeuroPenetrance reads the immune biology of depression from a routine blood sample: a six-gene whole-blood RNA signature tested on 8 public studies (779 people).">
+<link rel="stylesheet" href="/css/site.css">
+<script src="/nav.js" defer></script>
+<script src="/js/site.js" defer></script>
 </head>
 <body data-page="neuropenetrance.html">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
 
-<header class="site" id="site-header"></header>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Featured Project</div>
-    <h1>Neuro<em>Penetrance</em></h1>
-    <p class="lead">Reading the immune biology of depression from a routine blood sample. NeuroPenetrance
-    measures the activity (RNA) of six immune genes in whole blood and turns it into an interpretable
-    profile for every patient, to help find which patients carry the biology a treatment targets.</p>
-    <div class="hero-cta-row">
-      <a href="#demo" class="btn btn-gold">Try the live app ↓</a>
-      <a href="https://neuropenetrance.com" target="_blank" rel="noopener" class="btn btn-outline">Visit neuropenetrance.com ↗</a>
+<main id="main">
+  <section class="wrap" style="padding-top:36px;padding-bottom:44px">
+    <p class="kicker">My venture</p>
+    <h1>NeuroPenetrance: reading the immune biology of depression from a <em>blood sample</em></h1>
+    <p class="lede">NeuroPenetrance measures the activity (RNA) of six immune genes in whole blood and turns it into an interpretable profile for every patient, to help find which patients carry the biology a treatment targets.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="https://neuropenetrance.streamlit.app" target="_blank" rel="noopener">Try the PenetranSci demo ↗</a>
+      <a class="btn btn--outline" href="https://neuropenetrance.com" target="_blank" rel="noopener">Visit neuropenetrance.com ↗</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-alt">
-  <div class="wrap">
-    <div class="section-label">The Problem</div>
-    <h2 class="section-title">Depression is not one disease, but it is still treated as one</h2>
-    <p class="section-sub" style="max-width:760px;">Depression is diagnosed and treated almost entirely
-    by interview and trial and error; there is no blood test. Yet about one patient in four shows
-    low-grade inflammation in the blood, and early studies suggest this group responds differently to
-    treatment. When a drug trial cannot find these patients, a medicine that helps some can look useless
-    for all. The same idea runs through genetics: carrying a risk is not the same as becoming ill, a
-    gap called incomplete penetrance, which gives the company its name.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-label">The Approach</div>
-    <h2 class="section-title">A blood test first, a laboratory engine next</h2>
-    <div class="grid grid-2" style="margin-top:32px;">
-      <div class="card">
-        <div class="card-icon">▦</div>
-        <h3>Engine 2 — Blood immune signature (available now)</h3>
-        <p>Six immune genes measured in whole-blood RNA: three inflammation genes that rise in
-        depression and three lymphocyte genes that fall. The score is simply one group minus the other,
-        with no black box, and the PenetranSci app turns it into a calibrated probability with a 95%
-        range, a PDF report and batch analysis for whole studies. It works on samples clinics and
-        trials already store.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">◆</div>
-        <h3>Engine 1 — Patient-derived neurons (in development)</h3>
-        <p>The deeper question, why the same genetic risk leads to illness in one person and
-        resilience in another, needs a more direct tissue. Engine 1 grows a person's own cells into
-        neurons from stem cells and measures what their biology does, building on my Fulbright work
-        at the Max Delbrück Center in Berlin.</p>
+  <section class="section section--white">
+    <div class="wrap">
+      <p class="kicker">The problem</p>
+      <h2>Depression is not one disease, but it is still treated as one</h2>
+      <div class="prose" style="margin:0;max-width:760px">
+        <p>Depression is diagnosed and treated almost entirely by interview and trial and error; there is no blood test. Yet about one patient in four shows low-grade inflammation in the blood, and early studies suggest this group responds differently to treatment. When a drug trial cannot find these patients, a medicine that helps some can look useless for all.</p>
+        <p>The same idea runs through genetics: carrying a risk is not the same as becoming ill, a gap called incomplete penetrance, which gives the company its name.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-alt">
-  <div class="wrap">
-    <div class="section-label">The Evidence</div>
-    <h2 class="section-title">Tested on studies it had never seen, and reported honestly</h2>
-    <div class="grid grid-3" style="margin-top:30px;">
-      <div class="card"><h3>779 people</h3><p>8 public whole-blood RNA studies of depression and healthy
-      controls, from different labs and technologies.</p></div>
-      <div class="card"><h3>AUC 0.61</h3><p>Built on one study, then tested unchanged on 7 others
-      (0.50 = chance, 1.00 = perfect). Modest, about as good as a standard blood count, and we say so.</p></div>
-      <div class="card"><h3>8 of 8</h3><p>Studies in which the signature beat chance. The signal is real,
-      reproducible and fully explainable, gene by gene.</p></div>
-    </div>
-    <p style="margin-top:22px; max-width:760px; color:var(--ink-70);">PenetranSci is for research use
-    only; it is not a diagnostic test. The full results, including what didn't work, are on the
-    <a href="https://neuropenetrance.com/evidence.html" target="_blank" rel="noopener" style="color:var(--gold-deep); font-weight:600;">NeuroPenetrance evidence page</a>.</p>
-  </div>
-</section>
-
-<section id="demo">
-  <div class="wrap">
-    <div class="section-label">Live App</div>
-    <h2 class="section-title">See PenetranSci in action</h2>
-    <p class="section-sub">A real, working application, not a mock-up: patient intake with quality
-    warnings, the six-gene panel, a report with a calibrated probability, a gene reference and batch
-    analysis. Patient data is processed only in your session and never stored on the server.</p>
-
-    <div class="card" style="margin-top:30px; padding:0; overflow:hidden;">
-      <!-- If the embed doesn't render (iframe/cookie restrictions), the button below is the fallback. -->
-      <iframe
-        src="https://neuropenetrance.streamlit.app/?embed=true"
-        title="PenetranSci app"
-        style="width:100%; height:820px; border:none; display:block;"
-        loading="lazy">
-      </iframe>
-    </div>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://neuropenetrance.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary">
-        Open the app in a new tab →
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="callout">
-      <div class="section-label">What's Next</div>
-      <h2>Which patients carry the inflammatory form, and do they respond differently?</h2>
-      <p style="max-width:640px; margin-top:14px;">Across all eight studies, about one patient in five
-      carries the same inflammation pattern. The next steps are checking it against measured CRP, working
-      with biotech companies and research groups on their own samples and trial data, and preparing the
-      first Engine 1 proof of concept.</p>
-      <div style="margin-top:26px;">
-        <a href="https://neuropenetrance.com/partners.html" target="_blank" rel="noopener" class="btn btn-gold">Partner with NeuroPenetrance ↗</a>
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">The approach</p>
+      <h2>A blood test first, a laboratory engine next</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Engine 2: blood immune signature (available now)</h3>
+          <p>Six immune genes measured in whole-blood RNA: three inflammation genes that rise in depression and three lymphocyte genes that fall. The score is simply one group minus the other, with no black box. The PenetranSci app turns it into a calibrated probability with a 95% range, a PDF report and batch analysis for whole studies. It works on samples clinics and trials already store.</p>
+        </div>
+        <div class="card">
+          <h3>Engine 1: patient-derived neurons (in development)</h3>
+          <p>Why does the same genetic risk lead to illness in one person and resilience in another? Engine 1 grows a person's own cells into neurons from stem cells and measures what their biology does, building on my Fulbright work at the Max Delbrück Center in Berlin.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="site" id="site-footer"></footer>
-<script src="nav.js"></script>
+  <section class="band--navy">
+    <div class="wrap" style="padding-top:44px;padding-bottom:44px">
+      <p class="kicker">The evidence</p>
+      <h2>Tested on studies it had never seen, and reported honestly</h2>
+      <div class="why" style="padding-top:8px;padding-bottom:8px">
+        <div><b>779 people</b><p>8 public whole-blood RNA studies of depression and healthy controls, from different labs and technologies.</p></div>
+        <div><b>AUC 0.61</b><p>The six-gene signature was built on one study, then tested unchanged on 7 others (0.50 = chance, 1.00 = perfect). Modest, about as good as a standard blood count, and we say so.</p></div>
+        <div><b>8 of 8</b><p>Studies in which the signature beat chance. The signal is real, reproducible and explainable gene by gene.</p></div>
+      </div>
+      <p style="opacity:.9;font-size:14px;margin-top:14px">PenetranSci is for research use only; it is not a diagnostic test. The full results, including what didn't work, are on the <a href="https://neuropenetrance.com/evidence.html" style="color:var(--peach)">NeuroPenetrance evidence page</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="wrap">
+      <p class="kicker">Live app</p>
+      <h2>See PenetranSci in action</h2>
+      <p style="max-width:680px;color:var(--muted)">A real, working application: patient intake with quality warnings, the six-gene panel, a report with a calibrated probability, a gene reference and batch analysis. Patient data is processed only in your session and never stored on the server.</p>
+      <div class="btn-row"><a class="btn btn--primary" href="https://neuropenetrance.streamlit.app" target="_blank" rel="noopener">Try the PenetranSci demo ↗</a></div>
+    </div>
+  </section>
+
+  <section class="band--peach">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">What's next</p>
+        <h2>Which patients carry the inflammatory form, and do they respond differently?</h2>
+        <p>Across all eight studies, about one patient in five carries the same inflammation pattern. Next: checking it against measured CRP, working with biotech companies and research groups on their own samples and trial data, and preparing the first Engine 1 proof of concept.</p>
+      </div>
+      <a class="btn btn--primary" href="https://neuropenetrance.com/partners.html" target="_blank" rel="noopener">Partner with NeuroPenetrance ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
 </body>
 </html>

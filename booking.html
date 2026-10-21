@@ -3,72 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Call — STEM-azing</title>
-<link rel="stylesheet" href="styles.css">
+<title>Book a free call — STEM-azing</title>
+<meta name="description" content="Book a free 20-minute call with Dr. Nella C. Delva to talk about your lecture, writing, tutoring or research project.">
+<link rel="stylesheet" href="/css/site.css">
+<script src="/nav.js" defer></script>
+<script src="/js/site.js" defer></script>
 </head>
 <body data-page="booking.html">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
 
-<header class="site" id="site-header"></header>
+<main id="main">
+  <section class="wrap" style="padding-top:36px;padding-bottom:36px">
+    <p class="kicker">Book a call · 20 minutes, free</p>
+    <h1>Let's talk about your <em>project</em></h1>
+    <p class="lede">A free 20-minute call to understand what you need: a lecture, a manuscript, tutoring, a data project or something in between. No obligation, no pressure.</p>
+  </section>
 
-<section class="hero" style="padding-bottom:20px;">
-  <div class="wrap">
-    <div class="eyebrow">Book a Call</div>
-    <h1>Let's talk about your project.</h1>
-    <p class="lead">A free 20-minute call to understand what you need — whether that's a research
-    consultation, a workshop, a data analysis project, or something in between. No obligation, no
-    pressure.</p>
-  </div>
-</section>
-
-<section style="padding-top:10px;">
-  <div class="wrap two-col">
-    <div>
-      <div class="card">
-        <span class="badge">20 minutes · Free</span>
-        <h3 style="margin-bottom:14px;">Schedule below</h3>
-
-        <!-- Calendly scheduling widget — connected to nella-delva's Calendly account -->
-        <div class="calendly-inline-widget"
-             data-url="https://calendly.com/nella-delva/new-meeting-2"
-             style="min-width:280px; height:650px; border-radius:12px; overflow:hidden; border:1px solid var(--line);">
-        </div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-        <p style="font-size:12px; color:var(--ink-70); margin-top:16px;">
-          Pick any time that works for you — this connects directly to my live calendar.
-        </p>
-      </div>
-    </div>
-
-    <div>
-      <h2 class="section-title" style="font-size:24px;">What to expect</h2>
-      <div style="margin-top:22px;">
-        <div style="margin-bottom:20px;">
-          <div style="font-weight:600; color:var(--ink);">Come with a rough idea</div>
-          <p style="font-size:14.5px; color:var(--ink-70); margin-top:4px;">A specific question,
-          a dataset you're stuck on, or a topic you'd like covered — doesn't need to be fully
-          formed.</p>
-        </div>
-        <div style="margin-bottom:20px;">
-          <div style="font-weight:600; color:var(--ink);">We'll scope it together</div>
-          <p style="font-size:14.5px; color:var(--ink-70); margin-top:4px;">By the end of the
-          call, you'll know whether it's a fit, roughly what it costs, and next steps.</p>
-        </div>
-        <div style="margin-bottom:20px;">
-          <div style="font-weight:600; color:var(--ink);">No pressure to book</div>
-          <p style="font-size:14.5px; color:var(--ink-70); margin-top:4px;">This call is free.
-          You only pay if and when we agree to move forward together.</p>
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="calendly-slot" data-url="https://calendly.com/nella-delva/new-meeting-2">
+        <h2 style="margin-top:0">Pick a time</h2>
+        <p style="color:var(--muted);max-width:560px;margin:0 auto">The calendar is provided by Calendly. It loads only when you ask for it, and Calendly may then set cookies (see <a href="/datenschutz.html">Privacy</a>).</p>
+        <div class="btn-row" style="justify-content:center">
+          <button type="button" class="btn btn--accent" data-calendly-load>Show calendar</button>
+          <a class="btn btn--outline" href="https://calendly.com/nella-delva/new-meeting-2" target="_blank" rel="noopener">Open Calendly in a new tab ↗</a>
         </div>
       </div>
-      <hr class="divider">
-      <p style="font-size:14px; color:var(--ink-70);">Prefer email?
-        <a href="mailto:stemazing.advancement@gmail.com" style="color:var(--gold-deep); font-weight:600;">stemazing.advancement@gmail.com</a>
-      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="site" id="site-footer"></footer>
-<script src="nav.js"></script>
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">What to expect</p>
+      <h2>Simple and friendly</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Come with a rough idea</h3><p>A question, a dataset you're stuck on or a topic you'd like covered. It doesn't need to be fully formed.</p></div>
+        <div class="card"><h3>We scope it together</h3><p>By the end of the call you'll know whether it's a fit, roughly what it costs and the next steps.</p></div>
+        <div class="card"><h3>No pressure to book</h3><p>The call is free. You only pay if and when we agree to work together.</p></div>
+      </div>
+      <p style="margin-top:24px">Prefer email? <a href="mailto:stemazing.advancement@gmail.com">stemazing.advancement@gmail.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
 </body>
 </html>

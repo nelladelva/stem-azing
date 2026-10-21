@@ -2,6 +2,7 @@
 //   [data-currency="EUR|USD"]  € / $ switch for .amount and .amount-project
 //   [data-filter-group]        filter chips (.chip[data-filter]) over [data-tags] items
 //   .pay-btn[data-service]     invoice-request dialog (#payModal) → pre-filled email
+//   [data-calendly-load]       loads the Calendly widget into .calendly-slot[data-url] on click
 
 var INVOICE_EMAIL = "stemazing.advancement@gmail.com";
 
@@ -105,4 +106,20 @@ if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInv
   document.querySelectorAll("[data-close-modal]").forEach(function (b) { b.addEventListener("click", closeModal); });
   if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+  // ── Calendly, loaded only after a click ──
+  document.querySelectorAll("[data-calendly-load]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var slot = btn.closest(".calendly-slot");
+      if (!slot || slot.querySelector(".calendly-inline-widget")) return;
+      var w = document.createElement("div");
+      w.className = "calendly-inline-widget";
+      w.setAttribute("data-url", slot.getAttribute("data-url"));
+      slot.appendChild(w);
+      var sc = document.createElement("script");
+      sc.src = "https://assets.calendly.com/assets/external/widget.js";
+      sc.async = true;
+      document.body.appendChild(sc);
+      btn.disabled = true;
+    });
+  });
 })();
