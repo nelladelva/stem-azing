@@ -12,11 +12,10 @@ and scheduling accounts.
 
 ### 1. Payment (invoice requests) — in `services.html`
 
-The "Request deposit invoice" buttons open a short dialog and then an email to
+The "Request an invoice" buttons open a short dialog and then an email to
 `stemazing.advancement@gmail.com` (set in `INVOICE_EMAIL` near the bottom of `services.html`),
-pre-filled with the service, the 50% deposit amount and currency, and fields for the client's
-billing details. You then send the invoice yourself. Ghostwriting uses "Request a quote"
-(booking page) instead, because it is priced per word.
+pre-filled with the service, its starting rate and currency, and fields for the client's
+billing details. You then send the invoice yourself.
 
 Prices: search for `data-eur=` and `data-usd=` (and `data-deposit-eur` / `data-deposit-usd`)
 in `services.html` to edit every price.
