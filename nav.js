@@ -1,81 +1,153 @@
 // ============================================================
 // STEM-azing — shared header/footer injector
-// Keeps the nav and footer in one place across every page.
+// Keeps the menu and footer in one place across every page
+// (main pages, /posts/ and /de/). All links are root-absolute.
 // ============================================================
 
-const NAV_LINKS = [
-  { href: "index.html", label: "Home" },
-  { href: "biography.html", label: "Biography" },
-  { href: "portfolio.html", label: "Advising" },
-  { href: "services.html", label: "Services & Pricing" },
-  { href: "blog.html", label: "Scientific Writing & Editing" },
-  { href: "neuropenetrance.html", label: "NeuroPenetrance" },
-];
+// German pages exist under /de/ but stay hidden until a native speaker
+// has reviewed them. Set to true to show the EN | DE switch.
+var DE_LIVE = false;
 
-function renderHeader(activePage){
-  const nav = NAV_LINKS.map(l =>
-    `<a href="${l.href}" class="${activePage === l.href ? 'active' : ''}">${l.label}</a>`
-  ).join('');
+var NAV = {
+  en: [
+    { href: "/", label: "Home" },
+    { href: "/services.html", label: "Services" },
+    { href: "/about.html", label: "About" },
+    { href: "/neuropenetrance.html", label: "NeuroPenetrance" },
+    { href: "/writing.html", label: "Writing" }
+  ],
+  de: [
+    { href: "/de/", label: "Start" },
+    { href: "/de/services.html", label: "Leistungen" },
+    { href: "/de/about.html", label: "Über mich" },
+    { href: "/de/neuropenetrance.html", label: "NeuroPenetrance" },
+    { href: "/de/writing.html", label: "Texte" }
+  ]
+};
 
-  document.getElementById('site-header').innerHTML = `
-    <div class="nav">
-      <a href="index.html" class="brand"><span class="brand-mark"></span>STEM-azing</a>
-      <nav class="navlinks" id="navlinks">
-        ${nav}
-        <a href="booking.html" class="nav-cta">Book a Call</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
-    </div>
-  `;
+var STRINGS = {
+  en: {
+    cta: "Book a free call", booking: "/booking.html", menu: "Menu",
+    blurb: "Science made clear, for every classroom, page and lab.",
+    explore: "Explore", connect: "Connect", call: "Book a free 20-min call",
+    impressum: "Impressum", privacy: "Privacy"
+  },
+  de: {
+    cta: "Kostenloses Gespräch buchen", booking: "/de/booking.html", menu: "Menü",
+    blurb: "Wissenschaft verständlich gemacht – für Unterricht, Text und Labor.",
+    explore: "Seiten", connect: "Kontakt", call: "Kostenloses 20-Minuten-Gespräch",
+    impressum: "Impressum", privacy: "Datenschutz"
+  }
+};
 
-  document.getElementById('menuToggle').addEventListener('click', () => {
-    document.getElementById('navlinks').classList.toggle('open');
+var EMAIL = "stemazing.advancement@gmail.com";
+
+function langOf(pathname) {
+  return /^\/de(\/|$)/.test(pathname || "") ? "de" : "en";
+}
+
+function navLinks(lang) { return NAV[lang] || NAV.en; }
+function ctaLabel(lang) { return (STRINGS[lang] || STRINGS.en).cta; }
+
+// Same page in the other language, or null (posts are English only,
+// and nothing links to German while DE_LIVE is false).
+function alternateUrl(pathname, toLang) {
+  if (!DE_LIVE) return null;
+  var p = pathname || "/";
+  if (/^\/posts\//.test(p)) return null;
+  var from = langOf(p);
+  if (from === toLang) return p;
+  if (toLang === "de") {
+    var file = p.replace(/^\//, "");
+    return file === "" || file === "index.html" ? "/de/" : "/de/" + file;
+  }
+  var en = p.replace(/^\/de\/?/, "");
+  return en === "" || en === "index.html" ? "/" : "/" + en;
+}
+
+function footerLinks(lang) {
+  var s = STRINGS[lang] || STRINGS.en;
+  var pre = lang === "de" ? "/de" : "";
+  return [
+    { href: pre + "/impressum.html", label: s.impressum },
+    { href: pre + "/datenschutz.html", label: s.privacy },
+    { href: "https://www.linkedin.com/in/nelladelva", label: "LinkedIn", external: true },
+    { href: "https://x.com/NellaDelva", label: "X", external: true },
+    { href: "https://www.instagram.com/stem_azing/", label: "Instagram", external: true }
+  ];
+}
+
+function _setDeLive(on) { DE_LIVE = !!on; }
+
+function isActive(href, pathname) {
+  return href === pathname.replace(/index\.html$/, "");
+}
+
+function renderHeader(pathname) {
+  var lang = langOf(pathname);
+  var s = STRINGS[lang];
+  var links = navLinks(lang).map(function (l) {
+    return '<a href="' + l.href + '"' + (isActive(l.href, pathname) ? ' aria-current="page"' : "") + ">" + l.label + "</a>";
+  }).join("");
+  var alt = alternateUrl(pathname, lang === "de" ? "en" : "de");
+  var sw = alt
+    ? '<span class="lang-switch">' +
+        (lang === "en" ? '<b>EN</b> | <a href="' + alt + '" hreflang="de" lang="de">DE</a>'
+                       : '<a href="' + alt + '" hreflang="en" lang="en">EN</a> | <b>DE</b>') +
+      "</span>"
+    : "";
+  var home = lang === "de" ? "/de/" : "/";
+  document.getElementById("site-header").innerHTML =
+    '<div class="nav wrap">' +
+      '<a href="' + home + '" class="brand">STEM-azing</a>' +
+      '<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">' + s.menu + "</button>" +
+      '<nav class="navlinks" id="navlinks" aria-label="Main">' + links + sw +
+        '<a href="' + s.booking + '" class="btn btn--accent nav-cta">' + s.cta + "</a>" +
+      "</nav>" +
+    "</div>";
+  var toggle = document.getElementById("menuToggle");
+  toggle.addEventListener("click", function () {
+    var open = document.getElementById("navlinks").classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
   });
 }
 
-function renderFooter(){
-  document.getElementById('site-footer').innerHTML = `
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h4>STEM-azing</h4>
-          <p style="max-width:340px; font-size:14px; opacity:0.85;">
-            Global scientist bridging bench research and data science —
-            consulting, writing, and translating discovery into impact.
-          </p>
-          <div class="social-row">
-            <a href="https://www.linkedin.com/in/nelladelva" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://x.com/NellaDelva" target="_blank" rel="noopener">X</a>
-            <a href="https://www.instagram.com/stem_azing/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="portfolio.html">Advising</a>
-            <a href="services.html">Services & Pricing</a>
-            <a href="blog.html">Scientific Writing & Editing</a>
-            <a href="neuropenetrance.html">NeuroPenetrance</a>
-          </div>
-        </div>
-        <div>
-          <h4>Connect</h4>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="booking.html">Book a 20-min call</a>
-            <a href="mailto:stemazing.advancement@gmail.com">stemazing.advancement@gmail.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Nella C. Delva, Ph.D. — STEM-azing</span>
-        <span>Berlin, Germany</span>
-      </div>
-    </div>
-  `;
+function renderFooter(pathname) {
+  var lang = langOf(pathname);
+  var s = STRINGS[lang];
+  var explore = navLinks(lang).map(function (l) { return '<a href="' + l.href + '">' + l.label + "</a>"; }).join("");
+  var fl = footerLinks(lang);
+  var social = fl.filter(function (l) { return l.external; }).map(function (l) {
+    return '<a href="' + l.href + '" target="_blank" rel="noopener">' + l.label + "</a>";
+  }).join("");
+  var legal = fl.filter(function (l) { return !l.external; }).map(function (l) {
+    return '<a href="' + l.href + '">' + l.label + "</a>";
+  }).join("");
+  document.getElementById("site-footer").innerHTML =
+    '<div class="wrap footer-grid">' +
+      '<div><p class="footer-brand">STEM-azing</p><p>' + s.blurb + '</p><div class="footer-row">' + social + "</div></div>" +
+      '<div><p class="footer-h">' + s.explore + '</p><div class="footer-col">' + explore + "</div></div>" +
+      '<div><p class="footer-h">' + s.connect + '</p><div class="footer-col"><a href="' + s.booking + '">' + s.call + "</a>" +
+        '<a href="mailto:' + EMAIL + '">' + EMAIL + "</a></div></div>" +
+    "</div>" +
+    '<div class="wrap footer-bottom"><span>&copy; ' + new Date().getFullYear() + " Nella C. Delva, Ph.D. — STEM-azing · Berlin</span>" +
+      '<span class="footer-row">' + legal + "</span></div>";
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const page = document.body.getAttribute('data-page') || '';
-  renderHeader(page);
-  renderFooter();
-});
+if (typeof document !== "undefined") {
+  var start = function () {
+    var path = location.pathname;
+    if (document.getElementById("site-header")) renderHeader(path);
+    if (document.getElementById("site-footer")) renderFooter(path);
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+}
+
+if (typeof module !== "undefined") {
+  module.exports = {
+    get DE_LIVE() { return DE_LIVE; },
+    langOf: langOf, navLinks: navLinks, ctaLabel: ctaLabel,
+    alternateUrl: alternateUrl, footerLinks: footerLinks, _setDeLive: _setDeLive
+  };
+}
