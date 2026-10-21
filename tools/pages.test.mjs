@@ -20,3 +20,12 @@ test('home shows the 3 newest posts', () => {
   const posts = [...sec.matchAll(/href="\/posts\/([^"]+)"/g)].map(m => m[1]);
   assert.deepEqual([...new Set(posts)].slice(0, 3), ['organoids-vs-animal-models.html', 'research-without-borders.html', 'full-circle-fulbright.html']);
 });
+
+test('about', () => {
+  const h = read('about.html'), t = text(h);
+  has(t, ['I make science clear, for whoever is in the room.', 'One idea, three audiences', 'Can inflammation in the body affect depression?',
+    'For a student', 'For a curious reader', 'For a research team', 'Haiti → Florida → Berlin', 'Where curiosity began', 'McKnight',
+    'Have something that needs to be clear?']);
+  assert.ok(!t.includes('where I grew up'));
+  assert.ok(wordCount(h) <= 380, `words: ${wordCount(h)}`);
+});
