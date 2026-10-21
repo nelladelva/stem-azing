@@ -47,6 +47,7 @@ export function resolveRef(fromRel, ref) {
 export function text(html) {
   return html
     .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<\/?(em|strong|b|i|a|span|mark|del|small|abbr|sup|sub)\b[^>]*>/gi, '')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&rarr;/g, '→').replace(/&mdash;/g, '—')
     .replace(/&ndash;/g, '–').replace(/&euro;/g, '€').replace(/&#39;|&rsquo;/g, "'").replace(/&quot;/g, '"')

@@ -108,7 +108,7 @@ p { margin: 0; }
 @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
 
 /* ---------- hero + arch portrait ---------- */
-.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; padding: 36px 0 56px; }
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; padding-top: 36px; padding-bottom: 56px; }
 .hero h1 { margin-top: 10px; }
 @media (max-width: 760px) { .hero { grid-template-columns: 1fr; gap: 28px; } }
 .photo-arch { position: relative; display: flex; justify-content: center; }
@@ -163,10 +163,10 @@ p { margin: 0; }
 .currency button[aria-pressed="true"] { background: var(--blue); color: var(--white); }
 
 /* ---------- reasons / steps / facts bands ---------- */
-.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 44px 0; }
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-top: 44px; padding-bottom: 44px; }
 .why b, .steps b { display: block; font: 500 24px var(--serif); color: var(--peach); }
 .why p, .steps p { opacity: .92; margin-top: 6px; font-size: 15px; }
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 40px 0; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-top: 40px; padding-bottom: 40px; }
 .facts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .facts div { padding: 24px 20px; border-right: 1px solid rgba(255, 255, 255, .12); font-size: 13px; }
 .facts b { display: block; font: 500 19px var(--serif); color: var(--peach); margin-bottom: 2px; }
@@ -223,12 +223,12 @@ p { margin: 0; }
 .post-teaser a { text-decoration: none; color: var(--blue); }
 
 /* ---------- split band (NeuroPenetrance strip, publications) ---------- */
-.split { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 36px 0; flex-wrap: wrap; }
+.split { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 36px; padding-bottom: 36px; flex-wrap: wrap; }
 .split p { max-width: 620px; margin-top: 6px; }
 .split h2 { margin: 4px 0 6px; }
 
 /* ---------- closing call band ---------- */
-.cta-band { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 40px 0; flex-wrap: wrap; }
+.cta-band { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 40px; padding-bottom: 40px; flex-wrap: wrap; }
 .cta-band p.big { font: 500 26px var(--serif); color: var(--blue); }
 .cta-band p.small { color: var(--muted); margin-top: 4px; }
 
