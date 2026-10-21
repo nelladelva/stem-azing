@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { read, text, wordCount } from './site.mjs';
+import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { ROOT, read, text, wordCount } from './site.mjs';
 
 const has = (t, list) => { for (const s of list) assert.ok(t.includes(s), `missing: ${s}`); };
 
@@ -37,4 +39,22 @@ test('consulting portfolio', () => {
   assert.ok(h.includes('href="/services.html#research"') && h.includes('href="/booking.html"'));
   assert.ok(h.includes('/css/site.css'));
   if (t.includes('NeuroPenetrance')) assert.ok(t.includes('779') && t.includes('0.61'), 'NeuroPenetrance facts');
+});
+
+test('writing', () => {
+  const h = read('writing.html'), t = text(h);
+  has(t, ['Rigorous enough for peer review. Clear enough for everyone else.', 'may potentially have possibly had', 'Written for different readers',
+    'Peer-reviewed and published', 'Need writing like this?', 'Editing from €150 per 1,000 words; scientific edits €220.',
+    'Ghostwriting also offered', 'No VAT is charged under § 19 UStG.']);
+  for (const f of ['all', 'scientist', 'medical', 'general', 'career']) assert.ok(h.includes(`data-filter="${f}"`), f);
+  const bdnf = h.match(/<article[^>]*data-tags[^>]*>(?:(?!<\/article>)[\s\S])*bdnf-therapeutic[\s\S]*?<\/article>/);
+  assert.ok(bdnf && /co-authored/i.test(bdnf[0]), 'BDNF labelled co-authored');
+  const posts = readdirSync(join(ROOT, 'posts')).filter(f => f.endsWith('.html'));
+  for (const p of posts) assert.ok(h.includes(`href="/posts/${p}"`), p);
+  assert.ok(!h.includes('/post/'), 'no old Wix post links');
+  assert.ok(!t.includes('Two ways to work with a scientist who writes'));
+});
+
+test('home links to the writing page', () => {
+  assert.ok(read('index.html').includes('href="/writing.html"'));
 });

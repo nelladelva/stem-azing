@@ -283,3 +283,4 @@ p { margin: 0; }
 }
 .footer-bottom .footer-row { margin-top: 0; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } }
+.edit-card .before mark.vague { background: #F8E3DC; color: var(--terracotta-dark); padding: 0 3px; border-radius: 3px; }
