@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { join } from 'node:path';
 import { ROOT, read, text, wordCount } from './site.mjs';
 
@@ -73,4 +74,19 @@ test('booking', () => {
   assert.ok(h.includes('data-url="https://calendly.com/nella-delva/new-meeting-2"'));
   assert.ok(h.includes('href="https://calendly.com/nella-delva/new-meeting-2"'));
   has(t, ['20 minutes, free', 'stemazing.advancement@gmail.com']);
+});
+
+test('posts use the shared layout, text unchanged', () => {
+  const files = readdirSync(join(ROOT, 'posts')).filter(f => f.endsWith('.html'));
+  assert.equal(files.length, 16);
+  const article = h => text((h.match(/<article\b[^>]*>([\s\S]*?)<\/article>/) || [])[1] || '');
+  for (const f of files) {
+    const h = read(`posts/${f}`);
+    assert.ok(h.includes('id="site-header"') && h.includes('id="site-footer"'), `${f}: header/footer slots`);
+    assert.ok(!h.includes('class="site-nav"'), `${f}: old nav removed`);
+    assert.ok(h.includes('href="/css/site.css"') && h.includes('src="/nav.js"'), `${f}: shared css/nav`);
+    assert.ok(/<article\b[^>]*class="[^"]*\bprose\b/.test(h), `${f}: prose`);
+    const before = execSync(`git show main:posts/${f}`, { cwd: ROOT, encoding: 'utf8' });
+    assert.equal(article(h), article(before), `${f}: article text changed`);
+  }
 });
