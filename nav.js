@@ -46,6 +46,12 @@ function langOf(pathname) {
   return /^\/de(\/|$)/.test(pathname || "") ? "de" : "en";
 }
 
+// Language of the menu and footer: German only once DE_LIVE is on, so
+// hidden German pages (e.g. the legal ones) never link into other German pages.
+function menuLang(pathname) {
+  return DE_LIVE ? langOf(pathname) : "en";
+}
+
 function navLinks(lang) { return NAV[lang] || NAV.en; }
 function ctaLabel(lang) { return (STRINGS[lang] || STRINGS.en).cta; }
 
@@ -84,7 +90,7 @@ function isActive(href, pathname) {
 }
 
 function renderHeader(pathname) {
-  var lang = langOf(pathname);
+  var lang = menuLang(pathname);
   var s = STRINGS[lang];
   var links = navLinks(lang).map(function (l) {
     return '<a href="' + l.href + '"' + (isActive(l.href, pathname) ? ' aria-current="page"' : "") + ">" + l.label + "</a>";
@@ -113,7 +119,7 @@ function renderHeader(pathname) {
 }
 
 function renderFooter(pathname) {
-  var lang = langOf(pathname);
+  var lang = menuLang(pathname);
   var s = STRINGS[lang];
   var explore = navLinks(lang).map(function (l) { return '<a href="' + l.href + '">' + l.label + "</a>"; }).join("");
   var fl = footerLinks(lang);
@@ -147,7 +153,7 @@ if (typeof document !== "undefined") {
 if (typeof module !== "undefined") {
   module.exports = {
     get DE_LIVE() { return DE_LIVE; },
-    langOf: langOf, navLinks: navLinks, ctaLabel: ctaLabel,
+    langOf: langOf, menuLang: menuLang, navLinks: navLinks, ctaLabel: ctaLabel,
     alternateUrl: alternateUrl, footerLinks: footerLinks, _setDeLive: _setDeLive
   };
 }

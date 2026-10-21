@@ -44,3 +44,9 @@ test('footer has legal links', () => {
   assert.ok(footerLinks('en').some(l => l.href === '/impressum.html'));
   assert.ok(footerLinks('en').some(l => l.href === '/datenschutz.html'));
 });
+
+test('German pages use the English menu while German is hidden', () => {
+  assert.equal(nav.menuLang('/de/impressum.html'), 'en');
+  _setDeLive(true);
+  try { assert.equal(nav.menuLang('/de/impressum.html'), 'de'); } finally { _setDeLive(false); }
+});
