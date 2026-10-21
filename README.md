@@ -10,21 +10,16 @@ This site is fully built and functional, but three pieces need YOUR real account
 plugged in — these can't be created on your behalf, since they involve your own payment
 and scheduling accounts.
 
-### 1. Payment (PayPal) — in `services.html`
+### 1. Payment (invoice requests) — in `services.html`
 
-Near the bottom of `services.html`, find this line:
-```js
-const PAYPAL_USERNAME = "YOURPAYPALNAME";
-```
-Replace `YOURPAYPALNAME` with your actual PayPal.me username (create one free at
-paypal.me if you don't have one — takes about 2 minutes). This makes every "Pay 50%
-deposit" button generate a real PayPal payment link with the correct amount and currency
-automatically.
+The "Request deposit invoice" buttons open a short dialog and then an email to
+`stemazing.advancement@gmail.com` (set in `INVOICE_EMAIL` near the bottom of `services.html`),
+pre-filled with the service, the 50% deposit amount and currency, and fields for the client's
+billing details. You then send the invoice yourself. Ghostwriting uses "Request a quote"
+(booking page) instead, because it is priced per word.
 
-**Note on the prices themselves:** the EUR/USD numbers currently in `services.html` are
-starting-rate placeholders grounded in typical freelance consulting/data science rates in
-Germany (roughly €90–120/hr depending on service) — not your final pricing. Search for
-`data-eur=` and `data-usd=` in that file to find and edit every price.
+Prices: search for `data-eur=` and `data-usd=` (and `data-deposit-eur` / `data-deposit-usd`)
+in `services.html` to edit every price.
 
 ### 2. Booking (Calendly) — in `booking.html`
 
