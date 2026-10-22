@@ -112,6 +112,9 @@ p { margin: 0; }
 .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; padding-top: 36px; padding-bottom: 56px; }
 .hero h1 { margin-top: 10px; }
 @media (max-width: 760px) { .hero { grid-template-columns: 1fr; gap: 28px; } }
+.hero--text { grid-template-columns: 1fr; }
+.hero--text h1 { max-width: 20ch; }
+.hero--text .lede { max-width: 640px; }
 .photo-arch { position: relative; display: flex; justify-content: center; }
 .photo-arch img {
   width: 66%; aspect-ratio: 4 / 5; object-fit: cover;

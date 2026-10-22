@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readdirSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { join } from 'node:path';
-import { ROOT, read, text, wordCount } from './site.mjs';
+import { ROOT, read, text, wordCount, htmlFiles } from './site.mjs';
 
 const has = (t, list) => { for (const s of list) assert.ok(t.includes(s), `missing: ${s}`); };
 
@@ -89,4 +89,10 @@ test('posts use the shared layout, text unchanged', () => {
     const before = execSync(`git show main:posts/${f}`, { cwd: ROOT, encoding: 'utf8' });
     assert.equal(article(h), article(before), `${f}: article text changed`);
   }
+});
+
+test('portrait appears only on the home page', () => {
+  const allowed = ['de/index.html', 'index.html'];
+  const withPhoto = htmlFiles().filter(f => read(f).includes('headshot.jpg')).sort();
+  assert.deepEqual(withPhoto, allowed);
 });
