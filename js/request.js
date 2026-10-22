@@ -48,3 +48,131 @@ function pickCurrency(search) {
 }
 
 if (typeof module !== "undefined") module.exports = { estimate: estimate, estimateText: estimateText, pickCurrency: pickCurrency };
+
+(function () {
+  "use strict";
+  if (typeof document === "undefined") return;
+  var form = document.getElementById("request-form");
+  if (!form) return;
+
+  var lang = form.getAttribute("data-lang") === "de" ? "de" : "en";
+  var MSG = {
+    en: { pick: "Please choose at least one option.",
+          failed: "Sorry, your request could not be sent. Please try again, or email stemazing.advancement@gmail.com." },
+    de: { pick: "Bitte wählen Sie mindestens eine Option.",
+          failed: "Ihre Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an stemazing.advancement@gmail.com." }
+  }[lang];
+  var steps = form.querySelectorAll(".step");
+  var marks = form.querySelectorAll(".stepper li");
+  var subs = form.querySelectorAll('input[name="sub_services"]');
+  var currencySel = form.querySelector('select[name="currency"]');
+  var status = form.querySelector(".form-status");
+  var current = 0;
+
+  form.noValidate = true;
+  form.classList.add("is-stepper");
+  currencySel.value = pickCurrency(location.search);
+
+  // ── Steps ──
+  function show(i, focus) {
+    current = i;
+    steps.forEach(function (s, n) { s.hidden = n !== i; });
+    marks.forEach(function (m, n) {
+      if (n === i) m.setAttribute("aria-current", "step"); else m.removeAttribute("aria-current");
+      m.classList.toggle("is-done", n < i);
+    });
+    if (focus) {
+      var legend = steps[i].querySelector("legend");
+      legend.focus();
+      legend.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+  }
+
+  // Native validation for one step, plus "at least one option" on step 1.
+  function stepValid(i) {
+    var fields = steps[i].querySelectorAll("input, select, textarea");
+    for (var n = 0; n < fields.length; n++) {
+      if (!fields[n].checkValidity()) { fields[n].reportValidity(); return false; }
+    }
+    if (i === 0 && subs.length && ![].some.call(subs, function (c) { return c.checked; })) {
+      subs[0].setCustomValidity(MSG.pick);
+      subs[0].reportValidity();
+      return false;
+    }
+    return true;
+  }
+  subs.forEach(function (c) { c.addEventListener("change", function () { subs[0].setCustomValidity(""); }); });
+
+  form.querySelectorAll("[data-step-next]").forEach(function (b) {
+    b.addEventListener("click", function () { if (stepValid(current)) show(current + 1, true); });
+  });
+  form.querySelectorAll("[data-step-prev]").forEach(function (b) {
+    b.addEventListener("click", function () { show(current - 1, true); });
+  });
+
+  // ── Quantity boxes, "Other" text and hours appear only when they apply ──
+  function toggleExtras() {
+    form.querySelectorAll(".sub-extra").forEach(function (box) {
+      var key = box.getAttribute("data-for");
+      var src = key === "hourly" ? form.querySelector('input[name="billing"][value="hourly"]') : form.querySelector('[data-sub="' + key + '"]');
+      box.hidden = !(src && src.checked);
+    });
+  }
+
+  // ── Live estimate ──
+  function lines() {
+    var out = [];
+    subs.forEach(function (c) {
+      if (!c.checked) return;
+      var q = form.querySelector('[data-qty-for="' + c.getAttribute("data-sub") + '"]');
+      out.push({ per: c.getAttribute("data-per"), eur: c.getAttribute("data-eur"), usd: c.getAttribute("data-usd"), qty: q ? q.value : null });
+    });
+    var bill = form.querySelector('input[name="billing"]:checked');
+    if (bill) {
+      var hours = form.querySelector('input[name="hours"]');
+      out.push({ per: bill.getAttribute("data-per"), eur: bill.getAttribute("data-eur"), usd: bill.getAttribute("data-usd"), qty: hours ? hours.value : null });
+    }
+    return out;
+  }
+
+  function update() {
+    var cur = currencySel.value;
+    var text = estimateText(estimate(lines(), cur), cur, lang);
+    var box = form.querySelector("[data-estimate-lines]");
+    box.innerHTML = "";
+    text.forEach(function (t) { var p = document.createElement("p"); p.textContent = t; box.appendChild(p); });
+    form.elements.estimate.value = text.join(" · ");
+    var attr = cur === "USD" ? "data-usd" : "data-eur";
+    form.querySelectorAll('select[name="budget"] option[data-eur]').forEach(function (o) { o.textContent = o.getAttribute(attr); });
+    toggleExtras();
+  }
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+
+  // ── Send through Formspree, staying on the page ──
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    for (var i = 0; i < steps.length; i++) {
+      if (!stepValid(i)) { show(i, false); stepValid(i); return; }
+    }
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    status.hidden = true;
+    fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        form.hidden = true;
+        var thanks = document.querySelector(".thanks");
+        thanks.hidden = false;
+        thanks.focus();
+      })
+      .catch(function () {
+        status.textContent = MSG.failed;
+        status.hidden = false;
+        btn.disabled = false;
+      });
+  });
+
+  update();
+  show(0, false);
+})();

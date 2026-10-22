@@ -55,3 +55,7 @@ test('hreflang pairs and sitemap', () => {
     assert.ok(sm.includes(`<loc>https://stem-azing.com/${page}</loc>`), `sitemap: ${page}`);
   }
 });
+
+test('quantity boxes accept any whole number (no step that rejects 6000 words)', () => {
+  for (const f of [...files('en'), ...files('de')]) assert.ok(!/name="qty_[^"]*"[^>]*\bstep=/.test(read(f)), f);
+});

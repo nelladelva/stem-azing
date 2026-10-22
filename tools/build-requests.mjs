@@ -87,7 +87,7 @@ function subOption(sub, lang, t) {
   const data = `data-per="${sub.per}"${sub.price ? ' ' + price(sub.price) : ''}`;
   let extra = '';
   if (t.qty[sub.per]) {
-    extra = `<span class="sub-extra" data-for="${sub.id}"><label>${t.qty[sub.per]} <input type="number" min="1" name="qty_${sub.id}" data-qty-for="${sub.id}"${sub.per === '1000words' ? ' step="100"' : ''}></label></span>`;
+    extra = `<span class="sub-extra" data-for="${sub.id}"><label>${t.qty[sub.per]} <input type="number" min="1" name="qty_${sub.id}" data-qty-for="${sub.id}"></label></span>`;
   } else if (sub.id === 'other') {
     extra = `<span class="sub-extra" data-for="other"><label>${t.otherText} <input type="text" name="other_text"></label></span>`;
   }
