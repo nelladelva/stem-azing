@@ -28,6 +28,11 @@ test('privacy policies', () => {
   }
 });
 
+test('privacy policies say Formspree keeps its own copy', () => {
+  assert.ok(text(read('datenschutz.html')).includes('Formspree also keeps a copy of each request in our Formspree account until we delete it there.'));
+  assert.ok(text(read('de/datenschutz.html')).includes('Formspree speichert zudem eine Kopie jeder Anfrage in unserem Formspree-Konto, bis wir sie dort löschen.'));
+});
+
 test('every non-redirect page has the shared footer', () => {
   const missing = htmlFiles().filter(f => { const h = read(f); return !h.includes('http-equiv="refresh"') && !h.includes('id="site-footer"'); });
   assert.deepEqual(missing, []);

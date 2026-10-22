@@ -115,7 +115,10 @@ if (typeof module !== "undefined") module.exports = { estimate: estimate, estima
     form.querySelectorAll(".sub-extra").forEach(function (box) {
       var key = box.getAttribute("data-for");
       var src = key === "hourly" ? form.querySelector('input[name="billing"][value="hourly"]') : form.querySelector('[data-sub="' + key + '"]');
-      box.hidden = !(src && src.checked);
+      var on = !!(src && src.checked);
+      box.hidden = !on;
+      // Disabled fields are neither validated nor sent, so stale extras never block Next or reach the email.
+      box.querySelectorAll("input").forEach(function (i) { i.disabled = !on; });
     });
   }
 
@@ -146,6 +149,12 @@ if (typeof module !== "undefined") module.exports = { estimate: estimate, estima
     form.querySelectorAll('select[name="budget"] option[data-eur]').forEach(function (o) { o.textContent = o.getAttribute(attr); });
     toggleExtras();
   }
+  // Enter in a field before the last step means "Next", not "send the whole form".
+  form.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" || e.target.tagName !== "INPUT" || current === steps.length - 1) return;
+    e.preventDefault();
+    if (stepValid(current)) show(current + 1, true);
+  });
   form.addEventListener("input", update);
   form.addEventListener("change", update);
 
