@@ -24,6 +24,11 @@ export function checkServices(file, vatNote, names = {}) {
   assert.ok(ed.some(x => x[0] === '800' && x[1] === '880'), 'grants 800/880');
   assert.ok(text(h).includes(vatNote), 'VAT note');
   assert.equal((h.match(/class="[^"]*\bpay-btn\b/g) || []).length, 6, 'six request buttons');
+  const slugOf = { 'Guest lectures & workshops': 'lectures', 'Tutoring & mentorship': 'tutoring', 'Scientific writing & editing': 'writing',
+    'Science communication': 'communication', 'Scientific consulting': 'consulting', 'Research & data analysis': 'data-analysis' };
+  const pre = file.startsWith('de/') ? '/de' : '';
+  for (const [name, c] of Object.entries(p)) assert.ok(c.html.includes(`href="${pre}/request/${slugOf[name]}.html"`), `${name}: links to its form`);
+  assert.ok(!h.includes('id="payModal"'), 'old email dialog removed');
   for (const [name, c] of Object.entries(p)) {
     const proof = c.html.match(/<ul class="proof">([\s\S]*?)<\/ul>/);
     assert.equal(proof ? (proof[1].match(/<li\b/g) || []).length : 0, 2, `${name}: two proof points`);

@@ -41,7 +41,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="350" data-usd="385">€350 <span class="unit">/ session</span></span></div><span class="price-note">Multi-session workshops quoted separately</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Guest lectures &amp; workshops">Request an invoice</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/request/lectures.html">Request an invoice</a>
               <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
             </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="100" data-usd="120">€100 <span class="unit">/ session</span></span></div><span class="price-note">or <span class="amount-project" data-eur="950" data-usd="1000">€950</span> for 10 sessions</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Tutoring &amp; mentorship">Request an invoice</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/request/tutoring.html">Request an invoice</a>
               <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
             </div>
           </div>
@@ -74,7 +74,7 @@
           <div class="service-foot">
             <div><div class="price">from <span class="amount" data-eur="150" data-usd="165">€150 <span class="unit">/ 1,000 words</span></span></div><span class="price-note">language &amp; clarity edit · scientific edit <span class="amount-project" data-eur="220" data-usd="240">€220</span> / 1,000 words</span><span class="price-note">grants &amp; original writing from <span class="amount-project" data-eur="800" data-usd="880">€800</span></span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Scientific writing &amp; editing">Request an invoice</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/request/writing.html">Request an invoice</a>
               <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
             </div>
           </div>
@@ -86,7 +86,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="180" data-usd="198">€180 <span class="unit">/ piece</span></span></div><span class="price-note">Ongoing content packages available</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Science communication">Request an invoice</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/request/communication.html">Request an invoice</a>
               <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
             </div>
           </div>
@@ -106,7 +106,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="95" data-usd="105">€95 <span class="unit">/ hr</span></span></div><span class="price-note">or from <span class="amount-project" data-eur="750" data-usd="820">€750</span> per project</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Scientific consulting">Request an invoice</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/request/consulting.html">Request an invoice</a>
               <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
             </div>
           </div>
@@ -118,7 +118,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="90" data-usd="99">€90 <span class="unit">/ hr</span></span></div><span class="price-note">or from <span class="amount-project" data-eur="900" data-usd="985">€900</span> per project</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Research &amp; data analysis">Request an invoice</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/request/data-analysis.html">Request an invoice</a>
               <a class="btn btn--outline btn--sm" href="/booking.html">Ask first</a>
             </div>
           </div>
@@ -140,20 +140,6 @@
     </div>
   </section>
 </main>
-
-<div class="modal" id="payModal">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
-    <h3 id="payModalTitle">Request an invoice</h3>
-    <p>You're requesting an invoice for <strong id="payModalService"></strong>.</p>
-    <p class="price-note" style="margin-top:14px">Starting rate</p>
-    <p class="amount" id="payModalAmount"></p>
-    <div class="btn-row">
-      <a id="invoiceLink" href="#" class="btn btn--accent">Request invoice by email →</a>
-      <button type="button" class="btn btn--outline" data-close-modal>Cancel</button>
-    </div>
-    <p class="vat-note">This opens an email to stemazing.advancement@gmail.com. Please add your billing name and address. The final amount is confirmed on the invoice. No VAT is charged under § 19 UStG.</p>
-  </div>
-</div>
 
 <footer id="site-footer"></footer>
 </body>

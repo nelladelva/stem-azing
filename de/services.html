@@ -41,7 +41,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="350" data-usd="385">350 € <span class="unit">/ Einheit</span></span></div><span class="price-note">Workshop-Reihen auf Anfrage</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Gastvorträge &amp; Workshops" data-lang="de">Rechnung anfordern</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/de/request/lectures.html">Rechnung anfordern</a>
               <a class="btn btn--outline btn--sm" href="/de/booking.html">Erst fragen</a>
             </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="100" data-usd="120">100 € <span class="unit">/ Sitzung</span></span></div><span class="price-note">oder <span class="amount-project" data-eur="950" data-usd="1000">950 €</span> für 10 Sitzungen</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Nachhilfe &amp; Mentoring" data-lang="de">Rechnung anfordern</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/de/request/tutoring.html">Rechnung anfordern</a>
               <a class="btn btn--outline btn--sm" href="/de/booking.html">Erst fragen</a>
             </div>
           </div>
@@ -74,7 +74,7 @@
           <div class="service-foot">
             <div><div class="price">ab <span class="amount" data-eur="150" data-usd="165">150 € <span class="unit">/ 1.000 Wörter</span></span></div><span class="price-note">Sprach- &amp; Stillektorat · Fachlektorat <span class="amount-project" data-eur="220" data-usd="240">220 €</span> / 1.000 Wörter</span><span class="price-note">Förderanträge &amp; eigene Texte ab <span class="amount-project" data-eur="800" data-usd="880">800 €</span></span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Wissenschaftliches Schreiben &amp; Lektorat" data-lang="de">Rechnung anfordern</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/de/request/writing.html">Rechnung anfordern</a>
               <a class="btn btn--outline btn--sm" href="/de/booking.html">Erst fragen</a>
             </div>
           </div>
@@ -86,7 +86,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="180" data-usd="198">180 € <span class="unit">/ Beitrag</span></span></div><span class="price-note">Laufende Content-Pakete möglich</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Wissenschaftskommunikation" data-lang="de">Rechnung anfordern</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/de/request/communication.html">Rechnung anfordern</a>
               <a class="btn btn--outline btn--sm" href="/de/booking.html">Erst fragen</a>
             </div>
           </div>
@@ -106,7 +106,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="95" data-usd="105">95 € <span class="unit">/ Std.</span></span></div><span class="price-note">oder ab <span class="amount-project" data-eur="750" data-usd="820">750 €</span> pro Projekt</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Wissenschaftliche Beratung" data-lang="de">Rechnung anfordern</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/de/request/consulting.html">Rechnung anfordern</a>
               <a class="btn btn--outline btn--sm" href="/de/booking.html">Erst fragen</a>
             </div>
           </div>
@@ -118,7 +118,7 @@
           <div class="service-foot">
             <div><div class="price"><span class="amount" data-eur="90" data-usd="99">90 € <span class="unit">/ Std.</span></span></div><span class="price-note">oder ab <span class="amount-project" data-eur="900" data-usd="985">900 €</span> pro Projekt</span></div>
             <div class="btn-row" style="margin-top:0">
-              <button type="button" class="btn btn--primary btn--sm pay-btn" data-service="Forschungs- &amp; Datenanalyse" data-lang="de">Rechnung anfordern</button>
+              <a class="btn btn--primary btn--sm pay-btn" href="/de/request/data-analysis.html">Rechnung anfordern</a>
               <a class="btn btn--outline btn--sm" href="/de/booking.html">Erst fragen</a>
             </div>
           </div>
@@ -140,20 +140,6 @@
     </div>
   </section>
 </main>
-
-<div class="modal" id="payModal">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
-    <h3 id="payModalTitle">Rechnung anfordern</h3>
-    <p>Sie fordern eine Rechnung an für <strong id="payModalService"></strong>.</p>
-    <p class="price-note" style="margin-top:14px">Startpreis</p>
-    <p class="amount" id="payModalAmount"></p>
-    <div class="btn-row">
-      <a id="invoiceLink" href="#" class="btn btn--accent">Rechnung per E-Mail anfordern →</a>
-      <button type="button" class="btn btn--outline" data-close-modal>Abbrechen</button>
-    </div>
-    <p class="vat-note">Dadurch öffnet sich eine E-Mail an stemazing.advancement@gmail.com. Bitte ergänzen Sie Rechnungsname und -anschrift. Der endgültige Betrag steht auf der Rechnung. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
-  </div>
-</div>
 
 <footer id="site-footer"></footer>
 </body>

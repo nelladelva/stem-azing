@@ -27,8 +27,7 @@ test('every main page has a German partner', () => {
 
 test('German services: same prices, German VAT note, German invoice', () => {
   const h = checkServices('de/services.html', 'Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.', DE_NAMES);
-  const btns = h.match(/<button[^>]*class="[^"]*pay-btn[^"]*"[^>]*>/g);
-  assert.ok(btns.every(b => b.includes('data-lang="de"')), 'pay buttons carry data-lang="de"');
+  assert.equal((h.match(/class="[^"]*pay-btn[^"]*" href="\/de\/request\//g) || []).length, 6);
 });
 
 test('German pages use formal address', () => {

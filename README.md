@@ -21,7 +21,8 @@ loads Google Fonts or Wix images.
 | File | Page |
 |---|---|
 | `index.html` | Home |
-| `services.html` | Services & prices, € / $ switch, invoice request |
+| `services.html` | Services & prices, € / $ switch, links to the request forms |
+| `request/*.html`, `de/request/*.html` | Invoice request forms (generated, see below) |
 | `about.html` | About |
 | `writing.html` | Writing samples, publications, all blog posts |
 | `neuropenetrance.html` | NeuroPenetrance |
@@ -33,7 +34,7 @@ loads Google Fonts or Wix images.
 | `biography.html`, `portfolio.html`, `blog.html` | Redirects for old links |
 
 Shared parts: `css/site.css` (all styling), `nav.js` (menu and footer on every page),
-`js/site.js` (€ / $ switch, invoice dialog, sample filters, Calendly loader), photos in `img/`.
+`js/site.js` (€ / $ switch, sample filters, Calendly loader), `js/request.js` (request forms), photos in `img/`.
 
 ## Editing prices
 
@@ -47,9 +48,18 @@ STEM-azing is a Kleinunternehmerin business: every price area shows
 
 ## Invoice requests
 
-"Request an invoice" opens a dialog and then a pre-filled email to
-`stemazing.advancement@gmail.com` (set in `INVOICE_EMAIL` in `js/site.js`) with the
-service, starting rate, currency and the § 19 note. You send the invoice yourself.
+Each "Request an invoice" button on `services.html` / `de/services.html` links to that
+service's form: `request/<slug>.html` and `de/request/<slug>.html` (slugs `lectures`,
+`tutoring`, `writing`, `communication`, `consulting`, `data-analysis`), carrying the
+€ / $ choice as `?currency=`. Four steps: project (sub-services, live starting estimate),
+about you, invoice details, extras. Answers go to Formspree (`https://formspree.io/f/myeegvqk`),
+which emails them to you; you send the invoice yourself.
+
+The 12 form pages are **generated**. Edit `tools/request-data.mjs` (sub-services, questions,
+prices), then run `npm run build:requests` and commit the output; `npm test` fails if the
+pages are out of date. Stepper, estimate and sending live in `js/request.js`.
+When a price changes, change it in `services.html`, `de/services.html` **and**
+`tools/request-data.mjs`.
 
 ## German version
 

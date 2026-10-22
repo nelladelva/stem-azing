@@ -18,13 +18,6 @@ test('jump links clear the sticky header', () => {
   assert.match(read('css/site.css'), /html\s*\{[^}]*scroll-padding-top:\s*\d+px/);
 });
 
-test('invoice dialog keeps keyboard focus and returns it', () => {
-  const js = read('js/site.js');
-  assert.match(js, /lastFocus = document\.activeElement/, 'remembers the opener');
-  assert.match(js, /lastFocus\.focus\(\)/, 'restores focus on close');
-  assert.match(js, /e\.key === "Tab"/, 'keeps Tab inside the dialog');
-});
-
 test('privacy policies name the right legal bases', () => {
   for (const [f, list] of [
     ['de/datenschutz.html', ['Data Privacy Framework', 'Art. 45 DSGVO', '§ 25 Abs. 1 TDDDG', 'Art. 6 Abs. 1 lit. f DSGVO', 'Speicherdauer']],
