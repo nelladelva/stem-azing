@@ -25,7 +25,8 @@ var INVOICE_TEXT = {
 
 // "€150" in English, "150 €" in German
 function formatMoney(symbol, value, lang) {
-  return lang === "de" ? value + " " + symbol : symbol + value;
+  var v = String(value).replace(/\B(?=(\d{3})+(?!\d))/g, lang === "de" ? "." : ",");
+  return lang === "de" ? v + " " + symbol : symbol + v;
 }
 
 // { service, symbol, amount, unit, currency, lang } → { subject, href }

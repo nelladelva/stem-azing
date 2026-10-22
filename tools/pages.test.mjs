@@ -96,3 +96,13 @@ test('portrait appears only on the home page', () => {
   const withPhoto = htmlFiles().filter(f => read(f).includes('headshot.jpg')).sort();
   assert.deepEqual(withPhoto, allowed);
 });
+
+test('consistent facts: PhD field, years in research, German patient wording', () => {
+  for (const f of ['index.html', 'about.html', 'de/index.html', 'de/about.html', 'services.html', 'de/services.html'])
+    assert.ok(!/15\+/.test(text(read(f))), `${f}: says 15+ years`);
+  assert.ok(text(read('about.html')).includes('a PhD in biomedical sciences (neuroscience) at FSU'));
+  assert.ok(text(read('de/about.html')).includes('Promotion in Biomedizinischen Wissenschaften (Neurowissenschaften) an der FSU'));
+  const np = text(read('de/neuropenetrance.html'));
+  assert.ok(!np.includes('etwa jede fünfte Person'), 'de NeuroPenetrance: "Person" instead of patient');
+  assert.ok(np.includes('etwa jede fünfte Patientin bzw. jeder fünfte Patient'));
+});
