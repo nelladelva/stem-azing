@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { read, htmlFiles } from './site.mjs';
-import { PRICES, SERVICES } from './request-data.mjs';
+import { SERVICES } from './request-data.mjs';
 import { SCHEMA_PAGES, schemaFor, renderSchema } from './build-schema.mjs';
 
 const blocks = h => [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => m[1]);
@@ -32,19 +32,16 @@ test('the business: Berlin address, worldwide, English, linked to Nella', () => 
   }
 });
 
-test('services list the six starting prices in EUR and USD', () => {
-  const first = { lectures: 'lecture', tutoring: 'tutoring', writing: 'langEdit', communication: 'piece', consulting: 'consultHour', 'data-analysis': 'dataHour' };
+test('services are listed for search engines, but without prices', () => {
   for (const [f, lang] of [['services.html', 'en'], ['de/services.html', 'de']]) {
     const offers = node(f, 'ProfessionalService').hasOfferCatalog.itemListElement;
     assert.equal(offers.length, 6, f);
     SERVICES.forEach((s, i) => {
-      const o = offers[i];
-      assert.equal(o.itemOffered.name, s.name[lang]);
-      assert.equal(o.url, `https://stem-azing.com/${lang === 'de' ? 'de/' : ''}request/${s.slug}.html`);
-      const p = PRICES[first[s.slug]];
-      assert.deepEqual(o.priceSpecification.map(x => [x.price, x.priceCurrency]), [[p.eur, 'EUR'], [p.usd, 'USD']], `${f}: ${s.slug}`);
+      assert.equal(offers[i].itemOffered.name, s.name[lang]);
+      assert.equal(offers[i].url, `https://stem-azing.com/${lang === 'de' ? 'de/' : ''}request/${s.slug}.html`);
     });
   }
+  for (const f of SCHEMA_PAGES) assert.ok(!/price/i.test(blocks(read(f))[0]), `${f}: no prices in structured data`);
 });
 
 test('every page with language alternates has x-default pointing to English', () => {

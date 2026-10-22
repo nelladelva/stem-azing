@@ -100,7 +100,7 @@ export function renderPage(s, lang) {
   const pre = lang === 'de' ? 'de/' : '';
   const subs = [...s.subs, { id: 'other', en: 'Other', de: 'Sonstiges', per: s.billing ? 'info' : 'quote' }];
   const budgetLabel = (b, cur) => (lang === 'de' ? b[`de_${cur}`] : b[cur]);
-  const budget = `<select name="budget"><option value="">${t.choose}</option>${BUDGETS.map(b =>
+  const budget = `<select name="budget" data-nosnippet><option value="">${t.choose}</option>${BUDGETS.map(b =>
     `<option value="${esc(b.eur)}" data-val-eur="${esc(b.eur)}" data-val-usd="${esc(b.usd)}" data-eur="${esc(budgetLabel(b, 'eur'))}" data-usd="${esc(budgetLabel(b, 'usd'))}">${esc(budgetLabel(b, 'eur'))}</option>`).join('')}</select>`;
   const billing = s.billing ? radios(t.billing, 'billing', [
     { value: 'hourly', en: T.en.hourly, de: T.de.hourly, attrs: ` data-per="hour" ${price(s.billing.hour)}` },
@@ -155,7 +155,7 @@ export function renderPage(s, lang) {
         ${field(t.deadline, input('date', 'deadline', ' required'), true, t)}
         ${radios(t.format, 'format', [{ value: 'online', en: T.en.online, de: T.de.online }, { value: 'in-person', en: T.en.inPerson, de: T.de.inPerson }], lang, true, t)}
         <p class="field-note">${t.inPersonNote}</p>
-        <div class="estimate">
+        <div class="estimate" data-nosnippet>
           <p class="kicker">${t.estimate}</p>
           <div data-estimate-lines aria-live="polite"><p>${t.estimateNone}</p></div>
           <p class="vat-note">${t.estimateNote} ${t.rushNote} ${t.vat}</p>
