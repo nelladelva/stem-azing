@@ -25,7 +25,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px; }
 body {
   margin: 0; background: var(--cream); color: var(--ink);
   font: 16px/1.6 var(--sans); overflow-x: hidden;
@@ -34,6 +34,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--blue); }
 a:hover { color: var(--terracotta); }
 :focus-visible { outline: 3px solid var(--terracotta); outline-offset: 2px; border-radius: 4px; }
+.band--navy :focus-visible, #site-footer :focus-visible { outline-color: var(--peach); }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--blue); line-height: 1.15; margin: 0; }
 h1 { font-size: clamp(32px, 5vw, 46px); }
 h2 { font-size: clamp(26px, 3.4vw, 32px); margin: 6px 0 18px; }

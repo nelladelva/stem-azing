@@ -90,7 +90,12 @@ if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInv
   });
   // ── Invoice request dialog ──
   var modal = document.getElementById("payModal");
-  function closeModal() { if (modal) modal.classList.remove("is-open"); }
+  var lastFocus = null;
+  function closeModal() {
+    if (!modal || !modal.classList.contains("is-open")) return;
+    modal.classList.remove("is-open");
+    if (lastFocus) lastFocus.focus();
+  }
   document.querySelectorAll(".pay-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
       if (!modal) return;
@@ -106,13 +111,23 @@ if (typeof module !== "undefined") module.exports = { buildInvoiceMail: buildInv
       document.getElementById("payModalService").textContent = service;
       document.getElementById("payModalAmount").textContent = formatMoney(symbol, amount, lang) + unitText;
       document.getElementById("invoiceLink").href = mail.href;
+      lastFocus = document.activeElement;
       modal.classList.add("is-open");
       document.getElementById("invoiceLink").focus();
     });
   });
   document.querySelectorAll("[data-close-modal]").forEach(function (b) { b.addEventListener("click", closeModal); });
   if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+  document.addEventListener("keydown", function (e) {
+    if (!modal || !modal.classList.contains("is-open")) return;
+    if (e.key === "Escape") { closeModal(); return; }
+    if (e.key === "Tab") {
+      var items = modal.querySelectorAll("a[href], button");
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
   // ── Calendly, loaded only after a click ──
   document.querySelectorAll("[data-calendly-load]").forEach(function (btn) {
     btn.addEventListener("click", function () {
