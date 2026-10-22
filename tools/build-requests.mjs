@@ -13,8 +13,8 @@ const SITE = 'https://stem-azing.com/';
 
 const T = {
   en: {
-    kicker: 'Request an invoice', title: 'Request an invoice', back: '← All services', services: '/services.html', privacy: '/datenschutz.html',
-    description: n => `Tell Dr. Nella C. Delva what you need for ${n} and get an invoice: options, budget, timeline and billing details.`,
+    kicker: 'Request an invoice', title: 'Request a Quote', back: '← All services', services: '/services.html', privacy: '/datenschutz.html',
+    description: n => `${n} by Dr. Nella C. Delva, PhD: pick services, budget and deadline, see a live price and request a quote. Online worldwide.`,
     lede: 'A few questions so I can understand your project and prepare your invoice. It takes about five minutes.',
     lang: 'All communication will be in English.',
     steps: ['Your project', 'About you', 'Invoice details', 'Extras'],
@@ -34,8 +34,8 @@ const T = {
     thanksTitle: 'Thank you', thanks: "Thank you — I'll reply within 2 working days with your invoice or an invitation to a free call.",
   },
   de: {
-    kicker: 'Rechnung anfordern', title: 'Rechnung anfordern', back: '← Alle Leistungen', services: '/de/services.html', privacy: '/de/datenschutz.html',
-    description: n => `Teilen Sie Dr. Nella C. Delva mit, was Sie für ${n} brauchen, und erhalten Sie eine Rechnung: Leistungen, Budget, Zeitplan und Rechnungsdaten.`,
+    kicker: 'Rechnung anfordern', title: 'Angebot anfordern', back: '← Alle Leistungen', services: '/de/services.html', privacy: '/de/datenschutz.html',
+    description: n => `${n} von Dr. Nella C. Delva: Leistungen und Frist wählen, Preis sofort sehen, Angebot anfordern. Online & in Berlin.`,
     lede: 'Ein paar Fragen, damit ich Ihr Vorhaben verstehe und Ihre Rechnung vorbereiten kann. Das dauert etwa fünf Minuten.',
     lang: 'Die gesamte Kommunikation erfolgt auf Englisch.',
     steps: ['Ihr Vorhaben', 'Über Sie', 'Rechnungsdaten', 'Weiteres'],
@@ -114,8 +114,8 @@ export function renderPage(s, lang) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${t.title}: ${esc(name)} — STEM-azing</title>
-<meta name="description" content="${esc(t.description(name))}">
+<title>${t.title}: ${esc(s.seo[lang])} | STEM-azing</title>
+<meta name="description" content="${esc(t.description(s.seo[lang]))}">
 <link rel="alternate" hreflang="en" href="${SITE}request/${s.slug}.html">
 <link rel="alternate" hreflang="de" href="${SITE}de/request/${s.slug}.html">
 <link rel="stylesheet" href="/css/site.css">

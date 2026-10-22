@@ -26,6 +26,7 @@ const opt = (value, en, de) => ({ value, en, de });
 export const SERVICES = [
   {
     slug: 'lectures',
+    seo: { en: 'Science Guest Lectures & STEM Workshops', de: 'Gastvorträge & MINT-Workshops' },   // search phrase for the page title
     name: { en: 'Guest lectures & workshops', de: 'Gastvorträge & Workshops' },
     billing: null,
     subs: [
@@ -49,6 +50,7 @@ export const SERVICES = [
   },
   {
     slug: 'tutoring',
+    seo: { en: 'Online Biology & Science Tutoring', de: 'Nachhilfe Biologie & MINT' },   // search phrase for the page title
     name: { en: 'Tutoring & mentorship', de: 'Nachhilfe & Mentoring' },
     billing: null,
     subs: [
@@ -75,6 +77,7 @@ export const SERVICES = [
   },
   {
     slug: 'writing',
+    seo: { en: 'Scientific Editing & Proofreading', de: 'Englisches Lektorat & Korrektorat' },   // search phrase for the page title
     name: { en: 'Scientific writing & editing', de: 'Wissenschaftliches Schreiben & Lektorat' },
     billing: null,
     subs: [
@@ -100,6 +103,7 @@ export const SERVICES = [
   },
   {
     slug: 'communication',
+    seo: { en: 'Science Writing & Communication', de: 'Wissenschaftskommunikation & Fachtexte' },   // search phrase for the page title
     name: { en: 'Science communication', de: 'Wissenschaftskommunikation' },
     billing: null,
     subs: [
@@ -121,6 +125,7 @@ export const SERVICES = [
   },
   {
     slug: 'consulting',
+    seo: { en: 'Scientific Consulting & Research Advice', de: 'Wissenschaftliche Beratung & Forschung' },   // search phrase for the page title
     name: { en: 'Scientific consulting', de: 'Wissenschaftliche Beratung' },
     billing: { hour: 'consultHour', from: 'consultFrom' },
     subs: [
@@ -141,6 +146,7 @@ export const SERVICES = [
   },
   {
     slug: 'data-analysis',
+    seo: { en: 'Biomedical Data Analysis & Statistics', de: 'Biomedizinische Datenanalyse' },   // search phrase for the page title
     name: { en: 'Research & data analysis', de: 'Forschungs- & Datenanalyse' },
     billing: { hour: 'dataHour', from: 'dataFrom' },
     subs: [
