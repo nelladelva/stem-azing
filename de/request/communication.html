@@ -41,14 +41,14 @@
         <label class="field"><span>Zielgruppe</span><input type="text" name="audience"></label>
         <label class="field"><span>Plattform</span><input type="text" name="platform"></label>
         <label class="field"><span>Tonalität</span><input type="text" name="tone"></label>
-        <label class="field"><span>Budget</span><select name="budget"><option value="">Bitte wählen</option><option value="under-500" data-eur="Unter 500 €" data-usd="Unter 550 $">Unter 500 €</option><option value="500-1500" data-eur="500–1.500 €" data-usd="550–1.650 $">500–1.500 €</option><option value="1500-5000" data-eur="1.500–5.000 €" data-usd="1.650–5.500 $">1.500–5.000 €</option><option value="over-5000" data-eur="Über 5.000 €" data-usd="Über 5.500 $">Über 5.000 €</option><option value="not-sure" data-eur="Noch unklar" data-usd="Noch unklar">Noch unklar</option></select></label>
+        <label class="field"><span>Budget</span><select name="budget"><option value="">Bitte wählen</option><option value="Under €500" data-val-eur="Under €500" data-val-usd="Under $550" data-eur="Unter 500 €" data-usd="Unter 550 $">Unter 500 €</option><option value="€500–1,500" data-val-eur="€500–1,500" data-val-usd="$550–1,650" data-eur="500–1.500 €" data-usd="550–1.650 $">500–1.500 €</option><option value="€1,500–5,000" data-val-eur="€1,500–5,000" data-val-usd="$1,650–5,500" data-eur="1.500–5.000 €" data-usd="1.650–5.500 $">1.500–5.000 €</option><option value="Over €5,000" data-val-eur="Over €5,000" data-val-usd="Over $5,500" data-eur="Über 5.000 €" data-usd="Über 5.500 $">Über 5.000 €</option><option value="Not sure" data-val-eur="Not sure" data-val-usd="Not sure" data-eur="Noch unklar" data-usd="Noch unklar">Noch unklar</option></select></label>
         <label class="field"><span>Frist <abbr class="req" title="Pflichtfeld">*</abbr></span><input type="date" name="deadline" required></label>
         <div class="field" role="group" aria-labelledby="q-format"><span id="q-format">Online oder vor Ort? <abbr class="req" title="Pflichtfeld">*</abbr></span><div class="opts"><label class="opt"><input type="radio" name="format" value="online" required> <span>Online</span></label><label class="opt"><input type="radio" name="format" value="in-person" required> <span>Vor Ort</span></label></div></div>
-        <p class="field-note">Vor Ort bedeutet Berlin; Reisen außerhalb Berlins werden separat berechnet.</p>
-        <div class="estimate" aria-live="polite">
-          <p class="kicker">Live-Schätzung</p>
-          <div data-estimate-lines><p>Wählen Sie aus, was Sie brauchen, um eine Startschätzung zu sehen.</p></div>
-          <p class="vat-note">Unverbindliche Startschätzung; der endgültige Preis steht auf Ihrer Rechnung. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
+        <p class="field-note">Vor Ort bedeutet Berlin; Reisekosten außerhalb Berlins nach Absprache.</p>
+        <div class="estimate">
+          <p class="kicker">Live-Preisschätzung</p>
+          <div data-estimate-lines aria-live="polite"><p>Wählen Sie aus, was Sie brauchen, um eine erste Preisschätzung zu sehen.</p></div>
+          <p class="vat-note">Unverbindliche erste Preisschätzung; der endgültige Preis steht auf Ihrer Rechnung. Fristen unter 7 Tagen: +25 % Eilzuschlag. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
         </div>
         <div class="step-nav"><button type="button" class="btn btn--primary" data-step-next>Weiter →</button></div>
       </fieldset>
@@ -71,7 +71,7 @@
         <label class="field"><span>USt-IdNr. (optional)</span><input type="text" name="vat_id"></label>
         <label class="field"><span>Bestell- oder Referenznummer (optional)</span><input type="text" name="po_number"></label>
         <label class="field"><span>Währung</span><select name="currency"><option value="EUR">EUR €</option><option value="USD">USD $</option></select></label>
-        <label class="field"><span>Rechnung senden an (falls abweichend)</span><input type="email" name="invoice_email"></label>
+        <label class="field"><span>Rechnung per E-Mail an (falls abweichend)</span><input type="email" name="invoice_email"></label>
         <div class="step-nav"><button type="button" class="btn btn--outline" data-step-prev>← Zurück</button><button type="button" class="btn btn--primary" data-step-next>Weiter →</button></div>
       </fieldset>
 

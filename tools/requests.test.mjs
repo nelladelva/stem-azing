@@ -13,8 +13,8 @@ test('generated pages are committed and up to date', () => {
 });
 
 test('every form posts to Formspree and carries the required notes', () => {
-  for (const [lang, notes] of [['en', ['All communication will be in English.', 'No VAT is charged under § 19 UStG.', 'In person means Berlin; travel outside Berlin is quoted separately.']],
-                               ['de', ['Die gesamte Kommunikation erfolgt auf Englisch.', 'Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.', 'Vor Ort bedeutet Berlin; Reisen außerhalb Berlins werden separat berechnet.']]]) {
+  for (const [lang, notes] of [['en', ['All communication will be in English.', 'No VAT is charged under § 19 UStG.', 'In person means Berlin; travel outside Berlin is quoted separately.', 'Deadlines under 7 days: +25% rush fee.']],
+                               ['de', ['Die gesamte Kommunikation erfolgt auf Englisch.', 'Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.', 'Vor Ort bedeutet Berlin; Reisekosten außerhalb Berlins nach Absprache.', 'Fristen unter 7 Tagen: +25 % Eilzuschlag.']]]) {
     for (const f of files(lang)) {
       const h = read(f), t = text(h);
       assert.ok(h.includes('action="https://formspree.io/f/myeegvqk"') && h.includes('method="POST"'), f);
@@ -58,4 +58,33 @@ test('hreflang pairs and sitemap', () => {
 
 test('quantity boxes accept any whole number (no step that rejects 6000 words)', () => {
   for (const f of [...files('en'), ...files('de')]) assert.ok(!/name="qty_[^"]*"[^>]*\bstep=/.test(read(f)), f);
+});
+
+test('budget sends the range the client saw, in English', () => {
+  for (const f of ['request/writing.html', 'de/request/writing.html']) {
+    const h = read(f);
+    assert.ok(h.includes('<option value="€500–1,500" data-val-eur="€500–1,500" data-val-usd="$550–1,650"'), f);
+    assert.ok(h.includes('value="Not sure"'), `${f}: English value for not sure`);
+  }
+  assert.ok(read('de/request/writing.html').includes('data-usd="550–1.650 $">500–1.500 €</option>'));
+});
+
+test('only the price lines are announced to screen readers', () => {
+  for (const f of [...files('en'), ...files('de')]) {
+    const h = read(f);
+    assert.ok(h.includes('<div data-estimate-lines aria-live="polite">'), f);
+    assert.ok(!h.includes('class="estimate" aria-live'), f);
+  }
+});
+
+test('German wording from the review', () => {
+  const t = text(read('de/request/tutoring.html'));
+  for (const s of ['Bildungsstand', 'Schüler/in bzw. Studierende/r', 'Rechnung per E-Mail an (falls abweichend)', 'Unverbindliche erste Preisschätzung'])
+    assert.ok(t.includes(s), s);
+  assert.ok(!t.includes('Stufe der lernenden Person'));
+});
+
+test('services pages warn about the rush fee', () => {
+  assert.ok(text(read('services.html')).includes('Deadlines under 7 days: +25% rush fee.'));
+  assert.ok(text(read('de/services.html')).includes('Fristen unter 7 Tagen: +25 % Eilzuschlag.'));
 });

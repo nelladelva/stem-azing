@@ -63,14 +63,14 @@ export const SERVICES = [
       { id: 'scholarships', en: 'Scholarship & Fulbright guidance', de: 'Beratung zu Stipendien und Fulbright', per: 'session', price: 'tutoring' },
     ],
     questions: [
-      { name: 'student_level', type: 'select', en: "Student's level", de: 'Stufe der lernenden Person', options: [
+      { name: 'student_level', type: 'select', en: "Student's level", de: 'Bildungsstand', options: [
         opt('middle school', 'Middle school', 'Mittelstufe'), opt('high school', 'High school', 'Oberstufe'),
         opt('university', 'University', 'Studium'), opt('graduate', 'Graduate', 'Master / Promotion'), opt('professional', 'Professional', 'Berufstätig')] },
       { name: 'subject', type: 'text', en: 'Subject', de: 'Fach' },
       { name: 'goals', type: 'textarea', en: 'Goals', de: 'Ziele' },
       { name: 'schedule', type: 'text', en: 'Preferred schedule', de: 'Gewünschte Zeiten' },
       { name: 'payer', type: 'radio', en: 'Who is paying?', de: 'Wer bezahlt?', options: [
-        opt('parent', 'Parent', 'Eltern'), opt('student', 'Student', 'Lernende Person'), opt('school', 'School', 'Schule'), opt('other', 'Other', 'Sonstige')] },
+        opt('parent', 'Parent', 'Eltern'), opt('student', 'Student', 'Schüler/in bzw. Studierende/r'), opt('school', 'School', 'Schule'), opt('other', 'Other', 'Sonstige')] },
     ],
   },
   {

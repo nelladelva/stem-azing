@@ -6,26 +6,39 @@
 
 var money = typeof formatMoney !== "undefined" ? formatMoney : require("./site.js").formatMoney;
 
+var RUSH_RATE = 0.25;   // deadline less than 7 days away
+var RUSH_DAYS = 7;
+
 var ESTIMATE_TEXT = {
   en: { total: "Starting estimate: ", from: "From ", plusFrom: "+ from ", quoted: "+ items quoted after review",
-        deposit: "50% deposit books your spot: ", none: "Choose what you need to see a starting estimate." },
-  de: { total: "Startschätzung: ", from: "Ab ", plusFrom: "+ ab ", quoted: "+ weitere Posten nach Prüfung",
-        deposit: "50 % Anzahlung sichert Ihren Termin: ", none: "Wählen Sie aus, was Sie brauchen, um eine Startschätzung zu sehen." }
+        rush: "Rush fee (deadline within 7 days): +25%",
+        deposit: "50% deposit books your spot: ", none: "Choose what you need to see a starting estimate.",
+        pending: "Enter a quantity to see the price." },
+  de: { total: "Erste Preisschätzung: ", from: "Ab ", plusFrom: "+ ab ", quoted: "+ weitere Posten nach Prüfung",
+        rush: "Eilzuschlag (Frist unter 7 Tagen): +25 %",
+        deposit: "50 % Anzahlung sichert Ihren Termin: ", none: "Wählen Sie aus, was Sie brauchen, um eine erste Preisschätzung zu sehen.",
+        pending: "Geben Sie eine Menge ein, um den Preis zu sehen." }
 };
 
-// lines: [{ per, eur, usd, qty }] → { total, deposit, from: [amounts], quoted }
-function estimate(lines, currency) {
-  var r = { total: 0, deposit: 0, from: [], quoted: false };
+// lines: [{ per, eur, usd, qty }], rush: boolean
+// → { total, deposit, from: [amounts], quoted, rush: fee, rushed, pending: a priced item still needs its quantity }
+function estimate(lines, currency, rush) {
+  var r = { total: 0, deposit: 0, from: [], quoted: false, rush: 0, rushed: !!rush, pending: false };
   lines.forEach(function (l) {
     var rate = Number(currency === "USD" ? l.usd : l.eur);
     var qty = Number(l.qty);
-    var hasQty = isFinite(qty) && qty > 0;
-    if (l.per === "session" || l.per === "piece" || l.per === "hour") { if (hasQty) r.total += rate * qty; }
-    else if (l.per === "1000words") { if (hasQty) r.total += Math.round(rate * qty / 1000); }
+    var hasQty = l.qty !== "" && l.qty !== null && isFinite(qty) && qty > 0;
+    if (l.per === "session" || l.per === "piece" || l.per === "hour") { if (hasQty) r.total += rate * qty; else r.pending = true; }
+    else if (l.per === "1000words") { if (hasQty) r.total += Math.round(rate * qty / 1000); else r.pending = true; }
     else if (l.per === "flat") r.total += rate;
     else if (l.per === "from") r.from.push(rate);
     else if (l.per === "quote") r.quoted = true;
   });
+  if (rush) {
+    r.rush = Math.round(r.total * RUSH_RATE);
+    r.total += r.rush;
+    r.from = r.from.map(function (v) { return Math.round(v * (1 + RUSH_RATE)); });
+  }
   r.deposit = Math.round(r.total / 2);
   return r;
 }
@@ -36,10 +49,21 @@ function estimateText(r, currency, lang) {
   var fmt = function (v) { return money(symbol, v, lang); };
   var out = [];
   if (r.total > 0) out.push(t.total + fmt(r.total));
+  if (r.total > 0 && r.rushed) out.push(t.rush + " · " + fmt(r.rush));
   r.from.forEach(function (v, i) { out.push((r.total > 0 || i > 0 ? t.plusFrom : t.from) + fmt(v)); });
   if (r.quoted) out.push(t.quoted);
+  if (r.total === 0 && r.rushed && out.length) out.push(t.rush);
   if (r.total > 0) out.push(t.deposit + fmt(r.deposit));
-  return out.length ? out : [t.none];
+  if (out.length) return out;
+  return [r.pending ? t.pending : t.none];
+}
+
+// Both "YYYY-MM-DD": true when the deadline is today or within the next 6 days.
+function isRush(deadline, today) {
+  var d = Date.parse(deadline), t = Date.parse(today);
+  if (isNaN(d) || isNaN(t)) return false;
+  var days = Math.round((d - t) / 86400000);
+  return days >= 0 && days < RUSH_DAYS;
 }
 
 function pickCurrency(search) {
@@ -47,7 +71,7 @@ function pickCurrency(search) {
   return m && m[1].toUpperCase() === "USD" ? "USD" : "EUR";
 }
 
-if (typeof module !== "undefined") module.exports = { estimate: estimate, estimateText: estimateText, pickCurrency: pickCurrency };
+if (typeof module !== "undefined") module.exports = { estimate: estimate, estimateText: estimateText, pickCurrency: pickCurrency, isRush: isRush };
 
 (function () {
   "use strict";
@@ -69,9 +93,14 @@ if (typeof module !== "undefined") module.exports = { estimate: estimate, estima
   var status = form.querySelector(".form-status");
   var current = 0;
 
+  var now = new Date();
+  var today = now.getFullYear() + "-" + ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
+  var deadline = form.elements.deadline;
+
   form.noValidate = true;
   form.classList.add("is-stepper");
   currencySel.value = pickCurrency(location.search);
+  deadline.min = today;
 
   // ── Steps ──
   function show(i, focus) {
@@ -140,13 +169,16 @@ if (typeof module !== "undefined") module.exports = { estimate: estimate, estima
 
   function update() {
     var cur = currencySel.value;
-    var text = estimateText(estimate(lines(), cur), cur, lang);
+    var text = estimateText(estimate(lines(), cur, isRush(deadline.value, today)), cur, lang);
     var box = form.querySelector("[data-estimate-lines]");
     box.innerHTML = "";
     text.forEach(function (t) { var p = document.createElement("p"); p.textContent = t; box.appendChild(p); });
     form.elements.estimate.value = text.join(" · ");
-    var attr = cur === "USD" ? "data-usd" : "data-eur";
-    form.querySelectorAll('select[name="budget"] option[data-eur]').forEach(function (o) { o.textContent = o.getAttribute(attr); });
+    var usd = cur === "USD";
+    form.querySelectorAll('select[name="budget"] option[data-eur]').forEach(function (o) {
+      o.textContent = o.getAttribute(usd ? "data-usd" : "data-eur");
+      o.value = o.getAttribute(usd ? "data-val-usd" : "data-val-eur");
+    });
     toggleExtras();
   }
   // Enter in a field before the last step means "Next", not "send the whole form".
@@ -176,8 +208,10 @@ if (typeof module !== "undefined") module.exports = { estimate: estimate, estima
         thanks.focus();
       })
       .catch(function () {
-        status.textContent = MSG.failed;
+        // Clear, show, then fill: screen readers announce the alert again on every failure.
+        status.textContent = "";
         status.hidden = false;
+        setTimeout(function () { status.textContent = MSG.failed; }, 50);
         btn.disabled = false;
       });
   });

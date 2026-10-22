@@ -41,14 +41,14 @@
         <label class="field"><span>Audience</span><input type="text" name="audience"></label>
         <label class="field"><span>Platform</span><input type="text" name="platform"></label>
         <label class="field"><span>Tone</span><input type="text" name="tone"></label>
-        <label class="field"><span>Budget</span><select name="budget"><option value="">Please choose</option><option value="under-500" data-eur="Under €500" data-usd="Under $550">Under €500</option><option value="500-1500" data-eur="€500–1,500" data-usd="$550–1,650">€500–1,500</option><option value="1500-5000" data-eur="€1,500–5,000" data-usd="$1,650–5,500">€1,500–5,000</option><option value="over-5000" data-eur="Over €5,000" data-usd="Over $5,500">Over €5,000</option><option value="not-sure" data-eur="Not sure" data-usd="Not sure">Not sure</option></select></label>
+        <label class="field"><span>Budget</span><select name="budget"><option value="">Please choose</option><option value="Under €500" data-val-eur="Under €500" data-val-usd="Under $550" data-eur="Under €500" data-usd="Under $550">Under €500</option><option value="€500–1,500" data-val-eur="€500–1,500" data-val-usd="$550–1,650" data-eur="€500–1,500" data-usd="$550–1,650">€500–1,500</option><option value="€1,500–5,000" data-val-eur="€1,500–5,000" data-val-usd="$1,650–5,500" data-eur="€1,500–5,000" data-usd="$1,650–5,500">€1,500–5,000</option><option value="Over €5,000" data-val-eur="Over €5,000" data-val-usd="Over $5,500" data-eur="Over €5,000" data-usd="Over $5,500">Over €5,000</option><option value="Not sure" data-val-eur="Not sure" data-val-usd="Not sure" data-eur="Not sure" data-usd="Not sure">Not sure</option></select></label>
         <label class="field"><span>Deadline <abbr class="req" title="Required">*</abbr></span><input type="date" name="deadline" required></label>
         <div class="field" role="group" aria-labelledby="q-format"><span id="q-format">Online or in person? <abbr class="req" title="Required">*</abbr></span><div class="opts"><label class="opt"><input type="radio" name="format" value="online" required> <span>Online</span></label><label class="opt"><input type="radio" name="format" value="in-person" required> <span>In person</span></label></div></div>
         <p class="field-note">In person means Berlin; travel outside Berlin is quoted separately.</p>
-        <div class="estimate" aria-live="polite">
+        <div class="estimate">
           <p class="kicker">Live estimate</p>
-          <div data-estimate-lines><p>Choose what you need to see a starting estimate.</p></div>
-          <p class="vat-note">Starting estimate; the final price is confirmed on your invoice. No VAT is charged under § 19 UStG.</p>
+          <div data-estimate-lines aria-live="polite"><p>Choose what you need to see a starting estimate.</p></div>
+          <p class="vat-note">Starting estimate; the final price is confirmed on your invoice. Deadlines under 7 days: +25% rush fee. No VAT is charged under § 19 UStG.</p>
         </div>
         <div class="step-nav"><button type="button" class="btn btn--primary" data-step-next>Next →</button></div>
       </fieldset>

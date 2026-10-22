@@ -58,6 +58,8 @@ which emails them to you; you send the invoice yourself.
 The 12 form pages are **generated**. Edit `tools/request-data.mjs` (sub-services, questions,
 prices), then run `npm run build:requests` and commit the output; `npm test` fails if the
 pages are out of date. Stepper, estimate and sending live in `js/request.js`.
+Rush fee: a deadline less than 7 days away adds 25% to the estimate (`RUSH_RATE`, `RUSH_DAYS`
+in `js/request.js`); the services pages and every form say so.
 When a price changes, change it in `services.html`, `de/services.html` **and**
 `tools/request-data.mjs`.
 

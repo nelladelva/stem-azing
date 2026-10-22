@@ -24,7 +24,7 @@ const T = {
     budget: 'Budget', choose: 'Please choose', deadline: 'Deadline', format: 'Online or in person?', online: 'Online', inPerson: 'In person',
     inPersonNote: 'In person means Berlin; travel outside Berlin is quoted separately.',
     estimate: 'Live estimate', estimateNone: 'Choose what you need to see a starting estimate.',
-    estimateNote: 'Starting estimate; the final price is confirmed on your invoice.', vat: 'No VAT is charged under § 19 UStG.',
+    estimateNote: 'Starting estimate; the final price is confirmed on your invoice.', rushNote: 'Deadlines under 7 days: +25% rush fee.', vat: 'No VAT is charged under § 19 UStG.',
     name: 'Full name', email: 'Email', phone: 'Phone (optional)', organisation: 'Company, university or organisation', role: 'Role',
     billingName: 'Billing name (person or organisation)', billingAddress: 'Billing address', country: 'Country',
     vatId: 'VAT ID (optional)', po: 'PO or reference number (optional)', currency: 'Currency', invoiceEmail: 'Send the invoice to (if different)',
@@ -43,12 +43,12 @@ const T = {
     qty: { session: 'Sitzungen', piece: 'Beiträge', '1000words': 'Wörter' }, other: 'Sonstiges', otherText: 'Bitte beschreiben',
     billing: 'Nach Stunden oder als Projekt?', hourly: 'Nach Stunden', fixed: 'Festes Projekt', hours: 'Erwartete Stunden',
     budget: 'Budget', choose: 'Bitte wählen', deadline: 'Frist', format: 'Online oder vor Ort?', online: 'Online', inPerson: 'Vor Ort',
-    inPersonNote: 'Vor Ort bedeutet Berlin; Reisen außerhalb Berlins werden separat berechnet.',
-    estimate: 'Live-Schätzung', estimateNone: 'Wählen Sie aus, was Sie brauchen, um eine Startschätzung zu sehen.',
-    estimateNote: 'Unverbindliche Startschätzung; der endgültige Preis steht auf Ihrer Rechnung.', vat: 'Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.',
+    inPersonNote: 'Vor Ort bedeutet Berlin; Reisekosten außerhalb Berlins nach Absprache.',
+    estimate: 'Live-Preisschätzung', estimateNone: 'Wählen Sie aus, was Sie brauchen, um eine erste Preisschätzung zu sehen.',
+    estimateNote: 'Unverbindliche erste Preisschätzung; der endgültige Preis steht auf Ihrer Rechnung.', rushNote: 'Fristen unter 7 Tagen: +25 % Eilzuschlag.', vat: 'Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.',
     name: 'Vollständiger Name', email: 'E-Mail', phone: 'Telefon (optional)', organisation: 'Unternehmen, Hochschule oder Organisation', role: 'Funktion',
     billingName: 'Rechnungsname (Person oder Organisation)', billingAddress: 'Rechnungsanschrift', country: 'Land',
-    vatId: 'USt-IdNr. (optional)', po: 'Bestell- oder Referenznummer (optional)', currency: 'Währung', invoiceEmail: 'Rechnung senden an (falls abweichend)',
+    vatId: 'USt-IdNr. (optional)', po: 'Bestell- oder Referenznummer (optional)', currency: 'Währung', invoiceEmail: 'Rechnung per E-Mail an (falls abweichend)',
     details: 'Erzählen Sie mir mehr', files: 'Link zu Ihren Dateien (Google Drive, Dropbox …)', heard: 'Wie sind Sie auf STEM-azing aufmerksam geworden?',
     consent: ['Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden, wie in der ', 'Datenschutzerklärung', ' beschrieben.'],
     backBtn: '← Zurück', next: 'Weiter →', send: 'Anfrage senden', required: 'Pflichtfeld',
@@ -101,7 +101,7 @@ export function renderPage(s, lang) {
   const subs = [...s.subs, { id: 'other', en: 'Other', de: 'Sonstiges', per: s.billing ? 'info' : 'quote' }];
   const budgetLabel = (b, cur) => (lang === 'de' ? b[`de_${cur}`] : b[cur]);
   const budget = `<select name="budget"><option value="">${t.choose}</option>${BUDGETS.map(b =>
-    `<option value="${b.value}" data-eur="${esc(budgetLabel(b, 'eur'))}" data-usd="${esc(budgetLabel(b, 'usd'))}">${esc(budgetLabel(b, 'eur'))}</option>`).join('')}</select>`;
+    `<option value="${esc(b.eur)}" data-val-eur="${esc(b.eur)}" data-val-usd="${esc(b.usd)}" data-eur="${esc(budgetLabel(b, 'eur'))}" data-usd="${esc(budgetLabel(b, 'usd'))}">${esc(budgetLabel(b, 'eur'))}</option>`).join('')}</select>`;
   const billing = s.billing ? radios(t.billing, 'billing', [
     { value: 'hourly', en: T.en.hourly, de: T.de.hourly, attrs: ` data-per="hour" ${price(s.billing.hour)}` },
     { value: 'fixed', en: T.en.fixed, de: T.de.fixed, attrs: ` data-per="from" ${price(s.billing.from)}` },
@@ -154,10 +154,10 @@ export function renderPage(s, lang) {
         ${field(t.deadline, input('date', 'deadline', ' required'), true, t)}
         ${radios(t.format, 'format', [{ value: 'online', en: T.en.online, de: T.de.online }, { value: 'in-person', en: T.en.inPerson, de: T.de.inPerson }], lang, true, t)}
         <p class="field-note">${t.inPersonNote}</p>
-        <div class="estimate" aria-live="polite">
+        <div class="estimate">
           <p class="kicker">${t.estimate}</p>
-          <div data-estimate-lines><p>${t.estimateNone}</p></div>
-          <p class="vat-note">${t.estimateNote} ${t.vat}</p>
+          <div data-estimate-lines aria-live="polite"><p>${t.estimateNone}</p></div>
+          <p class="vat-note">${t.estimateNote} ${t.rushNote} ${t.vat}</p>
         </div>
         ${nav(1)}
       </fieldset>
