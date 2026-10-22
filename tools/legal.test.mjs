@@ -22,9 +22,9 @@ test('English Impressum', () => {
 test('privacy policies', () => {
   for (const [f, words] of [['datenschutz.html', ['no analytics', 'no tracking']], ['de/datenschutz.html', ['Verantwortliche', 'keine Analyse', 'Tracking']]]) {
     const h = read(f), t = text(h);
-    has(t, ['GitHub', 'Calendly', 'stemazing.advancement@gmail.com', 'Holzmarktstraße 73', ...words], f);
+    has(t, ['GitHub', 'Calendly', 'Formspree', 'stemazing.advancement@gmail.com', 'Holzmarktstraße 73', ...words], f);
     assert.ok(h.includes('class="draft-note"'), `${f}: draft note`);
-    assert.ok(!/Formspree|reCAPTCHA/.test(t), `${f}: no Formspree/reCAPTCHA`);
+    assert.ok(!/reCAPTCHA/.test(t), `${f}: no reCAPTCHA`);
   }
 });
 
