@@ -118,6 +118,7 @@ export function renderPage(s, lang) {
 <meta name="description" content="${esc(t.description(s.seo[lang]))}">
 <link rel="alternate" hreflang="en" href="${SITE}request/${s.slug}.html">
 <link rel="alternate" hreflang="de" href="${SITE}de/request/${s.slug}.html">
+<link rel="alternate" hreflang="x-default" href="${SITE}request/${s.slug}.html">
 <link rel="stylesheet" href="/css/site.css">
 <script src="/nav.js" defer></script>
 <script src="/js/site.js" defer></script>

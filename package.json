@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "test": "node --test \"tools/*.test.mjs\"",
-    "build:requests": "node tools/build-requests.mjs"
+    "build:requests": "node tools/build-requests.mjs",
+    "build:schema": "node tools/build-schema.mjs"
   }
 }

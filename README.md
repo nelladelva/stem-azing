@@ -63,6 +63,16 @@ in `js/request.js`); the services pages and every form say so.
 When a price changes, change it in `services.html`, `de/services.html` **and**
 `tools/request-data.mjs`.
 
+## Search engines
+
+- Titles and descriptions use the phrases people search for (`tools/seo.test.mjs` keeps them
+  ≤ 70 / ≤ 160 characters and unique).
+- Structured data (schema.org JSON-LD: STEM-azing, Dr. Nella C. Delva, the six services with
+  starting prices) sits in the home and services pages, EN + DE. It is generated from
+  `tools/build-schema.mjs` and `tools/request-data.mjs`: run `npm run build:schema` after a
+  price change. The portrait is referenced only from the home pages.
+- Every EN/DE pair also has `hreflang="x-default"` pointing to the English page.
+
 ## German version
 
 German pages live under `/de/` (same file names). `var DE_LIVE = true;` in `nav.js` shows the
