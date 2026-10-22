@@ -21,13 +21,12 @@ test('language detection', () => {
   assert.equal(langOf('/'), 'en');
 });
 
-test('language switch hidden while German is not live', () => {
-  assert.equal(nav.DE_LIVE, false);
-  assert.equal(alternateUrl('/services.html', 'de'), null);
+test('German is live: the language switch shows', () => {
+  assert.equal(nav.DE_LIVE, true);
+  assert.equal(alternateUrl('/services.html', 'de'), '/de/services.html');
 });
 
 test('language switch targets when live', () => {
-  _setDeLive(true);
   try {
     assert.equal(alternateUrl('/services.html', 'de'), '/de/services.html');
     assert.equal(alternateUrl('/', 'de'), '/de/');
@@ -35,7 +34,7 @@ test('language switch targets when live', () => {
     assert.equal(alternateUrl('/de/about.html', 'en'), '/about.html');
     assert.equal(alternateUrl('/de/', 'en'), '/');
     assert.equal(alternateUrl('/posts/a.html', 'de'), null);
-  } finally { _setDeLive(false); }
+  } finally { _setDeLive(true); }
 });
 
 test('footer has legal links', () => {
@@ -45,8 +44,9 @@ test('footer has legal links', () => {
   assert.ok(footerLinks('en').some(l => l.href === '/datenschutz.html'));
 });
 
-test('German pages use the English menu while German is hidden', () => {
-  assert.equal(nav.menuLang('/de/impressum.html'), 'en');
-  _setDeLive(true);
-  try { assert.equal(nav.menuLang('/de/impressum.html'), 'de'); } finally { _setDeLive(false); }
+test('German pages get the German menu now German is live', () => {
+  assert.equal(nav.menuLang('/de/impressum.html'), 'de');
+  assert.equal(nav.menuLang('/services.html'), 'en');
+  _setDeLive(false);
+  try { assert.equal(nav.menuLang('/de/impressum.html'), 'en'); } finally { _setDeLive(true); }
 });

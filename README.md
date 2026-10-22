@@ -51,13 +51,10 @@ STEM-azing is a Kleinunternehmerin business: every price area shows
 `stemazing.advancement@gmail.com` (set in `INVOICE_EMAIL` in `js/site.js`) with the
 service, starting rate, currency and the § 19 note. You send the invoice yourself.
 
-## German version (hidden)
+## German version
 
-The German pages in `de/` are not linked from the site until a native speaker has
-reviewed them. To launch:
-
-1. Set `var DE_LIVE = true;` in `nav.js` (shows the EN | DE switch and German menus).
-2. Add `hreflang` alternates between each EN/DE pair and the `/de/` pages to `sitemap.xml`.
-3. Update the "German stays hidden" test in `tools/i18n.test.mjs` to the live variant.
-
-The German legal pages (`de/impressum.html`, `de/datenschutz.html`) are live already.
+German pages live under `/de/` (same file names). `var DE_LIVE = true;` in `nav.js` shows the
+EN | DE switch and German menus. Each EN/DE pair carries `hreflang` alternates, and the
+German pages are in `sitemap.xml`. Blog posts are English only (no switch on post pages).
+When you add or rename a main page, add its German partner too — `npm test` checks the pairs.
+The German text was written by Claude; a native-speaker review is still recommended.

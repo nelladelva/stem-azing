@@ -35,8 +35,8 @@ test('privacy policies name the right legal bases', () => {
   }
 });
 
-test('unreviewed German main pages are noindex while hidden', () => {
-  assert.match(read('nav.js'), /var DE_LIVE = false;/);
+test('German main pages are indexable now German is live', () => {
+  assert.match(read('nav.js'), /var DE_LIVE = true;/);
   for (const f of ['index', 'services', 'about', 'writing', 'neuropenetrance', 'booking', 'consulting-portfolio'])
-    assert.ok(read(`de/${f}.html`).includes('<meta name="robots" content="noindex">'), `de/${f}.html`);
+    assert.ok(!read(`de/${f}.html`).includes('<meta name="robots" content="noindex">'), `de/${f}.html`);
 });

@@ -46,13 +46,19 @@ test('German pages link to English posts with hreflang="en"', () => {
   }
 });
 
-test('German stays hidden while DE_LIVE is false', () => {
-  assert.match(read('nav.js'), /var DE_LIVE = false;/);
-  for (const f of htmlFiles().filter(f => !f.startsWith('de/'))) {
-    const h = read(f);
-    for (const m of h.matchAll(/href="(\/de\/[^"]*)"/g))
-      assert.ok(['impressum.html', 'datenschutz.html'].includes(f) && LEGAL_DE.includes(m[1]), `${f} links ${m[1]}`);
-    if (!['impressum.html', 'datenschutz.html'].includes(f)) assert.ok(!h.includes('hreflang="de"'), `${f}: hreflang de`);
+test('German is live: language alternates and sitemap', () => {
+  assert.match(read('nav.js'), /var DE_LIVE = true;/);
+  const SITE = 'https://stem-azing.com/';
+  const url = f => SITE + (f === 'index.html' ? '' : f);
+  const de = f => SITE + 'de/' + (f === 'index.html' ? '' : f);
+  for (const f of EN_MAIN) {
+    for (const page of [f, `de/${f}`]) {
+      const h = read(page);
+      assert.ok(h.includes(`<link rel="alternate" hreflang="en" href="${url(f)}">`), `${page}: en alternate`);
+      assert.ok(h.includes(`<link rel="alternate" hreflang="de" href="${de(f)}">`), `${page}: de alternate`);
+    }
   }
-  assert.ok(!readFileSync(join(ROOT, 'sitemap.xml'), 'utf8').includes('/de/'), 'sitemap lists /de/');
+  const sm = readFileSync(join(ROOT, 'sitemap.xml'), 'utf8');
+  for (const f of EN_MAIN.filter(f => !['impressum.html', 'datenschutz.html'].includes(f)))
+    assert.ok(sm.includes(`<loc>${de(f)}</loc>`), `sitemap: ${de(f)}`);
 });

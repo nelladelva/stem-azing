@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { ROOT, read } from './site.mjs';
 
 test('sitemap lists live pages only', () => {
-  const locs = [...read('sitemap.xml').matchAll(/<loc>https:\/\/stem-azing\.com\/([^<]*)<\/loc>/g)].map(m => m[1] || 'index.html');
+  const locs = [...read('sitemap.xml').matchAll(/<loc>https:\/\/stem-azing\.com\/([^<]*)<\/loc>/g)].map(m => (m[1] === '' || m[1].endsWith('/')) ? m[1] + 'index.html' : m[1]);
   for (const l of locs) {
     assert.ok(existsSync(join(ROOT, l)), `${l} missing`);
     assert.ok(!read(l).includes('http-equiv="refresh"'), `${l} is a redirect`);

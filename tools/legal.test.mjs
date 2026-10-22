@@ -8,7 +8,7 @@ const DETAILS = ['Nella Christie Delva', 'STEM-azing', 'Holzmarktstraße 73', '1
 test('German Impressum', () => {
   const h = read('de/impressum.html'), t = text(h);
   has(t, ['Angaben gemäß § 5 DDG', ...DETAILS, 'Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.'], 'de/impressum');
-  assert.ok(h.includes('href="/booking.html"'), 'second contact: booking page (live page while German is hidden)');
+  assert.ok(h.includes('href="/de/booking.html"'), 'second contact: German booking page');
   assert.ok(!t.includes('USt-IdNr'));
   assert.ok(h.includes('lang="de"'));
 });

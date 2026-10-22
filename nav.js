@@ -4,9 +4,8 @@
 // (main pages, /posts/ and /de/). All links are root-absolute.
 // ============================================================
 
-// German pages exist under /de/ but stay hidden until a native speaker
-// has reviewed them. Set to true to show the EN | DE switch.
-var DE_LIVE = false;
+// German pages under /de/. true = show the EN | DE switch and German menus.
+var DE_LIVE = true;
 
 var NAV = {
   en: [
