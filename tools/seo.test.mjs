@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { read } from './site.mjs';
 import { SERVICES } from './request-data.mjs';
 
-const MAIN = ['index', 'services', 'about', 'writing', 'neuropenetrance', 'booking', 'consulting-portfolio'];
+const MAIN = ['index', 'services', 'about', 'writing', 'neuropenetrance', 'booking', 'consulting-portfolio', 'biography'];
 const PAGES = [...MAIN.flatMap(f => [`${f}.html`, `de/${f}.html`]), ...SERVICES.flatMap(s => [`request/${s.slug}.html`, `de/request/${s.slug}.html`])];
 const decode = s => s.replace(/&amp;/g, '&');
 const title = h => decode((h.match(/<title>([^<]*)<\/title>/) || [])[1] || '');

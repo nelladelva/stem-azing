@@ -33,6 +33,32 @@ test('about', () => {
   assert.ok(wordCount(h) <= 380, `words: ${wordCount(h)}`);
 });
 
+// Facts Nella confirmed on 23 Oct 2026: 10+ years of research (not "R&D"), AUC 0.61, EXIST in preparation, FSU from 2018.
+const DOIS = ['10.1177/1535370221991830', '10.1007/s42764-021-00038-x', '10.1021/acsptsci.1c00035', '10.2967/jnumed.118.217240'];
+
+test('biography', () => {
+  for (const [f, pre, facts] of [
+    ['biography.html', '', ['10+ years of research', 'Three ways I work', 'Mentoring & tutoring', 'Research & science writing',
+      'Data analysis & interpretation', 'Timeline', 'Education', 'Publications', 'Fellowships & awards', 'Languages',
+      'Polygence', '15+', '100+ graduate students', '100+ citations', 'Fulbright', 'McKnight', 'Max Delbrück Center',
+      'Moffitt', 'Hillsborough Community College', '2018 – 2025', 'EXIST application in preparation', '0.61', '779']],
+    ['de/biography.html', '/de', ['über 10 Jahren Forschung', 'Drei Arten, wie ich arbeite', 'Mentoring & Nachhilfe',
+      'Forschung & Wissenschaftsjournalismus', 'Datenanalyse & Interpretation', 'Werdegang', 'Ausbildung', 'Publikationen',
+      'Stipendien & Auszeichnungen', 'Sprachen', 'Polygence', '2018 – 2025', 'EXIST-Antrag in Vorbereitung', '0,61', '779',
+      'Die gesamte Kommunikation erfolgt auf Englisch.']],
+  ]) {
+    const h = read(f), t = text(h);
+    for (const s of facts) assert.ok(t.includes(s), `${f}: missing ${s}`);
+    for (const bad of ['0.772', '0,772', 'R&D', '15+ years', '15+ Jahre', '2020 – 2025']) assert.ok(!t.includes(bad), `${f}: says ${bad}`);
+    assert.ok(!/EXIST[^.]{0,40}(awarded|won|successful|erfolgreich|bewilligt)/i.test(t), `${f}: EXIST claimed as won`);
+    for (const d of DOIS) assert.ok(h.includes(`href="https://doi.org/${d}"`), `${f}: DOI ${d}`);
+    for (const slug of ['tutoring', 'writing', 'data-analysis']) assert.ok(h.includes(`href="${pre}/request/${slug}.html"`), `${f}: form ${slug}`);
+    assert.ok(!/[€$]\s?\d/.test(t), `${f}: shows a price`);
+  }
+  assert.ok(read('about.html').includes('href="/biography.html"'), 'About links to the biography');
+  assert.ok(read('de/about.html').includes('href="/de/biography.html"'), 'German About links to the German biography');
+});
+
 test('consulting portfolio', () => {
   const h = read('consulting-portfolio.html'), t = text(h);
   for (const id of ['case-study-1', 'case-study-2']) assert.ok(h.includes(`id="${id}"`), id);

@@ -30,6 +30,6 @@ test('privacy policies name the right legal bases', () => {
 
 test('German main pages are indexable now German is live', () => {
   assert.match(read('nav.js'), /var DE_LIVE = true;/);
-  for (const f of ['index', 'services', 'about', 'writing', 'neuropenetrance', 'booking', 'consulting-portfolio'])
+  for (const f of ['index', 'services', 'about', 'writing', 'neuropenetrance', 'booking', 'consulting-portfolio', 'biography'])
     assert.ok(!read(`de/${f}.html`).includes('<meta name="robots" content="noindex">'), `de/${f}.html`);
 });

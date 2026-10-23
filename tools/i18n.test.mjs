@@ -6,7 +6,7 @@ import { ROOT, read, text, htmlFiles } from './site.mjs';
 import { checkServices } from './prices.test.mjs';
 
 const EN_MAIN = ['index.html', 'services.html', 'about.html', 'writing.html', 'neuropenetrance.html', 'booking.html',
-  'consulting-portfolio.html', 'impressum.html', 'datenschutz.html'];
+  'consulting-portfolio.html', 'impressum.html', 'datenschutz.html', 'biography.html'];
 const LEGAL_DE = ['/de/impressum.html', '/de/datenschutz.html'];
 
 export const DE_NAMES = {

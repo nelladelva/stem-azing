@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { read } from './site.mjs';
 
-export const REDIRECTS = { 'biography.html': '/about.html', 'portfolio.html': '/consulting-portfolio.html', 'blog.html': '/writing.html' };
+export const REDIRECTS = { 'portfolio.html': '/consulting-portfolio.html', 'blog.html': '/writing.html' };
 
 test('old pages redirect and keep the #hash', () => {
   for (const [from, to] of Object.entries(REDIRECTS)) {
