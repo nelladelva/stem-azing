@@ -11,6 +11,7 @@ var NAV = {
   en: [
     { href: "/", label: "Home" },
     { href: "/services.html", label: "Services" },
+    { href: "/biography.html", label: "Biography" },
     { href: "/about.html", label: "About" },
     { href: "/neuropenetrance.html", label: "NeuroPenetrance" },
     { href: "/writing.html", label: "Writing" }
@@ -18,6 +19,7 @@ var NAV = {
   de: [
     { href: "/de/", label: "Start" },
     { href: "/de/services.html", label: "Leistungen" },
+    { href: "/de/biography.html", label: "Biografie" },
     { href: "/de/about.html", label: "Über mich" },
     { href: "/de/neuropenetrance.html", label: "NeuroPenetrance" },
     { href: "/de/writing.html", label: "Texte" }

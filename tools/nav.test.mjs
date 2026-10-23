@@ -6,9 +6,9 @@ const nav = require('../nav.js');
 const { navLinks, langOf, alternateUrl, footerLinks, ctaLabel, _setDeLive } = nav;
 
 test('menu labels and root-absolute links', () => {
-  assert.deepEqual(navLinks('en').map(l => l.label), ['Home', 'Services', 'About', 'NeuroPenetrance', 'Writing']);
-  assert.deepEqual(navLinks('de').map(l => l.href), ['/de/', '/de/services.html', '/de/about.html', '/de/neuropenetrance.html', '/de/writing.html']);
-  assert.deepEqual(navLinks('de').map(l => l.label), ['Start', 'Leistungen', 'Über mich', 'NeuroPenetrance', 'Texte']);
+  assert.deepEqual(navLinks('en').map(l => l.label), ['Home', 'Services', 'Biography', 'About', 'NeuroPenetrance', 'Writing']);
+  assert.deepEqual(navLinks('de').map(l => l.href), ['/de/', '/de/services.html', '/de/biography.html', '/de/about.html', '/de/neuropenetrance.html', '/de/writing.html']);
+  assert.deepEqual(navLinks('de').map(l => l.label), ['Start', 'Leistungen', 'Biografie', 'Über mich', 'NeuroPenetrance', 'Texte']);
   assert.ok(navLinks('en').every(l => l.href.startsWith('/')));
   assert.equal(ctaLabel('en'), 'Book a free call');
   assert.equal(ctaLabel('de'), 'Kostenloses Gespräch buchen');

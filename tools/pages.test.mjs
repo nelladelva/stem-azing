@@ -59,6 +59,15 @@ test('biography', () => {
   assert.ok(read('de/about.html').includes('href="/de/biography.html"'), 'German About links to the German biography');
 });
 
+test('Le Wagon: one bootcamp, Data Analytics (Nella, 23 Oct 2026)', () => {
+  for (const f of htmlFiles()) {
+    const t = text(read(f));
+    assert.ok(!/Data[- ]Science[- ]&[- ](AI|KI)|bootcamps/i.test(t), `${f}: mentions a second Le Wagon program`);
+  }
+  assert.ok(text(read('biography.html')).includes('Data Analytics bootcamp'), 'biography: Data Analytics bootcamp');
+  assert.ok(text(read('de/biography.html')).includes('Data-Analytics-Bootcamp'), 'de/biography: Data-Analytics-Bootcamp');
+});
+
 test('consulting portfolio', () => {
   const h = read('consulting-portfolio.html'), t = text(h);
   for (const id of ['case-study-1', 'case-study-2']) assert.ok(h.includes(`id="${id}"`), id);
